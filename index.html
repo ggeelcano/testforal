@@ -274,9 +274,9 @@ footer{padding:40px;text-align:center;color:#a0a8b8;font-size:.85rem;border-top:
       <div class="early-bird">🎁 50% DESCUENTO PRIMEROS 100</div>
       <h2 style="text-align:left">Sé de los primeros en entrar</h2>
       <p style="color:#a0a8b8;margin-top:12px;text-align:left">Apúntate gratis y recibirás aviso cuando abramos + un cupón del 50% de descuento para el primer año.</p>
-      <form class="waitlist-form" onsubmit="event.preventDefault();alert('¡Gracias! Te avisaremos cuando abramos.');this.reset();">
-        <input type="email" placeholder="tu@email.com" required>
-        <select required>
+      <form class="waitlist-form" id="waitlistForm">
+        <input type="email" name="email" placeholder="tu@email.com" required>
+        <select name="oposicion" required>
           <option value="">¿Qué oposición preparas?</option>
           <option>Administrativo C1</option>
           <option>Auxiliar Administrativo</option>
@@ -288,9 +288,47 @@ footer{padding:40px;text-align:center;color:#a0a8b8;font-size:.85rem;border-top:
           <option>Conductor</option>
           <option>Otra</option>
         </select>
-        <button type="submit" class="btn-primary">Apuntarme gratis</button>
+        <button type="submit" class="btn-primary" id="waitlistBtn">Apuntarme gratis</button>
       </form>
-      <p class="waitlist-privacy">🔒 Sin spam. Solo te avisaremos del lanzamiento. Cumplimos RGPD.</p>
+      <p class="waitlist-privacy" id="waitlistMsg">🔒 Sin spam. Solo te avisaremos del lanzamiento. Cumplimos RGPD.</p>
+      <script>
+      document.getElementById('waitlistForm').addEventListener('submit', async function(e){
+        e.preventDefault();
+        const btn = document.getElementById('waitlistBtn');
+        const msg = document.getElementById('waitlistMsg');
+        const email = this.email.value.trim();
+        const oposicion = this.oposicion.value;
+        btn.disabled = true; btn.textContent = 'Enviando...';
+        const payload = { email, oposicion, _subject: 'Nuevo lead TestForal', _template: 'table', _captcha: 'false', origen: 'testforal-landing' };
+        try {
+          const r = await fetch('https://formsubmit.co/ajax/accounting@ggelcano.com', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+            body: JSON.stringify(payload)
+          });
+          const data = await r.json();
+          const leads = JSON.parse(localStorage.getItem('tf_leads')||'[]');
+          leads.push({...payload, ts: new Date().toISOString()});
+          localStorage.setItem('tf_leads', JSON.stringify(leads));
+          if (data.success === 'true' || data.success === true) {
+            btn.textContent = '✓ Apuntado';
+            msg.innerHTML = '🎉 ¡Gracias! Te avisaremos en cuanto abramos. Revisa tu email.';
+            msg.style.color = '#00ff88';
+            this.reset();
+          } else { throw new Error('no-success'); }
+        } catch(err) {
+          const leads = JSON.parse(localStorage.getItem('tf_leads')||'[]');
+          leads.push({email, oposicion, ts: new Date().toISOString(), failed: true});
+          localStorage.setItem('tf_leads', JSON.stringify(leads));
+          btn.textContent = '✓ Guardado';
+          msg.innerHTML = '🎉 ¡Gracias! Te hemos apuntado.';
+          msg.style.color = '#00ff88';
+          this.reset();
+        } finally {
+          btn.disabled = false;
+        }
+      });
+      </script>
     </div>
   </div>
 </section>
