@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TestForal para Academias · Plataforma white-label de tests oposiciones</title>
+<meta name="description" content="Ofrece a tus alumnos una plataforma profesional de tests con tu marca. Sin desarrollo, sin mantenimiento, con contenido actualizado por expertos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:#fafafa;color:#1a1f2e;line-height:1.6}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;background:rgba(255,255,255,.9);backdrop-filter:blur(20px);border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:900;font-size:1.3rem;color:#0a4fa0}
+.logo span{color:#1a1f2e}
+.nav-cta{padding:10px 24px;background:#0a4fa0;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:.9rem;transition:all .2s}
+.nav-cta:hover{background:#083b78}
+.nav-back{color:#666;text-decoration:none;font-size:.9rem;margin-right:20px}
+
+.hero{min-height:90vh;display:flex;align-items:center;padding:120px 40px 80px;background:linear-gradient(135deg,#f5f7fb,#eaf0fa)}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center}
+.badge{display:inline-block;padding:8px 16px;background:#0a4fa015;border:1px solid #0a4fa030;border-radius:100px;font-size:.85rem;color:#0a4fa0;font-weight:600;margin-bottom:24px}
+h1{font-size:clamp(2.5rem,5vw,3.8rem);font-weight:900;line-height:1.1;margin-bottom:24px;letter-spacing:-.02em;color:#0a1530}
+.hero p{font-size:1.15rem;color:#4a5568;margin-bottom:32px;max-width:540px}
+.cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.btn-primary{padding:16px 32px;background:#0a4fa0;color:#fff;font-weight:700;border-radius:10px;text-decoration:none;font-size:1rem;transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:#083b78;transform:translateY(-2px);box-shadow:0 10px 30px rgba(10,79,160,.3)}
+.btn-ghost{padding:16px 32px;border:1px solid #cbd5e0;color:#1a1f2e;font-weight:600;border-radius:10px;text-decoration:none;font-size:1rem;background:#fff}
+
+.hero-visual{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:28px;box-shadow:0 20px 60px rgba(10,21,48,.08)}
+.browser-bar{display:flex;gap:6px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #eee}
+.browser-bar span{width:12px;height:12px;border-radius:50%}
+.browser-bar span:nth-child(1){background:#ff5f57}
+.browser-bar span:nth-child(2){background:#febc2e}
+.browser-bar span:nth-child(3){background:#28c840}
+.browser-url{flex:1;margin-left:12px;padding:4px 10px;background:#f5f7fb;border-radius:6px;font-size:.75rem;color:#718096}
+.wl-header{display:flex;align-items:center;gap:12px;padding:12px;background:linear-gradient(135deg,#0a4fa0,#083b78);border-radius:10px;color:#fff;margin-bottom:16px}
+.wl-logo{width:36px;height:36px;background:#fff;color:#0a4fa0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800}
+.wl-title{font-weight:700;font-size:.95rem}
+.wl-sub{font-size:.75rem;opacity:.8}
+.wl-body{padding:16px;background:#f5f7fb;border-radius:10px}
+.wl-q{font-size:.9rem;font-weight:600;margin-bottom:12px}
+.wl-opt{padding:10px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:6px;font-size:.85rem}
+.wl-opt.ok{background:#e6fff0;border-color:#10b981;color:#047857}
+
+section{padding:100px 40px}
+.container{max-width:1200px;margin:0 auto}
+h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;margin-bottom:16px;text-align:center;letter-spacing:-.02em;color:#0a1530}
+.section-sub{text-align:center;color:#4a5568;font-size:1.1rem;margin-bottom:60px;max-width:700px;margin-left:auto;margin-right:auto}
+
+.problem{background:#fff}
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:40px}
+.problem-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:28px;border-left:4px solid #ef4444}
+.problem-card.solved{border-left-color:#10b981}
+.problem-card h3{font-size:1.1rem;font-weight:700;margin-bottom:10px;color:#0a1530}
+.problem-card p{color:#4a5568;font-size:.95rem}
+.problem-card .tag{display:inline-block;padding:4px 10px;background:#fee2e2;color:#991b1b;font-size:.7rem;font-weight:700;border-radius:100px;margin-bottom:12px;letter-spacing:.05em}
+.problem-card.solved .tag{background:#d1fae5;color:#065f46}
+
+.how{background:#f5f7fb}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:40px}
+.step{background:#fff;padding:32px;border-radius:16px;position:relative;border:1px solid #e2e8f0}
+.step-num{width:40px;height:40px;background:#0a4fa0;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:16px;font-size:1.1rem}
+.step h3{font-size:1.1rem;font-weight:700;margin-bottom:10px;color:#0a1530}
+.step p{color:#4a5568;font-size:.95rem}
+
+.benefits{background:#fff}
+.benefit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:40px}
+.benefit{padding:24px;background:#f5f7fb;border-radius:14px;display:flex;gap:16px}
+.benefit-icon{width:44px;height:44px;background:#0a4fa0;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.benefit h4{font-size:1rem;font-weight:700;margin-bottom:6px;color:#0a1530}
+.benefit p{font-size:.9rem;color:#4a5568}
+
+.pricing{background:#f5f7fb}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:40px auto 0}
+.price-card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:36px 28px;position:relative}
+.price-card.featured{border-color:#0a4fa0;border-width:2px;box-shadow:0 20px 60px rgba(10,79,160,.15)}
+.price-card.featured::before{content:'RECOMENDADO';position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:6px 16px;background:#0a4fa0;color:#fff;font-size:.72rem;font-weight:800;border-radius:100px;letter-spacing:.05em}
+.price-name{font-size:1rem;font-weight:700;margin-bottom:4px;color:#4a5568;text-transform:uppercase;letter-spacing:.05em;font-size:.85rem}
+.price-amount{font-size:2.8rem;font-weight:900;color:#0a1530;margin-bottom:4px}
+.price-amount .currency{font-size:1.3rem;vertical-align:top;color:#4a5568}
+.price-period{color:#4a5568;font-size:.9rem;margin-bottom:24px}
+.price-list{list-style:none;margin-bottom:28px}
+.price-list li{padding:8px 0;font-size:.93rem;color:#2d3748;display:flex;align-items:flex-start;gap:10px}
+.price-list li::before{content:'✓';color:#10b981;font-weight:800;flex-shrink:0}
+.price-cta{display:block;padding:14px;text-align:center;border-radius:10px;text-decoration:none;font-weight:700;transition:all .2s;font-size:.95rem}
+.price-cta.primary{background:#0a4fa0;color:#fff}
+.price-cta.primary:hover{background:#083b78}
+.price-cta.secondary{border:1px solid #cbd5e0;color:#1a1f2e}
+.price-note{text-align:center;color:#4a5568;font-size:.85rem;margin-top:24px}
+
+.faq{background:#fff}
+.faq-grid{max-width:800px;margin:40px auto 0}
+.faq-item{background:#f5f7fb;border-radius:12px;margin-bottom:12px;padding:20px 24px}
+.faq-item h4{font-size:1rem;font-weight:700;margin-bottom:8px;color:#0a1530}
+.faq-item p{color:#4a5568;font-size:.95rem}
+
+.cta-final{background:linear-gradient(135deg,#0a4fa0,#083b78);color:#fff;text-align:center;padding:80px 40px}
+.cta-final h2{color:#fff;margin-bottom:16px}
+.cta-final p{color:#cbd5e0;font-size:1.1rem;margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto}
+.cta-final .btn-primary{background:#fff;color:#0a4fa0}
+.cta-final .btn-primary:hover{background:#f5f7fb}
+
+footer{padding:40px;text-align:center;color:#4a5568;font-size:.85rem;background:#fff;border-top:1px solid #eee}
+
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  section{padding:60px 20px}
+  .hero{padding:100px 20px 60px}
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Test<span>Foral</span> <span style="font-size:.7rem;color:#0a4fa0;vertical-align:middle;font-weight:600">PARTNERS</span></div>
+  <div>
+    <a href="index.html" class="nav-back">← Ver para alumnos</a>
+    <a href="#contacto" class="nav-cta">Solicitar demo</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="badge">💼 Programa para academias</span>
+      <h1>La plataforma de tests que tus alumnos piden, con <span style="color:#0a4fa0">tu marca</span></h1>
+      <p>Ofrece a tus opositores una plataforma profesional de tests online sin desarrollarla, sin mantenerla y sin preocuparte del contenido. Tú te centras en enseñar, nosotros en la tecnología.</p>
+      <div class="cta-row">
+        <a href="#contacto" class="btn-primary">Agendar demo de 15 min</a>
+        <a href="#planes" class="btn-ghost">Ver precios</a>
+      </div>
+      <div style="display:flex;gap:40px;flex-wrap:wrap;padding-top:16px;border-top:1px solid #cbd5e0">
+        <div>
+          <div style="font-size:1.8rem;font-weight:800;color:#0a4fa0">48h</div>
+          <div style="font-size:.85rem;color:#4a5568">de setup con tu marca</div>
+        </div>
+        <div>
+          <div style="font-size:1.8rem;font-weight:800;color:#0a4fa0">5.000+</div>
+          <div style="font-size:.85rem;color:#4a5568">preguntas preparadas</div>
+        </div>
+        <div>
+          <div style="font-size:1.8rem;font-weight:800;color:#0a4fa0">0€</div>
+          <div style="font-size:.85rem;color:#4a5568">si no tienes alumnos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="browser-bar">
+        <span></span><span></span><span></span>
+        <div class="browser-url">tests.tuacademia.com</div>
+      </div>
+      <div class="wl-header">
+        <div class="wl-logo">TA</div>
+        <div>
+          <div class="wl-title">Tu Academia · Tests Oposiciones</div>
+          <div class="wl-sub">Administrativo C1 · Simulacro #12</div>
+        </div>
+      </div>
+      <div class="wl-body">
+        <div class="wl-q">¿Qué órgano aprueba el presupuesto del Territorio Histórico de Bizkaia?</div>
+        <div class="wl-opt">A. La Diputación Foral</div>
+        <div class="wl-opt ok">B. Las Juntas Generales ✓</div>
+        <div class="wl-opt">C. El Gobierno Vasco</div>
+      </div>
+      <div style="margin-top:12px;display:flex;justify-content:space-between;font-size:.8rem;color:#4a5568">
+        <span>Pregunta 24/80</span>
+        <span style="color:#10b981;font-weight:600">21 aciertos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem">
+  <div class="container">
+    <h2>El problema de las academias pequeñas</h2>
+    <p class="section-sub">Mientras tus competidores grandes ofrecen plataformas profesionales, tú compites con PDFs y fotocopias.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <span class="tag">Hoy</span>
+        <h3>📄 Fotocopias y PDFs</h3>
+        <p>El alumno paga lo mismo pero recibe material offline. Percepción de academia "de las viejas".</p>
+      </div>
+      <div class="problem-card">
+        <span class="tag">Hoy</span>
+        <h3>💸 Desarrollar una plataforma cuesta 30.000€+</h3>
+        <p>Diseño, programación, servidor, mantenimiento, actualización constante del temario...</p>
+      </div>
+      <div class="problem-card">
+        <span class="tag">Hoy</span>
+        <h3>😓 Academia grande se lleva los alumnos</h3>
+        <p>Adams, MAD, CEF tienen apps propias. Los alumnos jóvenes se van con ellos por comodidad.</p>
+      </div>
+      <div class="problem-card solved">
+        <span class="tag">Con TestForal</span>
+        <h3>✨ Plataforma profesional en 48h</h3>
+        <p>Con tu logo, tu dominio y tu contenido. Ofreces lo mismo que Adams por 10% del coste.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="container">
+    <h2>Cómo funciona</h2>
+    <p class="section-sub">Te montamos tu propia academia digital en 4 pasos.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Firma y kickoff</h3>
+        <p>Contrato de licencia simple. Sin permanencia. Primer mes gratis para que lo pruebes.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Branding en 48h</h3>
+        <p>Instalamos tu logo, colores y dominio (tests.tuacademia.com). Listo para mostrar.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Alta de alumnos</h3>
+        <p>Panel de admin para crear cuentas de alumnos, grupos, asignar convocatorias.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Actualizaciones automáticas</h3>
+        <p>Nosotros actualizamos el temario cada vez que sale convocatoria BOB. Tú no tocas nada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="container">
+    <h2>Qué incluye la licencia</h2>
+    <div class="benefit-grid">
+      <div class="benefit"><div class="benefit-icon">🎨</div><div><h4>White-label completo</h4><p>Tu logo, tus colores, tu dominio. Los alumnos no saben que hay un proveedor detrás.</p></div></div>
+      <div class="benefit"><div class="benefit-icon">📚</div><div><h4>Temario actualizado</h4><p>Revisado cada mes. Preguntas nuevas con cada convocatoria BOB.</p></div></div>
+      <div class="benefit"><div class="benefit-icon">👥</div><div><h4>Gestión de alumnos</h4><p>Panel admin para altas, bajas, grupos, seguimiento individual.</p></div></div>
+      <div class="benefit"><div class="benefit-icon">📊</div><div><h4>Informes detallados</h4><p>Ve qué temas falla cada alumno. Úsalo para personalizar tus clases.</p></div></div>
+      <div class="benefit"><div class="benefit-icon">⚡</div><div><h4>Hosting y soporte</h4><p>Servidor profesional incluido. Soporte técnico en 24h.</p></div></div>
+      <div class="benefit"><div class="benefit-icon">📱</div><div><h4>Móvil y escritorio</h4><p>Funciona en cualquier dispositivo. No hay que descargar app.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="planes">
+  <div class="container">
+    <h2>Planes para academias</h2>
+    <p class="section-sub">Precio fijo mensual. Sin comisión por alumno. Cancela cuando quieras.</p>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-name">Starter</div>
+        <div class="price-amount"><span class="currency">€</span>99</div>
+        <div class="price-period">/mes · hasta 30 alumnos activos</div>
+        <ul class="price-list">
+          <li>Hasta 30 alumnos activos</li>
+          <li>3 oposiciones a elegir</li>
+          <li>Branding básico</li>
+          <li>Panel admin</li>
+          <li>Actualizaciones automáticas</li>
+          <li>Soporte por email</li>
+        </ul>
+        <a href="#contacto" class="price-cta secondary">Empezar</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-name">Pro</div>
+        <div class="price-amount"><span class="currency">€</span>199</div>
+        <div class="price-period">/mes · hasta 100 alumnos</div>
+        <ul class="price-list">
+          <li>Hasta 100 alumnos activos</li>
+          <li>Todas las oposiciones</li>
+          <li>White-label completo + dominio propio</li>
+          <li>Informes avanzados</li>
+          <li>API para integrar con tu CRM</li>
+          <li>Soporte prioritario WhatsApp</li>
+          <li><strong>Primer mes gratis</strong></li>
+        </ul>
+        <a href="#contacto" class="price-cta primary">Reservar demo</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Enterprise</div>
+        <div class="price-amount"><span class="currency">€</span>399</div>
+        <div class="price-period">/mes · alumnos ilimitados</div>
+        <ul class="price-list">
+          <li>Alumnos ilimitados</li>
+          <li>Todas las oposiciones + personalizadas</li>
+          <li>App móvil con tu logo (iOS + Android)</li>
+          <li>Preguntas exclusivas de tu academia</li>
+          <li>Onboarding y formación</li>
+          <li>Account manager dedicado</li>
+        </ul>
+        <a href="#contacto" class="price-cta secondary">Hablar con ventas</a>
+      </div>
+    </div>
+    <p class="price-note">💡 Setup inicial gratis · Cancela con 30 días de preaviso · Descuento 15% pago anual</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>¿Puedo añadir mis propias preguntas?</h4>
+        <p>Sí. El plan Pro permite subir tus propias baterías de preguntas. El Enterprise incluye gestión completa del contenido por tu parte.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Los alumnos saben que es TestForal o ven mi marca?</h4>
+        <p>Solo tu marca. Ni nuestro logo, ni mención en emails, ni en URL. Eres tú 100%.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Qué pasa si un mes tengo 10 alumnos y otro tengo 60?</h4>
+        <p>El plan se escala automáticamente. Pagas solo el tier que uses. Sin sorpresas.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Cuánto se tarda en arrancar?</h4>
+        <p>48h desde la firma hasta tener tu plataforma online con tu marca, lista para dar acceso a los alumnos.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Actualizáis el temario cuando sale nueva convocatoria?</h4>
+        <p>Sí, está incluido. Revisamos el BOB y actualizamos preguntas sin coste extra.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Qué pasa si cancelo?</h4>
+        <p>Con 30 días de preaviso. Te damos un export de tus alumnos y datos para que migres sin perder nada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final" id="contacto">
+  <div class="container">
+    <h2>Hablemos 15 minutos</h2>
+    <p>Te enseñamos la plataforma en vivo, vemos tu caso concreto y te damos una propuesta cerrada. Sin compromiso.</p>
+    <a href="mailto:accounting@ggelcano.com?subject=Demo%20TestForal%20Partners&body=Hola,%20quiero%20ver%20una%20demo%20de%20TestForal%20para%20mi%20academia." class="btn-primary">📧 Solicitar demo por email</a>
+    <p style="margin-top:24px;color:#cbd5e0;font-size:.9rem">O llámanos directamente · G&G Elcano · Bilbao</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 TestForal Partners · Una iniciativa de G&G Elcano · Bilbao, Bizkaia</p>
+</footer>
+
+</body>
+</html>

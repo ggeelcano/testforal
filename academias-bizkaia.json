@@ -1,0 +1,437 @@
+[
+  {
+    "nombre": "Campus Training | Centro de Formación en Bilbao",
+    "direccion": "Diego Lopez Haroko Kale Nagusia, 63 Bis, 1º A, Abando, 48011 Bilbao, Vizcaya",
+    "telefono": "944 34 04 39",
+    "web": "https://www.campustraining.es/?utm_source=gmb&utm_medium=organic&utm_campaign=campus_organic_es_gmb&MLL=11879",
+    "rating": 4.1,
+    "reviews": 494,
+    "maps": "https://maps.google.com/?cid=4677682937186142454&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "school",
+      "educational_institution",
+      "point_of_interest",
+      "health",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Academia Oposiciones Davante MasterD | Bilbao",
+    "direccion": "Agirre Lehendakariaren Etorb., 5, Deusto, 48014 Bilbao, Bizkaia",
+    "telefono": "944 75 97 30",
+    "web": "https://www.masterd.es/delegaciones/bilbao/1500?piloto=773&utm_source=google&utm_medium=organic&utm_campaign=GMB",
+    "rating": 4.3,
+    "reviews": 474,
+    "maps": "https://maps.google.com/?cid=7472823477106878117&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "school",
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Centro de Estudios Inatec",
+    "direccion": "Pl. Garellano, 14, bajo, Basurtu-Zorrotza, 48013 Bilbao, Bizkaia",
+    "telefono": "944 22 29 52",
+    "web": "http://www.centroinatec.com/",
+    "rating": 4.8,
+    "reviews": 329,
+    "maps": "https://maps.google.com/?cid=3429831426596768748&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Bilbao Formación",
+    "direccion": "Mazarredo Zumarkalea, 35, Abando, 48009 Bilbao, Bizkaia",
+    "telefono": "944 24 95 92",
+    "web": "https://www.bilbaoformacion.com/",
+    "rating": 4.5,
+    "reviews": 187,
+    "maps": "https://maps.google.com/?cid=14164300771550867622&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Juritecnia - Centro de Formación en Bilbao",
+    "direccion": "Calle Arenal, 5, 1º, Ibaiondo, 48005 Bilbao, Vizcaya",
+    "telefono": "944 79 45 20",
+    "web": "http://www.juritecnia.net/",
+    "rating": 4.5,
+    "reviews": 177,
+    "maps": "https://maps.google.com/?cid=17533103547289777060&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "employment_agency",
+      "school",
+      "educational_institution",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Centro Estudios Mikeldi",
+    "direccion": "Autonomia Kalea, 62, Abando, 48012 Bilbao, Bizkaia",
+    "telefono": "944 21 11 31",
+    "web": "http://www.mikeldi.com/",
+    "rating": 3.9,
+    "reviews": 125,
+    "maps": "https://maps.google.com/?cid=2545446825523312907&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "school",
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Academia San Agustín",
+    "direccion": "Poza Lizentziatuaren Kalea, 53, Abando, 48011 Bilbao, Bizkaia",
+    "telefono": "944 42 37 71",
+    "web": "http://www.academiasanagustin.com/",
+    "rating": 4.6,
+    "reviews": 102,
+    "maps": "https://maps.google.com/?cid=1191532203475025820&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "university",
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Academia Edison",
+    "direccion": "Gordóniz Kalea, 6, ext, dpto. 2, Abando, 48010 Bilbao, Bizkaia",
+    "telefono": "944 44 00 47",
+    "web": "http://academiasedison.es/",
+    "rating": 4.7,
+    "reviews": 95,
+    "maps": "https://maps.google.com/?cid=581892806019925379&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "school",
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Academia Belandia",
+    "direccion": "Hurtado de Amezaga Kalea, 10, 2º Izq, Abando, 48008 Bilbao, Bizkaia",
+    "telefono": "944 15 56 07",
+    "web": "http://www.academiabelandia.com/",
+    "rating": 3.2,
+    "reviews": 69,
+    "maps": "https://maps.google.com/?cid=17984635963507700050&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Lua oposiciones - Oposiciones Ertzaintza y Policía Local",
+    "direccion": "Larrauri Kalea, 1C, 48160 Elexalde Derio, Bizkaia",
+    "telefono": "645 20 39 74",
+    "web": "http://www.luaoposiciones.es/",
+    "rating": 5,
+    "reviews": 69,
+    "maps": "https://maps.google.com/?cid=7993854291572195962&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Academia Loroño",
+    "direccion": "Luis Briñas K., 7, Basurtu-Zorrotza, 48013 Bilbao, Bizkaia",
+    "telefono": "944 22 13 79",
+    "web": "http://www.academialorono.com/",
+    "rating": 5,
+    "reviews": 63,
+    "maps": "https://maps.google.com/?cid=572253059815108250&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Academia Ikas Barakaldo",
+    "direccion": "Muguruza Kalea, 15, Santa Teresa, 48902 San Vicente de Barakaldo, Bizkaia",
+    "telefono": "607 25 65 20",
+    "web": "http://www.ikasbarakaldo.com/",
+    "rating": 4.9,
+    "reviews": 63,
+    "maps": "https://maps.google.com/?cid=7418844986988575261&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "school",
+      "educational_institution",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "OpeBask - Academia de Oposiciones en Bilbao",
+    "direccion": "C. de Bertendona, Nº 6, Abando, 48008 Bilbao, Vizcaya",
+    "telefono": "946 07 33 62",
+    "web": "https://www.opebask.com/",
+    "rating": 4,
+    "reviews": 60,
+    "maps": "https://maps.google.com/?cid=7002589564508817611&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "school",
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Opebide - Academia de Oposiciones en Bilbao",
+    "direccion": "C. Henao, 52, 1a, Abando, 48009 Bilbao, Vizcaya",
+    "telefono": "945 10 26 08",
+    "web": "http://opebide.com/",
+    "rating": 4.4,
+    "reviews": 57,
+    "maps": "https://maps.google.com/?cid=6859494514031770404&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "school",
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "ACADEMIA IKASLEKU (Barakaldo)",
+    "direccion": "Askatasun Etorbidea, 61, 48901 San Vicente de Barakaldo, Bizkaia",
+    "telefono": "622 17 64 32",
+    "web": "https://www.ikasleku.com/academias/academia-en-barakaldo/",
+    "rating": 5,
+    "reviews": 50,
+    "maps": "https://maps.google.com/?cid=7878067982599312131&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "school",
+      "educational_institution",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "ACADEMIA EDISON GETXO",
+    "direccion": "Torrene Kalea, 9, 48991 Algorta, Bizkaia",
+    "telefono": "944 91 46 41",
+    "web": "http://www.academiasedison.com/",
+    "rating": 4.8,
+    "reviews": 49,
+    "maps": "https://maps.google.com/?cid=5963009300218906946&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "school",
+      "point_of_interest",
+      "educational_institution",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Centro de Estudios BILBAO",
+    "direccion": "Simón Bolívar Kalea, 27, 1º (dpto 14, Abando, 48013 Bilbao, Bizkaia",
+    "telefono": "678 92 72 15",
+    "web": "https://academiabilbao.es/",
+    "rating": 5,
+    "reviews": 47,
+    "maps": "https://maps.google.com/?cid=5564136781321312673&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Academia Newton",
+    "direccion": "Calle, Urkixo Zumarkalea, 83, Basurtu-Zorrotza, 48013 Bilbao, Bizkaia",
+    "telefono": "944 41 83 50",
+    "web": "http://www.academianewton.com/",
+    "rating": 3.9,
+    "reviews": 32,
+    "maps": "https://maps.google.com/?cid=12235543184191770196&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Academia Oposiciones",
+    "direccion": "Elcano Kalea, 34, C/ Colón de Larreátegui K., 12, Ledesma 8, Abando, 48008 Bilbao, Vizcaya",
+    "web": "https://estudiosadministrativos.com/",
+    "rating": 4.3,
+    "reviews": 18,
+    "maps": "https://maps.google.com/?cid=8193948780426690715&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "ACADEMIA DELTA BILBAO",
+    "direccion": "Egia Jeneralaren Kalea, 8, Abando, 48013 Bilbao, Bizkaia",
+    "telefono": "946 57 06 14",
+    "web": "http://www.academiadeltabilbao.com/",
+    "rating": 4.8,
+    "reviews": 15,
+    "maps": "https://maps.google.com/?cid=15933829452789031024&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Estudios Contables y Fiscales",
+    "direccion": "Ledesma Musikariaren Kalea, 6, Abando, 48001 Bilbao, Bizkaia",
+    "telefono": "944 24 89 63",
+    "web": "https://www.estudioscontables.es/",
+    "rating": 4.7,
+    "reviews": 15,
+    "maps": "https://maps.google.com/?cid=9725909370208531819&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Academia de Oposiciones Albia en Bilbao",
+    "direccion": "Done Bikendi Kalea, 6, Abando, 48001 Bilbao, Bizkaia",
+    "telefono": "615 75 63 87",
+    "web": "http://www.albia.org/",
+    "rating": 2.8,
+    "reviews": 11,
+    "maps": "https://maps.google.com/?cid=4649097255094239676&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "school",
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Mikelats Euskaltegia - Euskera para oposiciones y exámenes oficiales",
+    "direccion": "C. del Lic. Poza, 56, Entreplanta izquierda, Abando, 48013 Bilbao, Vizcaya",
+    "telefono": "944 15 32 95",
+    "web": "https://mikelatseuskaltegia.com/",
+    "rating": 4.3,
+    "reviews": 9,
+    "maps": "https://maps.google.com/?cid=13344325343633842743&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Escuela de Finanzas - Academia de oposiciones Bilbao",
+    "direccion": "Nafarroa Kalea, 6, Abando, 48001 Bilbao, Bizkaia",
+    "telefono": "944 24 01 48",
+    "web": "http://www.efbilbao.com/",
+    "rating": 4.3,
+    "reviews": 6,
+    "maps": "https://maps.google.com/?cid=18390457629044126817&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Academias Edison Barakaldo",
+    "direccion": "C. Elcano Kalea, 11, 2º, 48901 Baracaldo, Vizcaya",
+    "telefono": "944 78 12 72",
+    "web": "http://www.academiasedison.com/",
+    "rating": 5,
+    "reviews": 5,
+    "maps": "https://maps.google.com/?cid=2928729637621812975&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Academia Newton",
+    "direccion": "Sarrikoalde Plaza, 3, Deusto, 48015 Bilbao, Bizkaia",
+    "telefono": "944 75 07 08",
+    "web": "http://www.academianewton.com/",
+    "rating": 4,
+    "reviews": 4,
+    "maps": "https://maps.google.com/?cid=15218228621392373842&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Academia Seiko",
+    "direccion": "Durangoko Plateruen Plaza, 1, 48200 Durango, Bizkaia",
+    "telefono": "944 97 92 50",
+    "web": "http://academia-seiko.com/",
+    "rating": 5,
+    "reviews": 2,
+    "maps": "https://maps.google.com/?cid=16969142482936499001&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "school",
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Opositer, cursos homologados para oposiciones",
+    "direccion": "Quintana Kalea, nº 4, Ibaiondo, 48007 Bilbao, Bizkaia",
+    "telefono": "961 28 68 37",
+    "web": "https://www.opositer.edu.es/",
+    "rating": 5,
+    "reviews": 1,
+    "maps": "https://maps.google.com/?cid=17551533255780283664&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "Laacademia Oposaketak S.L.",
+    "direccion": "Av. del Ferrocarril, 10, ENTREPLANTA, Basurto-Zorroza, 48012 Bilbao, Vizcaya",
+    "telefono": "601 99 11 51",
+    "web": "https://oposicioneslaacademia.es/",
+    "maps": "https://maps.google.com/?cid=17020591162242429879&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "IBOP - Insituto Bask de Oposiciones",
+    "direccion": "C. Simón Bolívar, 27, 1º, estudios 2 y 3, Abando, 48013 Bilbao, Vizcaya",
+    "telefono": "944 02 03 15",
+    "maps": "https://maps.google.com/?cid=4922926114904365225&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "secondary_school",
+      "school",
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "nombre": "FORMAS Getxo - Academia de Cursos y Oposiciones",
+    "direccion": "Ibaigane Kalea, 15, 48930 Areeta / Las Arenas, Bizkaia",
+    "telefono": "944 80 55 70",
+    "maps": "https://maps.google.com/?cid=13849658233953684203&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "tipos": [
+      "school",
+      "educational_institution",
+      "point_of_interest",
+      "establishment"
+    ]
+  }
+]
