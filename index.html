@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TestForal · Tests oposiciones Diputación Foral de Bizkaia</title>
+<meta name="description" content="Prepara las oposiciones de la Diputación Foral de Bizkaia con miles de tests actualizados, simulacros cronometrados y estadísticas en tiempo real.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:#0a0e1a;color:#e4e7ee;line-height:1.6;overflow-x:hidden}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;background:rgba(10,14,26,.8);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:900;font-size:1.3rem;background:linear-gradient(135deg,#00d9ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo span{color:#e4e7ee;-webkit-text-fill-color:#e4e7ee}
+.nav-cta{padding:10px 24px;background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a;font-weight:700;border-radius:8px;text-decoration:none;font-size:.9rem;transition:transform .2s}
+.nav-cta:hover{transform:scale(1.05)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(0,217,255,.15),transparent 50%),radial-gradient(circle at 70% 60%,rgba(0,255,136,.1),transparent 50%);animation:float 20s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,-30px)}}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+.badge{display:inline-block;padding:8px 16px;background:rgba(0,217,255,.1);border:1px solid rgba(0,217,255,.3);border-radius:100px;font-size:.85rem;color:#00d9ff;font-weight:600;margin-bottom:24px}
+h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;line-height:1.1;margin-bottom:24px;letter-spacing:-.02em}
+h1 .gradient{background:linear-gradient(135deg,#00d9ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.2rem;color:#a0a8b8;margin-bottom:32px;max-width:500px}
+.cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.btn-primary{padding:16px 32px;background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a;font-weight:700;border-radius:10px;text-decoration:none;font-size:1rem;transition:transform .2s;border:none;cursor:pointer}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,217,255,.3)}
+.btn-ghost{padding:16px 32px;border:1px solid rgba(255,255,255,.15);color:#e4e7ee;font-weight:600;border-radius:10px;text-decoration:none;font-size:1rem}
+.stats{display:flex;gap:40px;flex-wrap:wrap}
+.stat-num{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#00d9ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:.85rem;color:#a0a8b8}
+
+/* Mock test */
+.mock{background:linear-gradient(135deg,#121828,#0f1422);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:32px;box-shadow:0 30px 60px rgba(0,0,0,.4);position:relative}
+.mock-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.mock-title{font-weight:700;font-size:.95rem}
+.mock-timer{font-family:'Courier New',monospace;color:#00ff88;font-weight:700;font-size:1rem}
+.mock-q{font-size:1.05rem;font-weight:600;margin-bottom:20px;line-height:1.5}
+.mock-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;margin-bottom:8px;cursor:pointer;transition:all .2s;font-size:.95rem}
+.mock-opt:hover{background:rgba(0,217,255,.08);border-color:rgba(0,217,255,.3)}
+.mock-opt.correct{background:rgba(0,255,136,.1);border-color:rgba(0,255,136,.4);color:#00ff88}
+.mock-opt .letter{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
+.mock-opt.correct .letter{background:#00ff88;color:#0a0e1a}
+.mock-progress{margin-top:20px;display:flex;justify-content:space-between;font-size:.85rem;color:#a0a8b8}
+
+/* Sections */
+section{padding:100px 40px}
+.container{max-width:1200px;margin:0 auto}
+h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px;text-align:center;letter-spacing:-.02em}
+.section-sub{text-align:center;color:#a0a8b8;font-size:1.1rem;margin-bottom:60px;max-width:600px;margin-left:auto;margin-right:auto}
+
+/* Features */
+.features{background:linear-gradient(180deg,#0a0e1a,#0d1220)}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.feature{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px;transition:all .3s}
+.feature:hover{border-color:rgba(0,217,255,.3);transform:translateY(-4px)}
+.feature-icon{width:48px;height:48px;background:linear-gradient(135deg,rgba(0,217,255,.2),rgba(0,255,136,.1));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
+.feature h3{font-size:1.2rem;font-weight:700;margin-bottom:12px}
+.feature p{color:#a0a8b8;font-size:.95rem}
+
+/* Oposiciones */
+.opos{background:#0a0e1a}
+.opo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.opo-card{background:linear-gradient(135deg,#121828,#0f1422);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;text-align:center;transition:all .3s}
+.opo-card:hover{border-color:rgba(0,255,136,.3)}
+.opo-icon{font-size:2.5rem;margin-bottom:12px}
+.opo-name{font-weight:700;font-size:1rem;margin-bottom:4px}
+.opo-tests{font-size:.85rem;color:#00ff88;font-weight:600}
+
+/* Pricing */
+.pricing{background:linear-gradient(180deg,#0d1220,#0a0e1a)}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1000px;margin:0 auto}
+.price-card{background:linear-gradient(135deg,#121828,#0f1422);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:40px 32px;position:relative}
+.price-card.featured{border-color:rgba(0,217,255,.4);transform:scale(1.03)}
+.price-card.featured::before{content:'MÁS POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:6px 16px;background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a;font-size:.75rem;font-weight:800;border-radius:100px;letter-spacing:.05em}
+.price-name{font-size:1.1rem;font-weight:700;margin-bottom:8px;color:#a0a8b8}
+.price-amount{font-size:3rem;font-weight:900;margin-bottom:4px}
+.price-amount .currency{font-size:1.5rem;vertical-align:top}
+.price-period{color:#a0a8b8;font-size:.9rem;margin-bottom:24px}
+.price-list{list-style:none;margin-bottom:32px}
+.price-list li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.95rem;display:flex;align-items:center;gap:10px}
+.price-list li::before{content:'✓';color:#00ff88;font-weight:800}
+.price-cta{display:block;padding:14px;text-align:center;border-radius:10px;text-decoration:none;font-weight:700;transition:all .2s}
+.price-cta.primary{background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a}
+.price-cta.secondary{border:1px solid rgba(255,255,255,.15);color:#e4e7ee}
+
+/* Waitlist */
+.waitlist{background:linear-gradient(135deg,#0a0e1a,#0f1a2e);text-align:center}
+.waitlist-box{max-width:600px;margin:0 auto;background:linear-gradient(135deg,rgba(0,217,255,.05),rgba(0,255,136,.03));border:1px solid rgba(0,217,255,.2);border-radius:24px;padding:48px 32px}
+.waitlist-form{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.waitlist-form input{flex:1;min-width:200px;padding:16px 20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#e4e7ee;font-size:1rem;font-family:inherit}
+.waitlist-form input:focus{outline:none;border-color:#00d9ff}
+.waitlist-form select{padding:16px 20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#e4e7ee;font-size:1rem;font-family:inherit;cursor:pointer}
+.waitlist-privacy{font-size:.8rem;color:#a0a8b8;margin-top:16px}
+.early-bird{display:inline-block;padding:8px 20px;background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.3);border-radius:100px;color:#00ff88;font-weight:700;font-size:.9rem;margin-bottom:20px}
+
+footer{padding:40px;text-align:center;color:#a0a8b8;font-size:.85rem;border-top:1px solid rgba(255,255,255,.05)}
+
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  section{padding:60px 20px}
+  .hero{padding:100px 20px 60px}
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .mock{padding:24px}
+  .price-card.featured{transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Test<span>Foral</span></div>
+  <a href="#waitlist" class="nav-cta">Acceso anticipado</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="badge">🚀 Próximamente · Primavera 2026</span>
+      <h1>Aprueba las <span class="gradient">oposiciones forales</span> de Bizkaia con tests que sí preparan</h1>
+      <p>Miles de preguntas actualizadas, simulacros cronometrados reales y estadísticas que te dicen exactamente qué temas fallas. Diseñado para las convocatorias de la Diputación Foral de Bizkaia.</p>
+      <div class="cta-row">
+        <a href="#waitlist" class="btn-primary">Unirme a la lista → 50% dto.</a>
+        <a href="#oposiciones" class="btn-ghost">Ver oposiciones</a>
+      </div>
+      <div class="stats">
+        <div>
+          <div class="stat-num">5.000+</div>
+          <div class="stat-label">preguntas tipo test</div>
+        </div>
+        <div>
+          <div class="stat-num">12</div>
+          <div class="stat-label">oposiciones cubiertas</div>
+        </div>
+        <div>
+          <div class="stat-num">2026</div>
+          <div class="stat-label">temario actualizado</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mock">
+      <div class="mock-header">
+        <div class="mock-title">Simulacro · Administrativo C1</div>
+        <div class="mock-timer">⏱ 00:42:18</div>
+      </div>
+      <div class="mock-q">Según la Norma Foral 5/2020, ¿cuál es el órgano competente para aprobar el presupuesto del Territorio Histórico de Bizkaia?</div>
+      <div class="mock-opt"><div class="letter">A</div> La Diputación Foral</div>
+      <div class="mock-opt correct"><div class="letter">B</div> Las Juntas Generales</div>
+      <div class="mock-opt"><div class="letter">C</div> El Gobierno Vasco</div>
+      <div class="mock-opt"><div class="letter">D</div> El Ayuntamiento de Bilbao</div>
+      <div class="mock-progress">
+        <span>Pregunta 24 / 80</span>
+        <span style="color:#00ff88">✓ 21 aciertos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2>Todo lo que necesitas para aprobar</h2>
+    <p class="section-sub">Una plataforma pensada para opositores reales, no un PDF con preguntas sueltas.</p>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">📚</div>
+        <h3>Temario oficial actualizado</h3>
+        <p>Tests basados en las bases de la última convocatoria BOB. Revisados cada mes por preparadores locales.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⏱</div>
+        <h3>Simulacros cronometrados</h3>
+        <p>Replica las condiciones reales del examen: tiempo, número de preguntas, penalización por error.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <h3>Estadísticas por tema</h3>
+        <p>Identifica qué partes del temario fallas más y recibe tests personalizados para reforzar.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🏆</div>
+        <h3>Ranking con opositores</h3>
+        <p>Compite con otros candidatos de Bizkaia y mide tu nivel real antes del examen.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📱</div>
+        <h3>Móvil y escritorio</h3>
+        <p>Estudia en cualquier lugar. Sincroniza tu progreso entre dispositivos sin esfuerzo.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🧠</div>
+        <h3>Repaso inteligente</h3>
+        <p>Algoritmo de repetición espaciada: las preguntas que fallas vuelven a aparecer cuando toca.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="opos" id="oposiciones">
+  <div class="container">
+    <h2>Oposiciones cubiertas</h2>
+    <p class="section-sub">Todas las categorías de la Diputación Foral de Bizkaia y sus organismos autónomos.</p>
+    <div class="opo-grid">
+      <div class="opo-card"><div class="opo-icon">📋</div><div class="opo-name">Administrativo C1</div><div class="opo-tests">1.200 preguntas</div></div>
+      <div class="opo-card"><div class="opo-icon">📁</div><div class="opo-name">Auxiliar Administrativo</div><div class="opo-tests">900 preguntas</div></div>
+      <div class="opo-card"><div class="opo-icon">🚒</div><div class="opo-name">Bombero Foral</div><div class="opo-tests">800 preguntas</div></div>
+      <div class="opo-card"><div class="opo-icon">🌲</div><div class="opo-name">Agente Forestal</div><div class="opo-tests">600 preguntas</div></div>
+      <div class="opo-card"><div class="opo-icon">⚖️</div><div class="opo-name">Técnico Jurídico A1</div><div class="opo-tests">750 preguntas</div></div>
+      <div class="opo-card"><div class="opo-icon">💼</div><div class="opo-name">Gestión A2</div><div class="opo-tests">700 preguntas</div></div>
+      <div class="opo-card"><div class="opo-icon">🔧</div><div class="opo-name">Peón / Oficial</div><div class="opo-tests">450 preguntas</div></div>
+      <div class="opo-card"><div class="opo-icon">🚗</div><div class="opo-name">Conductor</div><div class="opo-tests">400 preguntas</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="container">
+    <h2>Precios honestos</h2>
+    <p class="section-sub">Apúntate ahora y bloquea el precio de lanzamiento de por vida.</p>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-name">Gratis</div>
+        <div class="price-amount"><span class="currency">€</span>0</div>
+        <div class="price-period">para siempre</div>
+        <ul class="price-list">
+          <li>20% de tests disponibles</li>
+          <li>1 simulacro semanal</li>
+          <li>Estadísticas básicas</li>
+          <li>Acceso a 1 oposición</li>
+        </ul>
+        <a href="#waitlist" class="price-cta secondary">Empezar gratis</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-name">Premium Mensual</div>
+        <div class="price-amount"><span class="currency">€</span>9,90</div>
+        <div class="price-period">al mes · cancela cuando quieras</div>
+        <ul class="price-list">
+          <li>Todos los tests ilimitados</li>
+          <li>Simulacros cronometrados</li>
+          <li>Estadísticas avanzadas</li>
+          <li>Todas las oposiciones</li>
+          <li>Repaso inteligente</li>
+          <li>Soporte prioritario</li>
+        </ul>
+        <a href="#waitlist" class="price-cta primary">Acceso anticipado · 50% dto.</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Pack Convocatoria</div>
+        <div class="price-amount"><span class="currency">€</span>149</div>
+        <div class="price-period">acceso hasta el día del examen</div>
+        <ul class="price-list">
+          <li>Todo lo del Premium</li>
+          <li>Sesiones en vivo con preparadores</li>
+          <li>Corrección de supuestos</li>
+          <li>Grupo privado de WhatsApp</li>
+          <li>Simulacro presencial final</li>
+        </ul>
+        <a href="#waitlist" class="price-cta secondary">Reservar plaza</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="waitlist" id="waitlist">
+  <div class="container">
+    <div class="waitlist-box">
+      <div class="early-bird">🎁 50% DESCUENTO PRIMEROS 100</div>
+      <h2 style="text-align:left">Sé de los primeros en entrar</h2>
+      <p style="color:#a0a8b8;margin-top:12px;text-align:left">Apúntate gratis y recibirás aviso cuando abramos + un cupón del 50% de descuento para el primer año.</p>
+      <form class="waitlist-form" onsubmit="event.preventDefault();alert('¡Gracias! Te avisaremos cuando abramos.');this.reset();">
+        <input type="email" placeholder="tu@email.com" required>
+        <select required>
+          <option value="">¿Qué oposición preparas?</option>
+          <option>Administrativo C1</option>
+          <option>Auxiliar Administrativo</option>
+          <option>Bombero Foral</option>
+          <option>Agente Forestal</option>
+          <option>Técnico Jurídico A1</option>
+          <option>Gestión A2</option>
+          <option>Peón / Oficial</option>
+          <option>Conductor</option>
+          <option>Otra</option>
+        </select>
+        <button type="submit" class="btn-primary">Apuntarme gratis</button>
+      </form>
+      <p class="waitlist-privacy">🔒 Sin spam. Solo te avisaremos del lanzamiento. Cumplimos RGPD.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo" style="margin-bottom:12px">Test<span>Foral</span></div>
+  <p>© 2026 TestForal · Preparación oposiciones Diputación Foral de Bizkaia · Hecho en Bilbao 🖤</p>
+  <p style="margin-top:8px;font-size:.75rem">No afiliado a la Diputación Foral de Bizkaia. Servicio privado de preparación de oposiciones.</p>
+</footer>
+
+</body>
+</html>
