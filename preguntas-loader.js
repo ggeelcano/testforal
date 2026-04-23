@@ -2,7 +2,7 @@
 // Con cache en localStorage + fallback a preguntas.js hardcoded si offline.
 
 const SHEET_ID = '1ergqP9PB0FVhaN0bI8hIjYlxlT006fHLJL1WC3aGmnE';
-const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
+const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Preguntas`;
 const CACHE_KEY = 'tf_banco_v1';
 const CACHE_TS_KEY = 'tf_banco_ts';
 const CACHE_TTL_MS = 1000 * 60 * 60 * 6; // 6h
