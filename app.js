@@ -234,21 +234,53 @@ function finishTest() {
 $('againBtn').addEventListener('click', startTest);
 $('homeBtn').addEventListener('click', () => showScreen('home'));
 
+function actualizarUISync(banco, label) {
+  const syncEl = $('syncStatus');
+  const btn = $('syncBtn');
+  const total = banco ? Object.values(banco).reduce((s, d) => s + d.preguntas.length, 0) : 0;
+  const ts = parseInt(localStorage.getItem('tf_banco_ts') || '0');
+  const ageMin = ts ? Math.round((Date.now() - ts) / 60000) : null;
+  if (syncEl) syncEl.textContent = label || `${total} preguntas`;
+  if (btn) btn.title = ts ? `Actualizado hace ${ageMin} min · Click para sincronizar` : 'Click para sincronizar con el servidor';
+}
+
+async function sincronizarAhora() {
+  const btn = $('syncBtn');
+  const icon = $('syncIcon');
+  const syncEl = $('syncStatus');
+  if (btn.dataset.busy === '1') return;
+  btn.dataset.busy = '1';
+  icon.style.animation = 'spin 1s linear infinite';
+  syncEl.textContent = 'Sincronizando...';
+  try {
+    const banco = await window.forzarSincronizacion();
+    if (banco && Object.keys(banco).length > 0) {
+      window.BANCO_PREGUNTAS = banco;
+      renderOpoPicker();
+      actualizarUISync(banco, '✓ Actualizado');
+      setTimeout(() => actualizarUISync(banco), 2000);
+    } else {
+      syncEl.textContent = '⚠ Sin cambios';
+    }
+  } catch (e) {
+    syncEl.textContent = '⚠ Error';
+  } finally {
+    icon.style.animation = '';
+    btn.dataset.busy = '0';
+  }
+}
+
 // init
 (async () => {
+  const btn = $('syncBtn');
+  if (btn) btn.addEventListener('click', sincronizarAhora);
   const syncEl = $('syncStatus');
-  if (syncEl) syncEl.textContent = '⟳ Cargando preguntas...';
+  if (syncEl) syncEl.textContent = 'Cargando...';
   try {
     const banco = await window.cargarPreguntas();
     if (banco && Object.keys(banco).length > 0) {
       window.BANCO_PREGUNTAS = banco;
-      const total = Object.values(banco).reduce((s, d) => s + d.preguntas.length, 0);
-      const ts = parseInt(localStorage.getItem('tf_banco_ts') || '0');
-      const ageMin = ts ? Math.round((Date.now() - ts) / 60000) : null;
-      if (syncEl) {
-        syncEl.textContent = `✓ ${total} preguntas`;
-        syncEl.title = ts ? `Actualizado hace ${ageMin} min` : 'Preguntas locales';
-      }
+      actualizarUISync(banco);
     }
   } catch (e) {
     console.warn('Usando preguntas locales:', e);

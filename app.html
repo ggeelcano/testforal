@@ -118,7 +118,13 @@ header{display:flex;justify-content:space-between;align-items:center;padding:16p
 .r-item .qtxt{color:#e4e7ee;margin-bottom:4px}
 .r-item .atxt{color:#a0a8b8;font-size:.8rem}
 
+#syncBtn:hover{background:rgba(0,217,255,.15) !important;border-color:#00d9ff !important}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+#syncIcon{display:inline-block}
+
 @media(max-width:600px){
+  #syncBtn span:last-child{display:none}
+  #syncBtn{padding:6px 10px !important}
   .wrap{padding:16px}
   .question{padding:20px}
   .q-text{font-size:1.05rem}
@@ -134,7 +140,7 @@ header{display:flex;justify-content:space-between;align-items:center;padding:16p
   <header>
     <div class="logo">Test<span>Foral</span></div>
     <div style="display:flex;gap:10px;align-items:center">
-      <span id="syncStatus" style="font-size:.75rem;color:#a0a8b8;opacity:.7" title="Estado sincronización"></span>
+      <button id="syncBtn" title="Forzar actualización de preguntas desde el servidor" style="background:rgba(0,217,255,.08);border:1px solid rgba(0,217,255,.25);color:#00d9ff;font-family:inherit;font-size:.75rem;padding:6px 12px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s"><span id="syncIcon">⟳</span><span id="syncStatus">Sincronizar</span></button>
       <div class="timer" id="timer" style="display:none">⏱ 00:00</div>
     </div>
   </header>

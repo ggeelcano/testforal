@@ -117,4 +117,11 @@ async function refrescarEnBackground() {
   } catch {}
 }
 
+async function forzarSincronizacion() {
+  localStorage.removeItem(CACHE_KEY);
+  localStorage.removeItem(CACHE_TS_KEY);
+  return await cargarPreguntas();
+}
+
 window.cargarPreguntas = cargarPreguntas;
+window.forzarSincronizacion = forzarSincronizacion;
