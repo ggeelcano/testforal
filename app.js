@@ -32,7 +32,7 @@ function renderOpoPicker() {
     const b = document.createElement('button');
     b.className = 'opo-btn';
     if (o.ready) {
-      const data = BANCO_PREGUNTAS[o.id];
+      const data = window.BANCO_PREGUNTAS[o.id];
       b.innerHTML = `<span class="icon">${data.icon}</span><span class="n">${data.nombre}</span><span class="c">${data.preguntas.length} preguntas</span>`;
       b.onclick = () => selectOpo(o.id, b);
     } else {
@@ -49,7 +49,7 @@ function selectOpo(id, btn) {
   btn.style.borderColor = '#00d9ff';
   btn.style.background = 'rgba(0,217,255,.08)';
   $('startBtn').disabled = false;
-  $('startBtn').textContent = `Empezar test · ${BANCO_PREGUNTAS[id].nombre}`;
+  $('startBtn').textContent = `Empezar test · ${window.BANCO_PREGUNTAS[id].nombre}`;
 }
 
 document.querySelectorAll('.mode').forEach(m => {
@@ -73,7 +73,7 @@ function shuffle(arr) {
 
 function startTest() {
   if (!state.oposicion) return;
-  const data = BANCO_PREGUNTAS[state.oposicion];
+  const data = window.BANCO_PREGUNTAS[state.oposicion];
   state.preguntas = shuffle(data.preguntas).slice(0, Math.min(state.mode.n, data.preguntas.length));
   state.current = 0;
   state.answers = [];
@@ -235,4 +235,24 @@ $('againBtn').addEventListener('click', startTest);
 $('homeBtn').addEventListener('click', () => showScreen('home'));
 
 // init
-renderOpoPicker();
+(async () => {
+  const syncEl = $('syncStatus');
+  if (syncEl) syncEl.textContent = '⟳ Cargando preguntas...';
+  try {
+    const banco = await window.cargarPreguntas();
+    if (banco && Object.keys(banco).length > 0) {
+      window.BANCO_PREGUNTAS = banco;
+      const total = Object.values(banco).reduce((s, d) => s + d.preguntas.length, 0);
+      const ts = parseInt(localStorage.getItem('tf_banco_ts') || '0');
+      const ageMin = ts ? Math.round((Date.now() - ts) / 60000) : null;
+      if (syncEl) {
+        syncEl.textContent = `✓ ${total} preguntas`;
+        syncEl.title = ts ? `Actualizado hace ${ageMin} min` : 'Preguntas locales';
+      }
+    }
+  } catch (e) {
+    console.warn('Usando preguntas locales:', e);
+    if (syncEl) syncEl.textContent = '⚠ Offline';
+  }
+  renderOpoPicker();
+})();

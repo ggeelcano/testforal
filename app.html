@@ -133,7 +133,10 @@ header{display:flex;justify-content:space-between;align-items:center;padding:16p
 
   <header>
     <div class="logo">Test<span>Foral</span></div>
-    <div class="timer" id="timer" style="display:none">⏱ 00:00</div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <span id="syncStatus" style="font-size:.75rem;color:#a0a8b8;opacity:.7" title="Estado sincronización"></span>
+      <div class="timer" id="timer" style="display:none">⏱ 00:00</div>
+    </div>
   </header>
 
   <!-- HOME -->
@@ -213,6 +216,7 @@ header{display:flex;justify-content:space-between;align-items:center;padding:16p
 </div>
 
 <script src="preguntas.js"></script>
+<script src="preguntas-loader.js"></script>
 <script src="app.js"></script>
 <script>
 if ('serviceWorker' in navigator) {

@@ -1,8 +1,7 @@
 // Banco de preguntas TestForal — Oposiciones Diputación Foral de Bizkaia
-// Administrativo C1 (30 preguntas) + Auxiliar Administrativo (20) + Bombero Foral (15)
-// Basadas en temarios oficiales. Revisadas 2026.
+// Fallback local. Source of truth: Google Sheet (ver preguntas-loader.js).
 
-const BANCO_PREGUNTAS = {
+window.BANCO_PREGUNTAS = {
   "administrativo-c1": {
     nombre: "Administrativo C1",
     icon: "📋",
