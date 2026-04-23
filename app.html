@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TestForal · App de tests</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:#0a0e1a;color:#e4e7ee;line-height:1.6;min-height:100vh}
+
+.wrap{max-width:780px;margin:0 auto;padding:24px;min-height:100vh;display:flex;flex-direction:column}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 0;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{font-weight:900;font-size:1.2rem;background:linear-gradient(135deg,#00d9ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo span{color:#e4e7ee;-webkit-text-fill-color:#e4e7ee}
+.timer{font-family:'Courier New',monospace;color:#00ff88;font-weight:700;font-size:1.1rem;background:rgba(0,255,136,.08);padding:8px 16px;border-radius:10px;border:1px solid rgba(0,255,136,.2)}
+.timer.warn{color:#fbbf24;background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.2)}
+.timer.danger{color:#ef4444;background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.2)}
+
+/* Progress */
+.progress{display:flex;justify-content:space-between;margin-bottom:12px;font-size:.85rem;color:#a0a8b8}
+.bar{height:6px;background:rgba(255,255,255,.05);border-radius:100px;overflow:hidden;margin-bottom:32px}
+.bar-fill{height:100%;background:linear-gradient(90deg,#00d9ff,#00ff88);transition:width .3s;border-radius:100px}
+
+/* Screens */
+.screen{display:none;flex:1;flex-direction:column}
+.screen.active{display:flex}
+
+/* Home */
+.home{align-items:center;justify-content:center;text-align:center;padding:40px 0}
+.home h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;margin-bottom:16px;letter-spacing:-.02em}
+.home h1 .gradient{background:linear-gradient(135deg,#00d9ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.home p{color:#a0a8b8;margin-bottom:32px;max-width:500px}
+
+.opo-picker{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;width:100%;max-width:600px;margin-bottom:32px}
+.opo-btn{padding:20px 16px;background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.1);border-radius:14px;color:#e4e7ee;cursor:pointer;transition:all .2s;text-align:left;font-family:inherit}
+.opo-btn:hover{border-color:rgba(0,217,255,.4);background:rgba(0,217,255,.05)}
+.opo-btn:disabled{opacity:.4;cursor:not-allowed}
+.opo-btn .icon{font-size:1.8rem;display:block;margin-bottom:8px}
+.opo-btn .n{font-weight:700;font-size:.95rem}
+.opo-btn .c{font-size:.8rem;color:#00ff88;margin-top:4px}
+.opo-btn .soon{font-size:.7rem;color:#fbbf24;margin-top:4px}
+
+.start-btn{padding:16px 40px;background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a;font-weight:800;font-size:1.05rem;border:none;border-radius:12px;cursor:pointer;transition:transform .2s;font-family:inherit}
+.start-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,217,255,.3)}
+.start-btn:disabled{opacity:.3;cursor:not-allowed;transform:none;box-shadow:none}
+
+.mode-row{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;justify-content:center}
+.mode{padding:10px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:100px;cursor:pointer;font-size:.9rem;transition:all .2s;font-family:inherit;color:#e4e7ee}
+.mode.sel{background:rgba(0,217,255,.1);border-color:#00d9ff;color:#00d9ff}
+
+/* Quiz */
+.quiz{gap:24px}
+.question{background:linear-gradient(135deg,#121828,#0f1422);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.q-num{font-size:.85rem;color:#00d9ff;font-weight:700;margin-bottom:12px;letter-spacing:.05em}
+.q-text{font-size:1.15rem;font-weight:600;line-height:1.5;margin-bottom:24px}
+.options{display:flex;flex-direction:column;gap:10px}
+.opt{padding:16px 18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;cursor:pointer;transition:all .2s;display:flex;align-items:flex-start;gap:12px;font-size:.98rem;text-align:left;font-family:inherit;color:#e4e7ee;line-height:1.45}
+.opt:hover:not(.locked){background:rgba(0,217,255,.06);border-color:rgba(0,217,255,.3)}
+.opt .letter{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0;margin-top:-2px}
+.opt.selected{background:rgba(0,217,255,.1);border-color:#00d9ff}
+.opt.selected .letter{background:#00d9ff;color:#0a0e1a}
+.opt.correct{background:rgba(0,255,136,.1);border-color:#00ff88;color:#00ff88}
+.opt.correct .letter{background:#00ff88;color:#0a0e1a}
+.opt.wrong{background:rgba(239,68,68,.1);border-color:#ef4444;color:#ef4444}
+.opt.wrong .letter{background:#ef4444;color:#fff}
+.opt.locked{cursor:default}
+
+.explain{margin-top:18px;padding:14px 16px;background:rgba(0,217,255,.05);border-left:3px solid #00d9ff;border-radius:8px;font-size:.9rem;color:#a0cee8;display:none}
+.explain.show{display:block}
+.explain b{color:#00d9ff}
+
+.controls{display:flex;gap:12px;justify-content:space-between}
+.btn{padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;cursor:pointer;border:none;transition:all .2s;font-family:inherit}
+.btn-primary{background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-primary:disabled{opacity:.3;cursor:not-allowed;transform:none}
+.btn-ghost{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#e4e7ee}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+/* Result */
+.result{align-items:center;text-align:center;padding:20px 0}
+.score-ring{width:180px;height:180px;position:relative;margin-bottom:24px}
+.score-ring svg{transform:rotate(-90deg);width:100%;height:100%}
+.score-ring circle{fill:none;stroke-width:10}
+.score-ring .bg{stroke:rgba(255,255,255,.05)}
+.score-ring .fg{stroke:url(#grad);stroke-linecap:round;transition:stroke-dashoffset 1s ease}
+.score-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.score-pct{font-size:3rem;font-weight:900;background:linear-gradient(135deg,#00d9ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.score-lbl{font-size:.85rem;color:#a0a8b8;margin-top:4px}
+.result h2{font-size:2rem;font-weight:800;margin-bottom:12px}
+.result-msg{color:#a0a8b8;max-width:500px;margin-bottom:32px}
+
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px;width:100%;max-width:500px}
+.stat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+.stat-v{font-size:1.5rem;font-weight:800}
+.stat-v.ok{color:#00ff88}
+.stat-v.bad{color:#ef4444}
+.stat-v.time{color:#00d9ff}
+.stat-l{font-size:.75rem;color:#a0a8b8;margin-top:4px}
+
+.result-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+
+/* Review list */
+.review{margin-top:32px;width:100%}
+.review h3{font-size:1.1rem;margin-bottom:16px;color:#a0a8b8}
+.r-item{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:14px 16px;margin-bottom:8px;font-size:.85rem;text-align:left;display:flex;gap:10px}
+.r-item.ok{border-left:3px solid #00ff88}
+.r-item.bad{border-left:3px solid #ef4444}
+.r-item .mark{flex-shrink:0}
+.r-item .qtxt{color:#e4e7ee;margin-bottom:4px}
+.r-item .atxt{color:#a0a8b8;font-size:.8rem}
+
+@media(max-width:600px){
+  .wrap{padding:16px}
+  .question{padding:20px}
+  .q-text{font-size:1.05rem}
+  .stats-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .stat{padding:12px 8px}
+  .stat-v{font-size:1.2rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo">Test<span>Foral</span></div>
+    <div class="timer" id="timer" style="display:none">⏱ 00:00</div>
+  </header>
+
+  <!-- HOME -->
+  <section class="screen home active" id="home">
+    <h1>Prepara las <span class="gradient">oposiciones forales</span></h1>
+    <p>Elige una oposición y un modo. Los tests usan preguntas reales del temario de la Diputación Foral de Bizkaia.</p>
+
+    <div class="mode-row">
+      <button class="mode sel" data-mode="rapido" data-n="10" data-t="600">⚡ Rápido · 10 preguntas · 10 min</button>
+      <button class="mode" data-mode="medio" data-n="20" data-t="1200">🎯 Medio · 20 preguntas · 20 min</button>
+      <button class="mode" data-mode="simulacro" data-n="30" data-t="2700">🏆 Simulacro · 30 preguntas · 45 min</button>
+    </div>
+
+    <div class="opo-picker" id="opoPicker"></div>
+
+    <button class="start-btn" id="startBtn" disabled>Selecciona una oposición</button>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="screen quiz" id="quiz">
+    <div>
+      <div class="progress">
+        <span id="progressTxt">Pregunta 1 / 10</span>
+        <span id="progressScore">0 aciertos</span>
+      </div>
+      <div class="bar"><div class="bar-fill" id="barFill" style="width:0"></div></div>
+    </div>
+
+    <div class="question">
+      <div class="q-num" id="qNum">PREGUNTA 1</div>
+      <div class="q-text" id="qText">...</div>
+      <div class="options" id="qOpts"></div>
+      <div class="explain" id="qExplain"></div>
+    </div>
+
+    <div class="controls">
+      <button class="btn btn-ghost" id="quitBtn">Salir</button>
+      <button class="btn btn-primary" id="nextBtn" disabled>Siguiente →</button>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="screen result" id="result">
+    <div class="score-ring">
+      <svg viewBox="0 0 200 200">
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00d9ff"/>
+            <stop offset="100%" stop-color="#00ff88"/>
+          </linearGradient>
+        </defs>
+        <circle class="bg" cx="100" cy="100" r="88"/>
+        <circle class="fg" id="scoreRing" cx="100" cy="100" r="88" stroke-dasharray="552.9" stroke-dashoffset="552.9"/>
+      </svg>
+      <div class="score-text">
+        <div class="score-pct" id="scorePct">0%</div>
+        <div class="score-lbl">Nota</div>
+      </div>
+    </div>
+    <h2 id="resultTitle">Resultado</h2>
+    <p class="result-msg" id="resultMsg"></p>
+
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-v ok" id="sOk">0</div><div class="stat-l">Aciertos</div></div>
+      <div class="stat"><div class="stat-v bad" id="sBad">0</div><div class="stat-l">Fallos</div></div>
+      <div class="stat"><div class="stat-v time" id="sTime">0:00</div><div class="stat-l">Tiempo</div></div>
+    </div>
+
+    <div class="result-actions">
+      <button class="btn btn-primary" id="againBtn">🔄 Otro test</button>
+      <button class="btn btn-ghost" id="homeBtn">← Inicio</button>
+    </div>
+
+    <div class="review" id="review"></div>
+  </section>
+
+</div>
+
+<script src="preguntas.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
