@@ -287,4 +287,128 @@ async function sincronizarAhora() {
     if (syncEl) syncEl.textContent = '⚠ Offline';
   }
   renderOpoPicker();
+  initCalendario();
+  if (typeof initFiscalIA === 'function') initFiscalIA();
 })();
+
+// --- Calendario de convocatorias ---
+const calState = { filtro: 'todas' };
+
+function initCalendario() {
+  const openBtn = $('openCalBtn');
+  const backBtn = $('backCalBtn');
+  if (openBtn) openBtn.addEventListener('click', () => { showScreen('calendar'); renderCalendario(); });
+  if (backBtn) backBtn.addEventListener('click', () => showScreen('home'));
+  renderFiltros();
+}
+
+function renderFiltros() {
+  const cont = $('calFilters');
+  if (!cont) return;
+  const filtros = [
+    { id: 'todas', label: 'Todas' },
+    { id: 'abierta', label: '🟢 Inscripción abierta' },
+    { id: 'examen-proximo', label: '🟡 Examen próximo' },
+    { id: 'prevista', label: '🔵 Previstas' }
+  ];
+  cont.innerHTML = '';
+  filtros.forEach(f => {
+    const chip = document.createElement('button');
+    chip.className = 'cal-chip' + (calState.filtro === f.id ? ' active' : '');
+    chip.textContent = f.label;
+    chip.onclick = () => { calState.filtro = f.id; renderFiltros(); renderCalendario(); };
+    cont.appendChild(chip);
+  });
+}
+
+function fmtFecha(iso) {
+  if (!iso) return '—';
+  const [y, m, d] = iso.split('-');
+  const meses = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  return `${parseInt(d)} ${meses[parseInt(m)-1]} ${y}`;
+}
+
+function diasHasta(iso) {
+  if (!iso) return null;
+  const hoy = new Date();
+  hoy.setHours(0,0,0,0);
+  const target = new Date(iso + 'T00:00:00');
+  return Math.floor((target - hoy) / 86400000);
+}
+
+function countdownHtml(iso) {
+  const d = diasHasta(iso);
+  if (d === null) return '';
+  if (d < 0) return `<span class="countdown urgent">Finalizado</span>`;
+  if (d === 0) return `<span class="countdown urgent">¡HOY!</span>`;
+  if (d <= 7) return `<span class="countdown urgent">En ${d} ${d===1?'día':'días'}</span>`;
+  if (d <= 30) return `<span class="countdown soon">En ${d} días</span>`;
+  return `<span class="countdown">En ${d} días</span>`;
+}
+
+function renderCalendario() {
+  const list = $('calList');
+  if (!list) return;
+  const items = [...window.CONVOCATORIAS].sort((a, b) => {
+    const da = a.fechaExamen || '9999';
+    const db = b.fechaExamen || '9999';
+    return da.localeCompare(db);
+  });
+  const filtradas = calState.filtro === 'todas'
+    ? items
+    : items.filter(c => c.estado === calState.filtro);
+
+  list.innerHTML = '';
+  if (filtradas.length === 0) {
+    list.innerHTML = '<div style="text-align:center;padding:40px;color:#a0a8b8">No hay convocatorias en esta categoría.</div>';
+    return;
+  }
+
+  filtradas.forEach(c => {
+    const estado = window.ESTADOS_CONVOCATORIA[c.estado] || { label: c.estado, color: '#a0a8b8' };
+    const card = document.createElement('div');
+    card.className = `cal-card ${c.estado}`;
+    const tieneTest = window.BANCO_PREGUNTAS && window.BANCO_PREGUNTAS[c.id];
+    const plazoHtml = c.plazoInscripcion
+      ? `<div class="cal-date"><div class="cal-date-lbl">Fin inscripción</div><div class="cal-date-val ${c.estado==='abierta'?'highlight':''}">${fmtFecha(c.plazoInscripcion.fin)}</div></div>`
+      : '';
+    card.innerHTML = `
+      <div class="cal-top">
+        <div class="cal-name"><span class="cal-icon">${c.icon}</span>${c.nombre}</div>
+        <div class="cal-status" style="background:${estado.color}22;color:${estado.color}">${estado.label}</div>
+      </div>
+      <div class="cal-dates">
+        ${plazoHtml}
+        <div class="cal-date">
+          <div class="cal-date-lbl">Examen</div>
+          <div class="cal-date-val ${c.estado==='examen-proximo'?'warn':''}">${fmtFecha(c.fechaExamen)}${countdownHtml(c.fechaExamen)}</div>
+        </div>
+        <div class="cal-date">
+          <div class="cal-date-lbl">Plazas</div>
+          <div class="cal-date-val">${c.plazas}</div>
+        </div>
+      </div>
+      <div class="cal-meta">
+        <div>📚 <strong>${c.tipoExamen}</strong></div>
+        <div>🎓 Grupo <strong>${c.grupo}</strong></div>
+        <div>✅ ${c.requisitos}</div>
+      </div>
+      <div class="cal-actions">
+        ${tieneTest ? `<button class="cal-btn cal-btn-primary" data-opo="${c.id}">▶ Empezar test</button>` : `<button class="cal-btn cal-btn-ghost" disabled>Tests próximamente</button>`}
+        <a class="cal-btn cal-btn-ghost" href="${c.enlaceOficial}" target="_blank" rel="noopener">🔗 Info oficial</a>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+
+  list.querySelectorAll('[data-opo]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.opo;
+      state.oposicion = id;
+      showScreen('home');
+      const opoBtn = [...document.querySelectorAll('.opo-btn')].find(b => b.innerHTML.includes(window.BANCO_PREGUNTAS[id].nombre));
+      if (opoBtn) selectOpo(id, opoBtn);
+      $('startBtn').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+}

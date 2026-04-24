@@ -122,6 +122,99 @@ header{display:flex;justify-content:space-between;align-items:center;padding:16p
 @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 #syncIcon{display:inline-block}
 
+/* Calendario */
+.home-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+.btn-cal{padding:12px 24px;background:rgba(0,217,255,.08);border:1px solid rgba(0,217,255,.3);color:#00d9ff;font-weight:700;border-radius:10px;cursor:pointer;font-family:inherit;font-size:.95rem;transition:all .2s}
+.btn-cal:hover{background:rgba(0,217,255,.15);transform:translateY(-1px)}
+.cal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;gap:12px;flex-wrap:wrap}
+.cal-title{font-size:1.6rem;font-weight:800;letter-spacing:-.02em}
+.cal-sub{color:#a0a8b8;font-size:.9rem;margin-bottom:24px}
+.cal-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.cal-chip{padding:8px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:100px;color:#a0a8b8;font-size:.82rem;cursor:pointer;font-family:inherit;transition:all .2s}
+.cal-chip.active{background:rgba(0,217,255,.1);border-color:#00d9ff;color:#00d9ff}
+.cal-list{display:flex;flex-direction:column;gap:12px}
+.cal-card{background:linear-gradient(135deg,#121828,#0f1422);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px;transition:all .2s;border-left:3px solid #00d9ff}
+.cal-card:hover{border-color:rgba(0,217,255,.3);transform:translateX(2px)}
+.cal-card.abierta{border-left-color:#00ff88}
+.cal-card.examen-proximo{border-left-color:#fbbf24}
+.cal-card.prevista{border-left-color:#00d9ff}
+.cal-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.cal-name{font-size:1.1rem;font-weight:700;display:flex;align-items:center;gap:10px}
+.cal-icon{font-size:1.6rem}
+.cal-status{font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.cal-dates{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:14px 0}
+.cal-date{background:rgba(255,255,255,.03);border-radius:10px;padding:10px 12px}
+.cal-date-lbl{font-size:.7rem;color:#a0a8b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.cal-date-val{font-size:.92rem;font-weight:700;color:#e4e7ee}
+.cal-date-val.highlight{color:#00ff88}
+.cal-date-val.warn{color:#fbbf24}
+.cal-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:.82rem;color:#a0a8b8;padding-top:12px;border-top:1px solid rgba(255,255,255,.06)}
+.cal-meta strong{color:#e4e7ee}
+.cal-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.cal-btn{padding:8px 14px;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;font-family:inherit;transition:all .2s}
+.cal-btn-primary{background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a}
+.cal-btn-ghost{background:rgba(255,255,255,.05);color:#e4e7ee;border:1px solid rgba(255,255,255,.1)}
+.cal-btn:hover{transform:translateY(-1px)}
+.countdown{display:inline-block;padding:3px 10px;background:rgba(0,255,136,.1);color:#00ff88;border-radius:100px;font-size:.75rem;font-weight:700;margin-left:8px}
+.countdown.urgent{background:rgba(239,68,68,.12);color:#ef4444}
+.countdown.soon{background:rgba(251,191,36,.12);color:#fbbf24}
+
+/* IA Fiscal */
+.btn-fiscal{padding:12px 24px;background:linear-gradient(135deg,rgba(168,85,247,.15),rgba(236,72,153,.1));border:1px solid rgba(168,85,247,.4);color:#c4b5fd;font-weight:700;border-radius:10px;cursor:pointer;font-family:inherit;font-size:.95rem;transition:all .2s}
+.btn-fiscal:hover{background:linear-gradient(135deg,rgba(168,85,247,.25),rgba(236,72,153,.15));transform:translateY(-1px);color:#fff}
+.fiscal{padding:0}
+.fiscal-header{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
+.fiscal-title{font-size:1.3rem;font-weight:800;display:flex;align-items:center;gap:10px}
+.fiscal-title .robot{font-size:1.6rem}
+.powered-ai{font-size:.65rem;font-weight:700;padding:3px 10px;background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;border-radius:100px;letter-spacing:.5px;vertical-align:middle;animation:aiPulse 2s ease-in-out infinite}
+@keyframes aiPulse{0%,100%{box-shadow:0 0 0 0 rgba(168,85,247,.5)}50%{box-shadow:0 0 0 6px rgba(168,85,247,0)}}
+.btn-fiscal .ai-tag{display:inline-block;margin-left:6px;font-size:.65rem;padding:2px 8px;background:rgba(168,85,247,.25);border-radius:100px;font-weight:800;letter-spacing:.5px;color:#fff}
+.fiscal-title-sub{font-size:.75rem;color:#a0a8b8;font-weight:500;margin-top:2px}
+.fiscal-actions{display:flex;gap:8px}
+.fiscal-icon-btn{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:#a0a8b8;width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:1rem;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.fiscal-icon-btn:hover{background:rgba(168,85,247,.15);border-color:#a855f7;color:#c4b5fd}
+.fiscal-chat{flex:1;overflow-y:auto;padding:8px 4px;display:flex;flex-direction:column;gap:14px;min-height:400px;max-height:calc(100vh - 280px)}
+.fiscal-welcome{text-align:center;padding:40px 20px;color:#a0a8b8}
+.fiscal-avatar{font-size:3rem;margin-bottom:12px}
+.fiscal-welcome h3{color:#e4e7ee;margin-bottom:8px;font-size:1.3rem}
+.fiscal-welcome p{font-size:.92rem;max-width:400px;margin:0 auto}
+.fiscal-msg{display:flex;animation:fadeIn .3s}
+.fiscal-msg-user{justify-content:flex-end}
+.fiscal-msg-assistant{justify-content:flex-start}
+.fiscal-bubble{max-width:85%;padding:12px 16px;border-radius:14px;font-size:.93rem;line-height:1.55}
+.fiscal-msg-user .fiscal-bubble{background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a;border-bottom-right-radius:4px;font-weight:500}
+.fiscal-msg-assistant .fiscal-bubble{background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);color:#e4e7ee;border-bottom-left-radius:4px}
+.fiscal-bubble p{margin:0 0 8px}
+.fiscal-bubble p:last-child{margin:0}
+.fiscal-bubble strong{color:#c4b5fd}
+.fiscal-msg-user .fiscal-bubble strong{color:#0a0e1a}
+.fiscal-bubble code{background:rgba(0,0,0,.25);padding:2px 6px;border-radius:4px;font-family:'Courier New',monospace;font-size:.85em}
+.fiscal-bubble pre{background:rgba(0,0,0,.3);padding:12px;border-radius:8px;overflow-x:auto;margin:8px 0;font-size:.82em}
+.fiscal-bubble ul{margin:6px 0 6px 20px}
+.fiscal-bubble li{margin-bottom:4px}
+.fiscal-bubble h3,.fiscal-bubble h4{margin:10px 0 6px;color:#c4b5fd;font-size:1rem}
+.fiscal-dots{display:inline-flex;gap:4px}
+.fiscal-dots span{width:8px;height:8px;background:#c4b5fd;border-radius:50%;animation:fiscalDot 1.2s infinite}
+.fiscal-dots span:nth-child(2){animation-delay:.2s}
+.fiscal-dots span:nth-child(3){animation-delay:.4s}
+@keyframes fiscalDot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.fiscal-sugerencias{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}
+.fiscal-sug{padding:8px 14px;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.25);color:#c4b5fd;font-size:.82rem;border-radius:100px;cursor:pointer;font-family:inherit;transition:all .2s}
+.fiscal-sug:hover{background:rgba(168,85,247,.18);border-color:#a855f7;color:#fff}
+.fiscal-input-row{display:flex;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);margin-top:auto}
+.fiscal-input{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px;color:#e4e7ee;font-family:inherit;font-size:.95rem;outline:none;transition:border-color .2s;resize:none}
+.fiscal-input:focus{border-color:#a855f7;background:rgba(168,85,247,.05)}
+.fiscal-send{padding:0 20px;background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;font-weight:700;border:none;border-radius:12px;cursor:pointer;font-family:inherit;font-size:.95rem;transition:transform .15s}
+.fiscal-send:hover{transform:scale(1.03)}
+.fiscal-send:disabled{opacity:.5;cursor:not-allowed}
+
+.fiscal-opciones{display:flex;flex-direction:column;gap:6px;margin-top:12px;padding-top:12px;border-top:1px dashed rgba(168,85,247,.25)}
+.fiscal-opcion{text-align:left;padding:10px 14px;background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.2);color:#c4b5fd;font-family:inherit;font-size:.87rem;border-radius:10px;cursor:pointer;transition:all .15s;line-height:1.35}
+.fiscal-opcion:hover{background:rgba(168,85,247,.18);border-color:#a855f7;color:#fff;transform:translateX(3px)}
+.fiscal-opcion-no{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);color:#a0a8b8;font-size:.82rem;margin-top:2px}
+.fiscal-opcion-no:hover{background:rgba(255,255,255,.06);color:#e4e7ee;transform:none}
+
 @media(max-width:600px){
   #syncBtn span:last-child{display:none}
   #syncBtn{padding:6px 10px !important}
@@ -159,6 +252,47 @@ header{display:flex;justify-content:space-between;align-items:center;padding:16p
     <div class="opo-picker" id="opoPicker"></div>
 
     <button class="start-btn" id="startBtn" disabled>Selecciona una oposición</button>
+
+    <div class="home-actions">
+      <button class="btn-cal" id="openCalBtn">📅 Calendario de convocatorias</button>
+      <button class="btn-fiscal" id="openFiscalBtn">🤖 Asesor Fiscal <span class="ai-tag">AI</span></button>
+    </div>
+  </section>
+
+  <!-- FISCAL IA -->
+  <section class="screen fiscal" id="fiscal">
+    <div class="fiscal-header">
+      <div>
+        <div class="fiscal-title"><span class="robot">🤖</span>Asesor Fiscal Foral <span class="powered-ai">⚡ Powered by AI</span></div>
+        <div class="fiscal-title-sub">Fiscalidad foral de Bizkaia · Respuestas instantáneas</div>
+      </div>
+      <div class="fiscal-actions">
+        <button class="fiscal-icon-btn" id="fiscalClearBtn" title="Borrar conversación">🗑</button>
+        <button class="fiscal-icon-btn" id="backFiscalBtn" title="Volver">←</button>
+      </div>
+    </div>
+
+    <div class="fiscal-sugerencias" id="fiscalSugerencias"></div>
+    <div class="fiscal-chat" id="fiscalChat"></div>
+
+    <div class="fiscal-input-row">
+      <textarea class="fiscal-input" id="fiscalInput" rows="1" placeholder="Pregunta sobre IRPF foral, IS, IVA, tributos locales, Concierto Económico..."></textarea>
+      <button class="fiscal-send" id="fiscalSendBtn">Enviar</button>
+    </div>
+  </section>
+
+  <!-- CALENDARIO -->
+  <section class="screen calendar" id="calendar">
+    <div class="cal-header">
+      <div>
+        <div class="cal-title">📅 Calendario de convocatorias</div>
+        <div class="cal-sub">Oposiciones de la Diputación Foral de Bizkaia · Fechas oficiales y previstas</div>
+      </div>
+      <button class="btn btn-ghost" id="backCalBtn">← Volver</button>
+    </div>
+
+    <div class="cal-filters" id="calFilters"></div>
+    <div class="cal-list" id="calList"></div>
   </section>
 
   <!-- QUIZ -->
@@ -223,6 +357,10 @@ header{display:flex;justify-content:space-between;align-items:center;padding:16p
 
 <script src="preguntas.js"></script>
 <script src="preguntas-loader.js"></script>
+<script src="convocatorias.js"></script>
+<script src="fiscal-kb.js"></script>
+<script src="fiscal-kb-auto.js" onerror="window.FISCAL_KB_AUTO=[]"></script>
+<script src="fiscal-ia.js"></script>
 <script src="app.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
