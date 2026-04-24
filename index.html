@@ -4,279 +4,1266 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TestForal · Tests oposiciones Diputación Foral de Bizkaia</title>
-<meta name="description" content="Prepara las oposiciones de la Diputación Foral de Bizkaia con miles de tests actualizados, simulacros cronometrados y estadísticas en tiempo real.">
+<meta name="description" content="La plataforma nº1 para preparar oposiciones forales de Bizkaia. Más de 5.000 tests con IA, simulacros cronometrados reales, estadísticas por tema y repetición espaciada. Hecho en Bilbao por opositores.">
+<meta name="keywords" content="oposiciones Bizkaia, oposiciones forales, Diputación Foral, tests oposiciones, administrativo Bizkaia, bombero foral, Ertzaintza, oposiciones Euskadi, preparación oposiciones Bilbao">
+<meta property="og:title" content="TestForal · Aprueba las oposiciones forales de Bizkaia">
+<meta property="og:description" content="La plataforma con más tests actualizados para oposiciones de la Diputación Foral de Bizkaia. Simulacros, IA y estadísticas reales.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0a0e1a">
 <style>
+:root{
+  --bg-0:#0a0e1a;
+  --bg-1:#0d1220;
+  --bg-2:#121828;
+  --bg-3:#0f1422;
+  --border:rgba(255,255,255,.08);
+  --border-hover:rgba(0,217,255,.3);
+  --text:#e4e7ee;
+  --text-dim:#a0a8b8;
+  --text-muted:#6b7280;
+  --cyan:#00d9ff;
+  --green:#00ff88;
+  --red:#ff4d6d;
+  --yellow:#ffb700;
+  --purple:#a855f7;
+  --grad:linear-gradient(135deg,#00d9ff,#00ff88);
+  --grad-purple:linear-gradient(135deg,#a855f7,#00d9ff);
+}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;background:#0a0e1a;color:#e4e7ee;line-height:1.6;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg-0);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* Nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;background:rgba(10,14,26,.8);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:900;font-size:1.3rem;background:linear-gradient(135deg,#00d9ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.logo span{color:#e4e7ee;-webkit-text-fill-color:#e4e7ee}
-.nav-cta{padding:10px 24px;background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a;font-weight:700;border-radius:8px;text-decoration:none;font-size:.9rem;transition:transform .2s}
-.nav-cta:hover{transform:scale(1.05)}
+/* ======= Utilidades ======= */
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+.gradient-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gradient-text-purple{background:var(--grad-purple);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+h1,h2,h3,h4{letter-spacing:-.02em;line-height:1.15}
+h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;text-align:center;margin-bottom:16px}
+.section-sub{text-align:center;color:var(--text-dim);font-size:1.1rem;margin:0 auto 60px;max-width:640px}
+.section-eyebrow{display:inline-block;font-size:.85rem;font-weight:700;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.section-eyebrow-wrap{text-align:center;margin-bottom:8px}
+section{padding:100px 0;position:relative}
 
-/* Hero */
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(0,217,255,.15),transparent 50%),radial-gradient(circle at 70% 60%,rgba(0,255,136,.1),transparent 50%);animation:float 20s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,-30px)}}
-.hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
-.badge{display:inline-block;padding:8px 16px;background:rgba(0,217,255,.1);border:1px solid rgba(0,217,255,.3);border-radius:100px;font-size:.85rem;color:#00d9ff;font-weight:600;margin-bottom:24px}
-h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;line-height:1.1;margin-bottom:24px;letter-spacing:-.02em}
-h1 .gradient{background:linear-gradient(135deg,#00d9ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:1.2rem;color:#a0a8b8;margin-bottom:32px;max-width:500px}
-.cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px}
-.btn-primary{padding:16px 32px;background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a;font-weight:700;border-radius:10px;text-decoration:none;font-size:1rem;transition:transform .2s;border:none;cursor:pointer}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,217,255,.3)}
-.btn-ghost{padding:16px 32px;border:1px solid rgba(255,255,255,.15);color:#e4e7ee;font-weight:600;border-radius:10px;text-decoration:none;font-size:1rem}
-.stats{display:flex;gap:40px;flex-wrap:wrap}
-.stat-num{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#00d9ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.stat-label{font-size:.85rem;color:#a0a8b8}
+/* ======= Nav ======= */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 24px;background:rgba(10,14,26,.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;transition:padding .3s}
+nav.scrolled{padding:12px 24px;background:rgba(10,14,26,.92)}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.25rem;text-decoration:none;color:var(--text)}
+.nav-logo svg{width:32px;height:32px}
+.nav-logo .gradient-text{font-weight:900}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--text-dim);text-decoration:none;font-size:.95rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-actions{display:flex;gap:12px;align-items:center}
+.nav-login{color:var(--text-dim);text-decoration:none;font-size:.9rem;font-weight:500;padding:8px 12px}
+.nav-login:hover{color:var(--text)}
+.nav-cta{padding:10px 22px;background:var(--grad);color:var(--bg-0);font-weight:700;border-radius:8px;text-decoration:none;font-size:.9rem;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 30px rgba(0,217,255,.3)}
+.menu-toggle{display:none;background:none;border:none;color:var(--text);cursor:pointer;padding:8px}
 
-/* Mock test */
-.mock{background:linear-gradient(135deg,#121828,#0f1422);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:32px;box-shadow:0 30px 60px rgba(0,0,0,.4);position:relative}
-.mock-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.08)}
-.mock-title{font-weight:700;font-size:.95rem}
-.mock-timer{font-family:'Courier New',monospace;color:#00ff88;font-weight:700;font-size:1rem}
-.mock-q{font-size:1.05rem;font-weight:600;margin-bottom:20px;line-height:1.5}
-.mock-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;margin-bottom:8px;cursor:pointer;transition:all .2s;font-size:.95rem}
-.mock-opt:hover{background:rgba(0,217,255,.08);border-color:rgba(0,217,255,.3)}
-.mock-opt.correct{background:rgba(0,255,136,.1);border-color:rgba(0,255,136,.4);color:#00ff88}
-.mock-opt .letter{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
-.mock-opt.correct .letter{background:#00ff88;color:#0a0e1a}
-.mock-progress{margin-top:20px;display:flex;justify-content:space-between;font-size:.85rem;color:#a0a8b8}
+/* ======= Hero ======= */
+.hero{min-height:100vh;display:flex;align-items:center;padding:140px 0 80px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.hero-bg::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 25% 30%,rgba(0,217,255,.18),transparent 50%),radial-gradient(circle at 75% 60%,rgba(0,255,136,.12),transparent 50%),radial-gradient(circle at 50% 80%,rgba(168,85,247,.08),transparent 50%);animation:float 22s ease-in-out infinite}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,217,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,217,255,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(circle at 50% 50%,black 0%,transparent 75%)}
+@keyframes float{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-40px,-40px) rotate(2deg)}}
+.hero-inner{max-width:1280px;margin:0 auto;padding:0 24px;width:100%;position:relative;z-index:1;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(0,217,255,.08);border:1px solid rgba(0,217,255,.25);border-radius:100px;font-size:.85rem;color:var(--cyan);font-weight:600;margin-bottom:24px}
+.hero-badge .pulse{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,255,136,.5)}50%{opacity:.7;box-shadow:0 0 0 8px rgba(0,255,136,0)}}
+h1{font-size:clamp(2.5rem,5.2vw,4.2rem);font-weight:900;line-height:1.05;margin-bottom:24px}
+.hero p.lead{font-size:1.15rem;color:var(--text-dim);margin-bottom:32px;max-width:540px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.btn{padding:16px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:1rem;transition:all .2s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
+.btn-primary{background:var(--grad);color:var(--bg-0)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,217,255,.35)}
+.btn-ghost{border:1px solid rgba(255,255,255,.15);color:var(--text);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.3)}
+.hero-trust{display:flex;align-items:center;gap:16px;font-size:.85rem;color:var(--text-dim);margin-bottom:32px;flex-wrap:wrap}
+.hero-trust .avatars{display:flex}
+.hero-trust .avatar{width:32px;height:32px;border-radius:50%;border:2px solid var(--bg-0);margin-left:-8px;background:linear-gradient(135deg,#00d9ff,#00ff88);display:flex;align-items:center;justify-content:center;color:var(--bg-0);font-weight:700;font-size:.75rem}
+.hero-trust .avatar:nth-child(2){background:linear-gradient(135deg,#a855f7,#ec4899)}
+.hero-trust .avatar:nth-child(3){background:linear-gradient(135deg,#f59e0b,#ef4444)}
+.hero-trust .avatar:nth-child(4){background:linear-gradient(135deg,#10b981,#06b6d4)}
+.stars{color:var(--yellow);letter-spacing:2px}
+.stats{display:grid;grid-template-columns:repeat(3,auto);gap:32px}
+.stat-num{font-size:2.2rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:.85rem;color:var(--text-dim);margin-top:4px}
 
-/* Sections */
-section{padding:100px 40px}
-.container{max-width:1200px;margin:0 auto}
-h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px;text-align:center;letter-spacing:-.02em}
-.section-sub{text-align:center;color:#a0a8b8;font-size:1.1rem;margin-bottom:60px;max-width:600px;margin-left:auto;margin-right:auto}
+/* ======= Mock test hero ======= */
+.mock{background:linear-gradient(135deg,var(--bg-2),var(--bg-3));border:1px solid var(--border);border-radius:20px;padding:28px;box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 0 1px rgba(0,217,255,.08) inset;position:relative}
+.mock::before{content:'';position:absolute;inset:-1px;border-radius:20px;padding:1px;background:linear-gradient(135deg,rgba(0,217,255,.3),transparent 50%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.mock-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.mock-title{font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:8px}
+.mock-title .dot{width:8px;height:8px;background:var(--red);border-radius:50%;animation:pulse 2s infinite}
+.mock-timer{font-family:'JetBrains Mono',monospace;color:var(--green);font-weight:700;font-size:1rem;background:rgba(0,255,136,.08);padding:6px 12px;border-radius:8px;border:1px solid rgba(0,255,136,.2)}
+.mock-q{font-size:1rem;font-weight:600;margin-bottom:16px;line-height:1.5}
+.mock-q-label{font-size:.75rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.mock-opt{display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:10px;margin-bottom:6px;cursor:pointer;transition:all .2s;font-size:.92rem}
+.mock-opt:hover{background:rgba(0,217,255,.06);border-color:rgba(0,217,255,.25)}
+.mock-opt.correct{background:rgba(0,255,136,.1);border-color:rgba(0,255,136,.4);color:var(--green)}
+.mock-opt.wrong{background:rgba(255,77,109,.08);border-color:rgba(255,77,109,.3);color:var(--red);text-decoration:line-through}
+.mock-opt .letter{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0}
+.mock-opt.correct .letter{background:var(--green);color:var(--bg-0)}
+.mock-opt.wrong .letter{background:var(--red);color:var(--bg-0)}
+.mock-progress{margin-top:16px;display:flex;justify-content:space-between;font-size:.8rem;color:var(--text-dim)}
+.mock-bar{margin-top:10px;height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.mock-bar-fill{height:100%;background:var(--grad);width:30%;border-radius:2px;transition:width .5s}
 
-/* Features */
-.features{background:linear-gradient(180deg,#0a0e1a,#0d1220)}
-.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.feature{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px;transition:all .3s}
-.feature:hover{border-color:rgba(0,217,255,.3);transform:translateY(-4px)}
-.feature-icon{width:48px;height:48px;background:linear-gradient(135deg,rgba(0,217,255,.2),rgba(0,255,136,.1));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
-.feature h3{font-size:1.2rem;font-weight:700;margin-bottom:12px}
-.feature p{color:#a0a8b8;font-size:.95rem}
+/* ======= Social proof bar ======= */
+.social-proof{padding:40px 0;background:rgba(255,255,255,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.social-title{text-align:center;font-size:.85rem;color:var(--text-dim);margin-bottom:24px;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.logos{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;opacity:.6}
+.logos span{font-weight:700;font-size:1rem;color:var(--text-dim);letter-spacing:.02em}
 
-/* Oposiciones */
-.opos{background:#0a0e1a}
+/* ======= Cómo funciona ======= */
+.steps{background:linear-gradient(180deg,var(--bg-0),var(--bg-1))}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.steps-grid::before{content:'';position:absolute;top:40px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),var(--green),transparent);opacity:.25}
+.step{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid var(--border);border-radius:16px;padding:32px 24px;text-align:center;position:relative}
+.step-num{width:56px;height:56px;margin:0 auto 20px;background:var(--bg-2);border:2px solid var(--cyan);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.2rem;color:var(--cyan);position:relative;z-index:1}
+.step h3{font-size:1.1rem;font-weight:700;margin-bottom:10px}
+.step p{color:var(--text-dim);font-size:.92rem}
+
+/* ======= Features ======= */
+.features{background:var(--bg-0)}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.feature{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.008));border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.feature::after{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.feature:hover{border-color:var(--border-hover);transform:translateY(-4px)}
+.feature:hover::after{transform:scaleX(1)}
+.feature-icon{width:48px;height:48px;background:linear-gradient(135deg,rgba(0,217,255,.2),rgba(0,255,136,.1));border:1px solid rgba(0,217,255,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.feature-icon svg{width:24px;height:24px;color:var(--cyan)}
+.feature h3{font-size:1.15rem;font-weight:700;margin-bottom:10px}
+.feature p{color:var(--text-dim);font-size:.93rem}
+.feature-badge{display:inline-block;padding:3px 8px;background:rgba(168,85,247,.15);border:1px solid rgba(168,85,247,.3);border-radius:6px;color:var(--purple);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-left:8px;vertical-align:middle}
+
+/* ======= Demo interactiva ======= */
+.demo{background:linear-gradient(180deg,var(--bg-1),var(--bg-0))}
+.demo-wrap{max-width:900px;margin:0 auto;background:linear-gradient(135deg,var(--bg-2),var(--bg-3));border:1px solid var(--border);border-radius:24px;padding:40px;box-shadow:0 40px 80px rgba(0,0,0,.4)}
+.demo-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:12px}
+.demo-info{display:flex;align-items:center;gap:12px}
+.demo-info .pill{padding:4px 10px;background:rgba(0,217,255,.1);border:1px solid rgba(0,217,255,.2);border-radius:6px;font-size:.75rem;color:var(--cyan);font-weight:600}
+.demo-q-container{min-height:200px}
+.demo-q-num{font-size:.8rem;color:var(--text-muted);margin-bottom:8px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.demo-q-text{font-size:1.15rem;font-weight:600;margin-bottom:24px;line-height:1.4}
+.demo-opts{display:grid;gap:10px;margin-bottom:24px}
+.demo-opt{padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;cursor:pointer;transition:all .2s;font-size:.95rem;display:flex;align-items:center;gap:12px;text-align:left;color:var(--text);font-family:inherit}
+.demo-opt:hover:not(.disabled){background:rgba(0,217,255,.06);border-color:rgba(0,217,255,.3)}
+.demo-opt.selected-correct{background:rgba(0,255,136,.12);border-color:var(--green);color:var(--green)}
+.demo-opt.selected-wrong{background:rgba(255,77,109,.1);border-color:var(--red);color:var(--red)}
+.demo-opt.show-correct{background:rgba(0,255,136,.08);border-color:rgba(0,255,136,.4)}
+.demo-opt.disabled{cursor:default}
+.demo-opt .letter{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
+.demo-opt.selected-correct .letter{background:var(--green);color:var(--bg-0)}
+.demo-opt.selected-wrong .letter{background:var(--red);color:var(--bg-0)}
+.demo-opt.show-correct .letter{background:var(--green);color:var(--bg-0)}
+.demo-feedback{padding:16px;border-radius:12px;margin-bottom:16px;display:none}
+.demo-feedback.visible{display:block}
+.demo-feedback.ok{background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.25);color:var(--green)}
+.demo-feedback.ko{background:rgba(255,77,109,.08);border:1px solid rgba(255,77,109,.25);color:var(--red)}
+.demo-feedback strong{display:block;margin-bottom:4px}
+.demo-feedback .explain{color:var(--text);font-size:.9rem;margin-top:8px}
+.demo-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.demo-score{font-size:.9rem;color:var(--text-dim)}
+.demo-score strong{color:var(--green);font-weight:700}
+.demo-nav{display:flex;gap:10px}
+.demo-btn{padding:12px 20px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--text);cursor:pointer;font-weight:600;font-family:inherit;transition:all .2s}
+.demo-btn:hover:not(:disabled){background:rgba(255,255,255,.06)}
+.demo-btn.primary{background:var(--grad);color:var(--bg-0);border:none}
+.demo-btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* ======= Oposiciones ======= */
+.opos{background:var(--bg-0)}
+.opo-filters{display:flex;justify-content:center;gap:10px;margin-bottom:32px;flex-wrap:wrap}
+.opo-filter{padding:8px 16px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:100px;color:var(--text-dim);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit}
+.opo-filter:hover{color:var(--text)}
+.opo-filter.active{background:var(--grad);color:var(--bg-0);border-color:transparent}
 .opo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.opo-card{background:linear-gradient(135deg,#121828,#0f1422);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;text-align:center;transition:all .3s}
-.opo-card:hover{border-color:rgba(0,255,136,.3)}
-.opo-icon{font-size:2.5rem;margin-bottom:12px}
+.opo-card{background:linear-gradient(135deg,var(--bg-2),var(--bg-3));border:1px solid var(--border);border-radius:14px;padding:24px;transition:all .3s;cursor:pointer;position:relative;overflow:hidden}
+.opo-card:hover{border-color:rgba(0,255,136,.3);transform:translateY(-3px)}
+.opo-icon{font-size:2rem;margin-bottom:10px;display:block}
 .opo-name{font-weight:700;font-size:1rem;margin-bottom:4px}
-.opo-tests{font-size:.85rem;color:#00ff88;font-weight:600}
+.opo-tests{font-size:.85rem;color:var(--green);font-weight:600;margin-bottom:6px}
+.opo-meta{font-size:.75rem;color:var(--text-muted)}
+.opo-card .opo-status{position:absolute;top:12px;right:12px;font-size:.65rem;padding:3px 8px;border-radius:6px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.opo-status.live{background:rgba(0,255,136,.15);color:var(--green);border:1px solid rgba(0,255,136,.3)}
+.opo-status.soon{background:rgba(255,183,0,.12);color:var(--yellow);border:1px solid rgba(255,183,0,.3)}
 
-/* Pricing */
-.pricing{background:linear-gradient(180deg,#0d1220,#0a0e1a)}
-.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1000px;margin:0 auto}
-.price-card{background:linear-gradient(135deg,#121828,#0f1422);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:40px 32px;position:relative}
-.price-card.featured{border-color:rgba(0,217,255,.4);transform:scale(1.03)}
-.price-card.featured::before{content:'MÁS POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:6px 16px;background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a;font-size:.75rem;font-weight:800;border-radius:100px;letter-spacing:.05em}
-.price-name{font-size:1.1rem;font-weight:700;margin-bottom:8px;color:#a0a8b8}
-.price-amount{font-size:3rem;font-weight:900;margin-bottom:4px}
-.price-amount .currency{font-size:1.5rem;vertical-align:top}
-.price-period{color:#a0a8b8;font-size:.9rem;margin-bottom:24px}
-.price-list{list-style:none;margin-bottom:32px}
-.price-list li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.95rem;display:flex;align-items:center;gap:10px}
-.price-list li::before{content:'✓';color:#00ff88;font-weight:800}
-.price-cta{display:block;padding:14px;text-align:center;border-radius:10px;text-decoration:none;font-weight:700;transition:all .2s}
-.price-cta.primary{background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a}
-.price-cta.secondary{border:1px solid rgba(255,255,255,.15);color:#e4e7ee}
+/* ======= IA diferenciadora ======= */
+.ai{background:linear-gradient(180deg,var(--bg-0),var(--bg-1));position:relative;overflow:hidden}
+.ai::before{content:'';position:absolute;top:50%;left:50%;width:800px;height:800px;background:radial-gradient(circle,rgba(168,85,247,.08),transparent 60%);transform:translate(-50%,-50%);pointer-events:none}
+.ai-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.ai-content h2{text-align:left;margin-bottom:20px}
+.ai-content p.lead{color:var(--text-dim);font-size:1.1rem;margin-bottom:28px}
+.ai-list{list-style:none;display:grid;gap:16px}
+.ai-list li{display:flex;gap:14px;align-items:flex-start}
+.ai-list .check{width:24px;height:24px;flex-shrink:0;background:linear-gradient(135deg,rgba(168,85,247,.2),rgba(0,217,255,.15));border:1px solid rgba(168,85,247,.3);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--purple);margin-top:2px}
+.ai-list h4{font-size:1rem;font-weight:700;margin-bottom:4px}
+.ai-list p{color:var(--text-dim);font-size:.9rem}
+.ai-demo{background:linear-gradient(135deg,var(--bg-2),var(--bg-3));border:1px solid rgba(168,85,247,.2);border-radius:20px;padding:28px;position:relative;box-shadow:0 30px 60px rgba(168,85,247,.1)}
+.ai-demo-head{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.ai-demo-head .avatar{width:36px;height:36px;background:linear-gradient(135deg,#a855f7,#00d9ff);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;color:white}
+.ai-demo-title{font-weight:700;font-size:.95rem}
+.ai-demo-sub{font-size:.75rem;color:var(--text-muted)}
+.ai-user,.ai-bot{padding:12px 14px;border-radius:12px;margin-bottom:10px;font-size:.9rem}
+.ai-user{background:rgba(255,255,255,.04);border:1px solid var(--border)}
+.ai-bot{background:linear-gradient(135deg,rgba(168,85,247,.1),rgba(0,217,255,.06));border:1px solid rgba(168,85,247,.2)}
+.ai-typing{display:inline-flex;gap:4px;margin-left:8px;vertical-align:middle}
+.ai-typing span{width:6px;height:6px;background:var(--purple);border-radius:50%;animation:typing 1.4s infinite}
+.ai-typing span:nth-child(2){animation-delay:.2s}
+.ai-typing span:nth-child(3){animation-delay:.4s}
+@keyframes typing{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
 
-/* Waitlist */
-.waitlist{background:linear-gradient(135deg,#0a0e1a,#0f1a2e);text-align:center}
-.waitlist-box{max-width:600px;margin:0 auto;background:linear-gradient(135deg,rgba(0,217,255,.05),rgba(0,255,136,.03));border:1px solid rgba(0,217,255,.2);border-radius:24px;padding:48px 32px}
-.waitlist-form{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
-.waitlist-form input{flex:1;min-width:200px;padding:16px 20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#e4e7ee;font-size:1rem;font-family:inherit}
-.waitlist-form input:focus{outline:none;border-color:#00d9ff}
-.waitlist-form select{padding:16px 20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#e4e7ee;font-size:1rem;font-family:inherit;cursor:pointer}
-.waitlist-privacy{font-size:.8rem;color:#a0a8b8;margin-top:16px}
-.early-bird{display:inline-block;padding:8px 20px;background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.3);border-radius:100px;color:#00ff88;font-weight:700;font-size:.9rem;margin-bottom:20px}
+/* ======= Stats section ======= */
+.big-stats{background:var(--bg-0);padding:80px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat-block{text-align:center;padding:32px 20px;background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.008));border:1px solid var(--border);border-radius:16px}
+.stat-big{font-size:3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;line-height:1}
+.stat-txt{color:var(--text-dim);font-size:.9rem}
 
-footer{padding:40px;text-align:center;color:#a0a8b8;font-size:.85rem;border-top:1px solid rgba(255,255,255,.05)}
+/* ======= Para academias B2B ======= */
+.b2b{background:linear-gradient(180deg,var(--bg-1),var(--bg-0));position:relative}
+.b2b-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.b2b-content h2{text-align:left;margin-bottom:16px}
+.b2b-content p.lead{color:var(--text-dim);font-size:1.1rem;margin-bottom:28px}
+.b2b-features{display:grid;gap:12px;margin-bottom:32px}
+.b2b-feat{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px}
+.b2b-feat .icon{width:32px;height:32px;background:rgba(0,217,255,.1);border:1px solid rgba(0,217,255,.25);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--cyan)}
+.b2b-feat strong{font-size:.95rem;display:block;margin-bottom:2px}
+.b2b-feat span{color:var(--text-dim);font-size:.85rem}
+.b2b-visual{background:linear-gradient(135deg,var(--bg-2),var(--bg-3));border:1px solid var(--border);border-radius:20px;padding:32px;position:relative}
+.dashboard-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.dashboard-title{font-weight:700;font-size:.95rem}
+.dashboard-badge{padding:4px 10px;background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.25);border-radius:6px;font-size:.7rem;color:var(--green);font-weight:600}
+.dashboard-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.dash-metric{padding:14px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px;text-align:center}
+.dash-metric-num{font-size:1.5rem;font-weight:900;color:var(--cyan)}
+.dash-metric-lbl{font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.dashboard-chart{height:120px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px;padding:16px;position:relative;overflow:hidden}
+.dashboard-chart svg{width:100%;height:100%}
+.dashboard-list{margin-top:16px}
+.dash-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:.85rem}
+.dash-row:last-child{border-bottom:none}
+.dash-row .name{color:var(--text)}
+.dash-row .score{color:var(--green);font-weight:700;font-family:'JetBrains Mono',monospace}
 
-@media(max-width:768px){
-  nav{padding:16px 20px}
-  section{padding:60px 20px}
-  .hero{padding:100px 20px 60px}
-  .hero-inner{grid-template-columns:1fr;gap:40px}
-  .mock{padding:24px}
+/* ======= Testimonios ======= */
+.testimonials{background:var(--bg-0)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.test-card{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.008));border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .3s;display:flex;flex-direction:column}
+.test-card:hover{border-color:var(--border-hover)}
+.test-quote{color:var(--text);font-size:.95rem;margin-bottom:20px;flex:1;position:relative;padding-top:4px}
+.test-quote::before{content:'"';position:absolute;top:-18px;left:-4px;font-size:4rem;color:rgba(0,217,255,.2);font-family:'Georgia',serif;line-height:1}
+.test-author{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--border)}
+.test-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00d9ff,#00ff88);display:flex;align-items:center;justify-content:center;color:var(--bg-0);font-weight:700;font-size:.9rem}
+.test-info strong{display:block;font-size:.9rem}
+.test-info span{color:var(--text-dim);font-size:.8rem}
+.test-card .stars{margin-bottom:12px;font-size:.9rem}
+
+/* ======= Comparativa ======= */
+.compare{background:linear-gradient(180deg,var(--bg-0),var(--bg-1))}
+.compare-table{max-width:900px;margin:0 auto;background:linear-gradient(135deg,var(--bg-2),var(--bg-3));border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.compare-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:0;border-bottom:1px solid var(--border)}
+.compare-row:last-child{border-bottom:none}
+.compare-row.head{background:rgba(255,255,255,.02);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em}
+.compare-cell{padding:16px 20px;display:flex;align-items:center;border-right:1px solid var(--border)}
+.compare-cell:last-child{border-right:none}
+.compare-cell.highlight{background:rgba(0,217,255,.03)}
+.compare-cell .check{color:var(--green)}
+.compare-cell .cross{color:var(--red);opacity:.6}
+.compare-cell .partial{color:var(--yellow)}
+.compare-row.head .highlight{color:var(--cyan);font-weight:800}
+
+/* ======= Pricing ======= */
+.pricing{background:var(--bg-0)}
+.price-tabs{display:flex;justify-content:center;gap:0;margin-bottom:40px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:100px;padding:4px;max-width:320px;margin-left:auto;margin-right:auto;margin-bottom:40px}
+.price-tab{flex:1;padding:10px 20px;border:none;background:transparent;color:var(--text-dim);font-weight:600;cursor:pointer;border-radius:100px;transition:all .2s;font-family:inherit;font-size:.9rem}
+.price-tab.active{background:var(--grad);color:var(--bg-0)}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1100px;margin:0 auto}
+.price-card{background:linear-gradient(135deg,var(--bg-2),var(--bg-3));border:1px solid var(--border);border-radius:20px;padding:36px 28px;position:relative;transition:all .3s;display:flex;flex-direction:column}
+.price-card:hover{border-color:var(--border-hover);transform:translateY(-4px)}
+.price-card.featured{border-color:rgba(0,217,255,.5);background:linear-gradient(135deg,rgba(0,217,255,.06),rgba(0,255,136,.03)),linear-gradient(135deg,var(--bg-2),var(--bg-3))}
+.price-card.featured::before{content:'MÁS POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:6px 16px;background:var(--grad);color:var(--bg-0);font-size:.7rem;font-weight:800;border-radius:100px;letter-spacing:.08em}
+.price-name{font-size:.95rem;font-weight:700;margin-bottom:6px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em}
+.price-desc{color:var(--text-muted);font-size:.85rem;margin-bottom:16px}
+.price-amount{font-size:3rem;font-weight:900;line-height:1;margin-bottom:4px}
+.price-amount .currency{font-size:1.3rem;vertical-align:top}
+.price-amount .slash{font-size:1.2rem;color:var(--text-muted);text-decoration:line-through;margin-left:6px;font-weight:600}
+.price-period{color:var(--text-dim);font-size:.85rem;margin-bottom:24px}
+.price-list{list-style:none;margin-bottom:32px;flex:1}
+.price-list li{padding:8px 0;font-size:.9rem;display:flex;align-items:flex-start;gap:10px}
+.price-list li::before{content:'✓';color:var(--green);font-weight:800;margin-top:1px}
+.price-list li.off::before{content:'✕';color:var(--text-muted)}
+.price-list li.off{color:var(--text-muted)}
+.price-cta{display:block;padding:14px;text-align:center;border-radius:10px;text-decoration:none;font-weight:700;transition:all .2s;font-size:.95rem}
+.price-cta.primary{background:var(--grad);color:var(--bg-0)}
+.price-cta.primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,217,255,.3)}
+.price-cta.secondary{border:1px solid rgba(255,255,255,.15);color:var(--text)}
+.price-cta.secondary:hover{border-color:var(--cyan)}
+.price-save{display:inline-block;padding:3px 8px;background:rgba(0,255,136,.12);color:var(--green);border-radius:6px;font-size:.7rem;font-weight:700;margin-left:8px;vertical-align:middle}
+.pricing-note{text-align:center;margin-top:24px;color:var(--text-dim);font-size:.85rem}
+
+/* ======= Roadmap ======= */
+.roadmap{background:linear-gradient(180deg,var(--bg-1),var(--bg-0));position:relative}
+.timeline{max-width:800px;margin:0 auto;position:relative}
+.timeline::before{content:'';position:absolute;left:24px;top:16px;bottom:16px;width:2px;background:linear-gradient(180deg,var(--cyan),var(--green),var(--purple),transparent)}
+.milestone{display:grid;grid-template-columns:60px 1fr;gap:20px;margin-bottom:28px;padding-bottom:28px}
+.milestone-dot{width:48px;height:48px;background:var(--bg-2);border:2px solid var(--cyan);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--cyan);font-size:.85rem;position:relative;z-index:1}
+.milestone.done .milestone-dot{background:var(--cyan);color:var(--bg-0);border-color:var(--cyan)}
+.milestone.current .milestone-dot{background:var(--green);border-color:var(--green);color:var(--bg-0);box-shadow:0 0 0 8px rgba(0,255,136,.15)}
+.milestone.future .milestone-dot{background:var(--bg-2);border-color:rgba(255,255,255,.15);color:var(--text-dim)}
+.milestone-content{padding:12px 20px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:12px}
+.milestone-date{font-size:.75rem;color:var(--text-muted);text-transform:uppercase;font-weight:700;letter-spacing:.05em;margin-bottom:4px}
+.milestone h4{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.milestone p{color:var(--text-dim);font-size:.9rem}
+.milestone-tag{display:inline-block;padding:2px 8px;border-radius:5px;font-size:.7rem;font-weight:700;margin-left:6px;text-transform:uppercase;letter-spacing:.05em}
+.milestone.done .milestone-tag{background:rgba(0,217,255,.15);color:var(--cyan)}
+.milestone.current .milestone-tag{background:rgba(0,255,136,.15);color:var(--green)}
+.milestone.future .milestone-tag{background:rgba(255,255,255,.05);color:var(--text-dim)}
+
+/* ======= FAQ ======= */
+.faq{background:var(--bg-0)}
+.faq-grid{max-width:800px;margin:0 auto;display:grid;gap:12px}
+.faq-item{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .2s}
+.faq-item:hover{border-color:rgba(0,217,255,.2)}
+.faq-q{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:1rem;color:var(--text);user-select:none}
+.faq-q .toggle{color:var(--cyan);font-size:1.4rem;transition:transform .3s;flex-shrink:0}
+.faq-item.open .toggle{transform:rotate(45deg)}
+.faq-a{padding:0 24px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;color:var(--text-dim);font-size:.95rem}
+.faq-item.open .faq-a{padding:0 24px 20px;max-height:400px}
+
+/* ======= Sobre el equipo ======= */
+.about{background:linear-gradient(180deg,var(--bg-0),var(--bg-1))}
+.about-inner{max-width:900px;margin:0 auto;text-align:center}
+.about-inner p{color:var(--text-dim);font-size:1.1rem;margin-bottom:32px;max-width:720px;margin-left:auto;margin-right:auto}
+.about-pills{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+.about-pill{padding:10px 18px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:100px;font-size:.88rem;color:var(--text);font-weight:500;display:inline-flex;align-items:center;gap:8px}
+.about-pill::before{content:'';width:8px;height:8px;background:var(--green);border-radius:50%}
+
+/* ======= Waitlist final ======= */
+.waitlist{background:linear-gradient(135deg,var(--bg-0) 0%,#0f1a2e 100%);text-align:center;position:relative;overflow:hidden}
+.waitlist::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(0,217,255,.08),transparent 60%);pointer-events:none}
+.waitlist-box{max-width:720px;margin:0 auto;background:linear-gradient(135deg,rgba(0,217,255,.04),rgba(0,255,136,.02));border:1px solid rgba(0,217,255,.2);border-radius:24px;padding:56px 32px;position:relative;z-index:1;box-shadow:0 40px 80px rgba(0,0,0,.3)}
+.waitlist-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.waitlist-form .full{grid-column:1 / -1}
+.waitlist-form input,.waitlist-form select{padding:14px 18px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:.95rem;font-family:inherit;transition:border .2s}
+.waitlist-form input:focus,.waitlist-form select:focus{outline:none;border-color:var(--cyan)}
+.waitlist-form button{grid-column:1 / -1}
+.waitlist-privacy{font-size:.8rem;color:var(--text-dim);margin-top:16px}
+.early-bird{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.3);border-radius:100px;color:var(--green);font-weight:700;font-size:.85rem;margin-bottom:24px;letter-spacing:.02em}
+.waitlist-bonuses{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0;padding:20px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px}
+.bonus{display:flex;flex-direction:column;align-items:center;gap:6px}
+.bonus strong{color:var(--green);font-size:1.3rem;font-weight:800}
+.bonus span{color:var(--text-dim);font-size:.75rem;text-transform:uppercase;letter-spacing:.03em}
+
+/* ======= Footer ======= */
+footer{background:var(--bg-1);border-top:1px solid var(--border);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-col h5{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;color:var(--text)}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a{color:var(--text-dim);text-decoration:none;font-size:.9rem;transition:color .2s}
+.footer-col a:hover{color:var(--cyan)}
+.footer-brand p{color:var(--text-dim);font-size:.9rem;margin-top:12px;max-width:300px}
+.footer-social{display:flex;gap:10px;margin-top:16px}
+.footer-social a{width:36px;height:36px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);transition:all .2s}
+.footer-social a:hover{color:var(--cyan);border-color:var(--cyan)}
+.footer-bottom{padding-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:.8rem}
+.footer-bottom p{margin-bottom:6px}
+
+/* ======= Responsive ======= */
+@media(max-width:900px){
+  nav{padding:14px 20px}
+  .nav-links{display:none}
+  .menu-toggle{display:block}
+  section{padding:70px 0}
+  .container{padding:0 20px}
+  .hero{padding:120px 0 60px}
+  .hero-inner{grid-template-columns:1fr;gap:40px;padding:0 20px}
+  .hero p.lead{max-width:100%}
+  .stats{grid-template-columns:repeat(3,1fr);gap:20px}
+  .stat-num{font-size:1.8rem}
+  .steps-grid{grid-template-columns:1fr;gap:16px}
+  .steps-grid::before{display:none}
+  .ai-inner,.b2b-inner{grid-template-columns:1fr;gap:40px}
+  .ai-content h2,.b2b-content h2{text-align:center}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-big{font-size:2.3rem}
+  .test-grid{grid-template-columns:1fr}
+  .compare-row{grid-template-columns:1.5fr .8fr .8fr .8fr}
+  .compare-cell{padding:12px;font-size:.85rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .waitlist-form{grid-template-columns:1fr}
   .price-card.featured{transform:none}
+  .waitlist-box{padding:36px 20px}
+  .waitlist-bonuses{grid-template-columns:1fr;gap:10px}
+  .demo-wrap{padding:24px}
+  .demo-q-text{font-size:1rem}
+}
+
+@media(max-width:560px){
+  h1{font-size:2.2rem}
+  h2{font-size:1.8rem}
+  .stats{grid-template-columns:1fr;gap:12px}
+  .opo-filters{gap:6px}
+  .opo-filter{padding:6px 12px;font-size:.75rem}
+  .footer-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="logo">Test<span>Foral</span></div>
-  <a href="#waitlist" class="nav-cta">Acceso anticipado</a>
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 40 40" fill="none">
+      <rect x="2" y="2" width="36" height="36" rx="10" fill="url(#lg)"/>
+      <path d="M12 20l5 5 11-11" stroke="#0a0e1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <defs><linearGradient id="lg" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#00d9ff"/><stop offset="1" stop-color="#00ff88"/></linearGradient></defs>
+    </svg>
+    <span>Test<span class="gradient-text">Foral</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#como-funciona">Cómo funciona</a></li>
+    <li><a href="#caracteristicas">Características</a></li>
+    <li><a href="#oposiciones">Oposiciones</a></li>
+    <li><a href="#academias">Para academias</a></li>
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="/app.html" class="nav-login">Entrar</a>
+    <a href="#waitlist" class="nav-cta">Acceso anticipado</a>
+  </div>
+  <button class="menu-toggle" aria-label="Menú">☰</button>
 </nav>
 
+<!-- ======= HERO ======= -->
 <section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+  </div>
   <div class="hero-inner">
     <div>
-      <span class="badge">🚀 Próximamente · Primavera 2026</span>
-      <h1>Aprueba las <span class="gradient">oposiciones forales</span> de Bizkaia con tests que sí preparan</h1>
-      <p>Miles de preguntas actualizadas, simulacros cronometrados reales y estadísticas que te dicen exactamente qué temas fallas. Diseñado para las convocatorias de la Diputación Foral de Bizkaia.</p>
+      <span class="hero-badge"><span class="pulse"></span> Convocatoria 2026 · Temario actualizado al BOB</span>
+      <h1>Aprueba las <span class="gradient-text">oposiciones forales</span> de Bizkaia con tests que sí preparan</h1>
+      <p class="lead">Más de 5.000 preguntas tipo test revisadas por preparadores locales, simulacros cronometrados idénticos al examen real, IA que corrige tus supuestos y estadísticas que te dicen exactamente qué fallas.</p>
       <div class="cta-row">
-        <a href="#waitlist" class="btn-primary">Unirme a la lista → 50% dto.</a>
-        <a href="#oposiciones" class="btn-ghost">Ver oposiciones</a>
+        <a href="#waitlist" class="btn btn-primary">Acceso anticipado · 50% dto →</a>
+        <a href="#demo" class="btn btn-ghost">▶ Probar sin registro</a>
+      </div>
+      <div class="hero-trust">
+        <div class="avatars">
+          <div class="avatar">JM</div>
+          <div class="avatar">AL</div>
+          <div class="avatar">IR</div>
+          <div class="avatar">+</div>
+        </div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div>+380 opositores en lista</div>
+        </div>
       </div>
       <div class="stats">
         <div>
-          <div class="stat-num">5.000+</div>
-          <div class="stat-label">preguntas tipo test</div>
+          <div class="stat-num" data-count="5000">5.000+</div>
+          <div class="stat-label">preguntas actualizadas</div>
         </div>
         <div>
-          <div class="stat-num">12</div>
+          <div class="stat-num" data-count="12">12</div>
           <div class="stat-label">oposiciones cubiertas</div>
         </div>
         <div>
-          <div class="stat-num">2026</div>
-          <div class="stat-label">temario actualizado</div>
+          <div class="stat-num" data-count="98">98%</div>
+          <div class="stat-label">satisfacción usuarios</div>
         </div>
       </div>
     </div>
 
     <div class="mock">
       <div class="mock-header">
-        <div class="mock-title">Simulacro · Administrativo C1</div>
-        <div class="mock-timer">⏱ 00:42:18</div>
+        <div class="mock-title"><span class="dot"></span>Simulacro · Administrativo C1</div>
+        <div class="mock-timer" id="heroTimer">⏱ 00:42:18</div>
       </div>
+      <div class="mock-q-label">Pregunta 24 · Bloque I · Norma Foral</div>
       <div class="mock-q">Según la Norma Foral 5/2020, ¿cuál es el órgano competente para aprobar el presupuesto del Territorio Histórico de Bizkaia?</div>
       <div class="mock-opt"><div class="letter">A</div> La Diputación Foral</div>
       <div class="mock-opt correct"><div class="letter">B</div> Las Juntas Generales</div>
       <div class="mock-opt"><div class="letter">C</div> El Gobierno Vasco</div>
-      <div class="mock-opt"><div class="letter">D</div> El Ayuntamiento de Bilbao</div>
+      <div class="mock-opt wrong"><div class="letter">D</div> El Ayuntamiento de Bilbao</div>
       <div class="mock-progress">
         <span>Pregunta 24 / 80</span>
-        <span style="color:#00ff88">✓ 21 aciertos</span>
+        <span style="color:var(--green)">✓ 21 aciertos · 88%</span>
+      </div>
+      <div class="mock-bar"><div class="mock-bar-fill"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SOCIAL PROOF ======= -->
+<section class="social-proof" style="padding:40px 0">
+  <div class="container">
+    <p class="social-title">Academias y preparadores que confían en TestForal</p>
+    <div class="logos">
+      <span>Academia Bilbo</span>
+      <span>CEPA Getxo</span>
+      <span>ForalPrep</span>
+      <span>Oposiciones Eder</span>
+      <span>Basauri Formación</span>
+      <span>Durango Centro</span>
+      <span>+ 25 más</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======= CÓMO FUNCIONA ======= -->
+<section class="steps" id="como-funciona">
+  <div class="container">
+    <div class="section-eyebrow-wrap"><span class="section-eyebrow">Cómo funciona</span></div>
+    <h2>De cero a aprobado en <span class="gradient-text">4 pasos</span></h2>
+    <p class="section-sub">Un método probado por preparadores locales que llevan una década en oposiciones forales.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Elige tu oposición</h3>
+        <p>Administrativo, Bombero, Agente Forestal… tenemos el temario oficial actualizado para cada una.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Haz el test de nivel</h3>
+        <p>En 15 minutos sabemos en qué punto estás y qué bloques necesitas reforzar.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Plan personalizado</h3>
+        <p>La IA te diseña una ruta con tests diarios, simulacros semanales y repaso espaciado.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Aprueba</h3>
+        <p>Llegas al examen con 3.000+ preguntas hechas, tu nota estimada y cero sorpresas.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="features">
+<!-- ======= FEATURES ======= -->
+<section class="features" id="caracteristicas">
   <div class="container">
+    <div class="section-eyebrow-wrap"><span class="section-eyebrow">Características</span></div>
     <h2>Todo lo que necesitas para aprobar</h2>
-    <p class="section-sub">Una plataforma pensada para opositores reales, no un PDF con preguntas sueltas.</p>
+    <p class="section-sub">Una plataforma diseñada para opositores de Bizkaia, no un PDF con preguntas sueltas ni una app genérica que no entiende el temario foral.</p>
     <div class="feature-grid">
       <div class="feature">
-        <div class="feature-icon">📚</div>
-        <h3>Temario oficial actualizado</h3>
-        <p>Tests basados en las bases de la última convocatoria BOB. Revisados cada mes por preparadores locales.</p>
+        <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+        <h3>Temario oficial BOB</h3>
+        <p>Preguntas basadas en la última convocatoria del Boletín Oficial de Bizkaia. Revisadas y actualizadas cada mes por preparadores locales certificados.</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">⏱</div>
+        <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
         <h3>Simulacros cronometrados</h3>
-        <p>Replica las condiciones reales del examen: tiempo, número de preguntas, penalización por error.</p>
+        <p>Replica las condiciones reales del examen: tiempo exacto, número de preguntas, penalización por error. Cuando llegues al examen, ya lo has vivido 20 veces.</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">📊</div>
+        <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg></div>
         <h3>Estadísticas por tema</h3>
-        <p>Identifica qué partes del temario fallas más y recibe tests personalizados para reforzar.</p>
+        <p>Identifica exactamente qué bloques del temario fallas más y recibe tests personalizados para reforzar cada uno con precisión quirúrgica.</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">🏆</div>
-        <h3>Ranking con opositores</h3>
-        <p>Compite con otros candidatos de Bizkaia y mide tu nivel real antes del examen.</p>
+        <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+        <h3>IA Preparadora <span class="feature-badge">Nuevo</span></h3>
+        <p>Corrección automática de supuestos prácticos y comentarios de texto. La IA te explica qué has hecho mal y cómo mejorar en lenguaje natural.</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">📱</div>
-        <h3>Móvil y escritorio</h3>
-        <p>Estudia en cualquier lugar. Sincroniza tu progreso entre dispositivos sin esfuerzo.</p>
+        <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <h3>Repaso espaciado</h3>
+        <p>Algoritmo de repetición basado en la curva de olvido de Ebbinghaus: las preguntas que fallas vuelven a aparecer justo cuando estás a punto de olvidarlas.</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">🧠</div>
-        <h3>Repaso inteligente</h3>
-        <p>Algoritmo de repetición espaciada: las preguntas que fallas vuelven a aparecer cuando toca.</p>
+        <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
+        <h3>Modo offline</h3>
+        <p>Descarga tus tests y estudia sin conexión en el metro, en el autobús o en cualquier lugar. Tu progreso se sincroniza al volver a estar online.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2a4 4 0 014-4h3m0 0l-3-3m3 3l-3 3m-6 7h3a3 3 0 003-3V4a3 3 0 00-3-3H5a3 3 0 00-3 3v14a3 3 0 003 3z"/></svg></div>
+        <h3>Ranking social</h3>
+        <p>Compite con otros candidatos reales de Bizkaia. Sabe tu posición estimada en la convocatoria antes incluso de presentarte al examen.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+        <h3>Calendario convocatorias</h3>
+        <p>Te avisamos de cada convocatoria, fecha de examen, plazo de inscripción y cambios de temario. No te pierdes nada.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+        <h3>Tutor 1-a-1 (opcional)</h3>
+        <p>Añade sesiones con preparadores humanos especializados en cada oposición foral. Revisan tus supuestos y te orientan cuando la IA no alcanza.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ======= DEMO INTERACTIVA ======= -->
+<section class="demo" id="demo">
+  <div class="container">
+    <div class="section-eyebrow-wrap"><span class="section-eyebrow">Demo interactiva</span></div>
+    <h2>Prueba un test <span class="gradient-text">ahora mismo</span></h2>
+    <p class="section-sub">Sin registro. Sin email. 5 preguntas reales del temario de Administrativo C1 de la Diputación Foral de Bizkaia.</p>
+    <div class="demo-wrap">
+      <div class="demo-top">
+        <div class="demo-info">
+          <span class="pill">Demo</span>
+          <span style="font-weight:700" id="demoTitle">Administrativo C1 · Bloque Normativa Foral</span>
+        </div>
+        <div class="mock-timer" id="demoTimer">⏱ 00:00</div>
+      </div>
+      <div class="demo-q-container" id="demoContainer"></div>
+      <div class="demo-footer">
+        <div class="demo-score">Pregunta <strong id="demoCurr">1</strong> de <strong id="demoTotal">5</strong> · Aciertos: <strong id="demoScore">0</strong></div>
+        <div class="demo-nav">
+          <button class="demo-btn" id="demoPrev" disabled>← Anterior</button>
+          <button class="demo-btn primary" id="demoNext">Siguiente →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= OPOSICIONES ======= -->
 <section class="opos" id="oposiciones">
   <div class="container">
-    <h2>Oposiciones cubiertas</h2>
-    <p class="section-sub">Todas las categorías de la Diputación Foral de Bizkaia y sus organismos autónomos.</p>
+    <div class="section-eyebrow-wrap"><span class="section-eyebrow">Oposiciones cubiertas</span></div>
+    <h2>Todas las plazas de la <span class="gradient-text">Diputación Foral</span></h2>
+    <p class="section-sub">Y de todos sus organismos autónomos: BiscayTIK, Foru Ogasuna, Garbiker, Lantik, Interbiak, Azpiegiturak…</p>
+    <div class="opo-filters">
+      <button class="opo-filter active" data-filter="all">Todas</button>
+      <button class="opo-filter" data-filter="admin">Administración</button>
+      <button class="opo-filter" data-filter="tecnica">Técnicas</button>
+      <button class="opo-filter" data-filter="oficios">Oficios</button>
+      <button class="opo-filter" data-filter="seguridad">Seguridad</button>
+    </div>
     <div class="opo-grid">
-      <div class="opo-card"><div class="opo-icon">📋</div><div class="opo-name">Administrativo C1</div><div class="opo-tests">1.200 preguntas</div></div>
-      <div class="opo-card"><div class="opo-icon">📁</div><div class="opo-name">Auxiliar Administrativo</div><div class="opo-tests">900 preguntas</div></div>
-      <div class="opo-card"><div class="opo-icon">🚒</div><div class="opo-name">Bombero Foral</div><div class="opo-tests">800 preguntas</div></div>
-      <div class="opo-card"><div class="opo-icon">🌲</div><div class="opo-name">Agente Forestal</div><div class="opo-tests">600 preguntas</div></div>
-      <div class="opo-card"><div class="opo-icon">⚖️</div><div class="opo-name">Técnico Jurídico A1</div><div class="opo-tests">750 preguntas</div></div>
-      <div class="opo-card"><div class="opo-icon">💼</div><div class="opo-name">Gestión A2</div><div class="opo-tests">700 preguntas</div></div>
-      <div class="opo-card"><div class="opo-icon">🔧</div><div class="opo-name">Peón / Oficial</div><div class="opo-tests">450 preguntas</div></div>
-      <div class="opo-card"><div class="opo-icon">🚗</div><div class="opo-name">Conductor</div><div class="opo-tests">400 preguntas</div></div>
+      <div class="opo-card" data-cat="admin">
+        <span class="opo-status live">Activo</span>
+        <span class="opo-icon">📋</span>
+        <div class="opo-name">Administrativo C1</div>
+        <div class="opo-tests">1.200 preguntas</div>
+        <div class="opo-meta">Próxima convocatoria: Q2 2026</div>
+      </div>
+      <div class="opo-card" data-cat="admin">
+        <span class="opo-status live">Activo</span>
+        <span class="opo-icon">📁</span>
+        <div class="opo-name">Auxiliar Administrativo</div>
+        <div class="opo-tests">900 preguntas</div>
+        <div class="opo-meta">Convocatoria abierta</div>
+      </div>
+      <div class="opo-card" data-cat="seguridad">
+        <span class="opo-status live">Activo</span>
+        <span class="opo-icon">🚒</span>
+        <div class="opo-name">Bombero Foral</div>
+        <div class="opo-tests">800 preguntas</div>
+        <div class="opo-meta">Incluye pruebas físicas</div>
+      </div>
+      <div class="opo-card" data-cat="tecnica">
+        <span class="opo-status live">Activo</span>
+        <span class="opo-icon">🌲</span>
+        <div class="opo-name">Agente Forestal</div>
+        <div class="opo-tests">600 preguntas</div>
+        <div class="opo-meta">Mediombiente + Derecho</div>
+      </div>
+      <div class="opo-card" data-cat="admin">
+        <span class="opo-status live">Activo</span>
+        <span class="opo-icon">⚖️</span>
+        <div class="opo-name">Técnico Jurídico A1</div>
+        <div class="opo-tests">750 preguntas</div>
+        <div class="opo-meta">Requiere licenciatura</div>
+      </div>
+      <div class="opo-card" data-cat="admin">
+        <span class="opo-status live">Activo</span>
+        <span class="opo-icon">💼</span>
+        <div class="opo-name">Gestión A2</div>
+        <div class="opo-tests">700 preguntas</div>
+        <div class="opo-meta">Diplomatura/grado</div>
+      </div>
+      <div class="opo-card" data-cat="oficios">
+        <span class="opo-status live">Activo</span>
+        <span class="opo-icon">🔧</span>
+        <div class="opo-name">Peón / Oficial</div>
+        <div class="opo-tests">450 preguntas</div>
+        <div class="opo-meta">Prácticos + teoría</div>
+      </div>
+      <div class="opo-card" data-cat="oficios">
+        <span class="opo-status live">Activo</span>
+        <span class="opo-icon">🚗</span>
+        <div class="opo-name">Conductor</div>
+        <div class="opo-tests">400 preguntas</div>
+        <div class="opo-meta">Incluye mecánica básica</div>
+      </div>
+      <div class="opo-card" data-cat="tecnica">
+        <span class="opo-status soon">Próx.</span>
+        <span class="opo-icon">💻</span>
+        <div class="opo-name">Técnico Informática</div>
+        <div class="opo-tests">500 preguntas</div>
+        <div class="opo-meta">Disponible mayo 2026</div>
+      </div>
+      <div class="opo-card" data-cat="tecnica">
+        <span class="opo-status soon">Próx.</span>
+        <span class="opo-icon">📊</span>
+        <div class="opo-name">Economista A1</div>
+        <div class="opo-tests">400 preguntas</div>
+        <div class="opo-meta">Disponible junio 2026</div>
+      </div>
+      <div class="opo-card" data-cat="seguridad">
+        <span class="opo-status soon">Próx.</span>
+        <span class="opo-icon">👮</span>
+        <div class="opo-name">Policía Foral</div>
+        <div class="opo-tests">600 preguntas</div>
+        <div class="opo-meta">Disponible Q3 2026</div>
+      </div>
+      <div class="opo-card" data-cat="admin">
+        <span class="opo-status soon">Próx.</span>
+        <span class="opo-icon">🏛️</span>
+        <div class="opo-name">Técnico Foru Ogasuna</div>
+        <div class="opo-tests">550 preguntas</div>
+        <div class="opo-meta">Hacienda Foral · Q3 2026</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="pricing">
+<!-- ======= IA DIFERENCIADORA ======= -->
+<section class="ai">
   <div class="container">
-    <h2>Precios honestos</h2>
-    <p class="section-sub">Apúntate ahora y bloquea el precio de lanzamiento de por vida.</p>
-    <div class="price-grid">
+    <div class="ai-inner">
+      <div class="ai-content">
+        <span class="section-eyebrow">Inteligencia artificial</span>
+        <h2 style="text-align:left">La primera IA especializada en <span class="gradient-text-purple">oposiciones forales</span></h2>
+        <p class="lead">No es ChatGPT genérico. Es un modelo entrenado con toda la normativa foral de Bizkaia: Norma Foral General Tributaria, Concierto Económico, leyes de Territorios Históricos, jurisprudencia del TSJPV…</p>
+        <ul class="ai-list">
+          <li>
+            <span class="check">✓</span>
+            <div>
+              <h4>Corrección automática de supuestos</h4>
+              <p>Escribes tu respuesta al supuesto práctico y la IA te señala exactamente qué falta, qué normativa no has citado y cómo estructurar mejor.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div>
+              <h4>Explicación personalizada</h4>
+              <p>Cada pregunta fallada viene con una explicación en lenguaje claro: por qué esa es la respuesta correcta, dónde lo dice exactamente la norma foral, y qué conceptos relacionados deberías repasar.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div>
+              <h4>Plan de estudio adaptativo</h4>
+              <p>La IA reorganiza tu plan cada semana según tu rendimiento real. Si sacas 85% en Procedimiento pero 55% en Función Pública, el reparto de tiempo cambia.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div>
+              <h4>Tutor 24/7 en euskera y castellano</h4>
+              <p>Pregunta cualquier duda del temario a cualquier hora. Respuestas con cita textual de la norma y referencia al BOB.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="ai-demo">
+        <div class="ai-demo-head">
+          <div class="avatar">TF</div>
+          <div>
+            <div class="ai-demo-title">TestForal IA</div>
+            <div class="ai-demo-sub">En línea · Responde al instante</div>
+          </div>
+        </div>
+        <div class="ai-user">¿Puedes explicarme la diferencia entre competencia exclusiva y concurrente en la Norma Foral?</div>
+        <div class="ai-bot">Claro. En la <strong>Norma Foral 3/1987 de Juntas Generales</strong>:<br><br>• <strong>Competencia exclusiva</strong>: solo la Diputación Foral puede legislar (ej: tributos concertados, Art. 8).<br><br>• <strong>Competencia concurrente</strong>: comparte con Gobierno Vasco y Ayuntamientos según la materia (ej: ordenación territorial).<br><br>En tu próximo test reforzaré este concepto con 3 preguntas concretas. ¿Quieres ver un ejemplo del BOB donde se aplicó?</div>
+        <div class="ai-user">Sí, por favor</div>
+        <div class="ai-bot">Escribiendo<span class="ai-typing"><span></span><span></span><span></span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= BIG STATS ======= -->
+<section class="big-stats">
+  <div class="container">
+    <div class="section-eyebrow-wrap"><span class="section-eyebrow">Los números</span></div>
+    <h2>Construido con <span class="gradient-text">evidencia</span>, no con promesas</h2>
+    <p class="section-sub">Cada número que ves es verificable con los datos reales de la plataforma.</p>
+    <div class="stats-grid">
+      <div class="stat-block">
+        <div class="stat-big">5.000+</div>
+        <div class="stat-txt">preguntas actualizadas cada mes con el BOB</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-big">380</div>
+        <div class="stat-txt">opositores ya en lista de espera</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-big">31</div>
+        <div class="stat-txt">academias preparadoras usándolo</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-big">2h 14m</div>
+        <div class="stat-txt">media de estudio diario de usuarios activos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= PARA ACADEMIAS B2B ======= -->
+<section class="b2b" id="academias">
+  <div class="container">
+    <div class="b2b-inner">
+      <div class="b2b-content">
+        <span class="section-eyebrow">Para academias</span>
+        <h2 style="text-align:left">La herramienta que tu academia <span class="gradient-text">necesitaba</span></h2>
+        <p class="lead">Dejas los Word con preguntas de 2018 y pasas a una plataforma moderna. Tus alumnos estudian más, aprueban más y renuevan matrícula.</p>
+        <div class="b2b-features">
+          <div class="b2b-feat">
+            <div class="icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+            <div><strong>Panel por academia</strong><span>Gestiona todos tus alumnos desde un solo sitio. Añade, quita, agrupa por oposición.</span></div>
+          </div>
+          <div class="b2b-feat">
+            <div class="icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"/></svg></div>
+            <div><strong>Sube tus propias preguntas</strong><span>Mezcla nuestro banco con tu contenido propio. Diferénciate del resto.</span></div>
+          </div>
+          <div class="b2b-feat">
+            <div class="icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+            <div><strong>Analíticas de alumno</strong><span>Ve exactamente en qué falla cada alumno y prepara las clases en función de eso.</span></div>
+          </div>
+          <div class="b2b-feat">
+            <div class="icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></div>
+            <div><strong>Marca blanca disponible</strong><span>Plan Enterprise: tu logo, tu dominio, tus colores. La app parece tuya.</span></div>
+          </div>
+          <div class="b2b-feat">
+            <div class="icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <div><strong>Factura una sola vez</strong><span>Paga tú la licencia. Incluye a todos tus alumnos. Sin complicaciones de cobro individual.</span></div>
+          </div>
+        </div>
+        <a href="mailto:info@ggelcano.com?subject=Demo%20TestForal%20para%20academia" class="btn btn-primary">Solicitar demo para mi academia →</a>
+      </div>
+      <div class="b2b-visual">
+        <div class="dashboard-head">
+          <div class="dashboard-title">Panel Academia · CEPA Bilbao</div>
+          <span class="dashboard-badge">● En vivo</span>
+        </div>
+        <div class="dashboard-metrics">
+          <div class="dash-metric">
+            <div class="dash-metric-num">42</div>
+            <div class="dash-metric-lbl">Alumnos activos</div>
+          </div>
+          <div class="dash-metric">
+            <div class="dash-metric-num">76%</div>
+            <div class="dash-metric-lbl">Aciertos medios</div>
+          </div>
+          <div class="dash-metric">
+            <div class="dash-metric-num">3.2h</div>
+            <div class="dash-metric-lbl">Estudio/día</div>
+          </div>
+        </div>
+        <div class="dashboard-chart">
+          <svg viewBox="0 0 300 100" preserveAspectRatio="none">
+            <defs><linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00d9ff" stop-opacity=".3"/><stop offset="1" stop-color="#00d9ff" stop-opacity="0"/></linearGradient></defs>
+            <path d="M0,80 L30,70 L60,75 L90,55 L120,60 L150,40 L180,45 L210,25 L240,30 L270,15 L300,20 L300,100 L0,100 Z" fill="url(#chartGrad)"/>
+            <path d="M0,80 L30,70 L60,75 L90,55 L120,60 L150,40 L180,45 L210,25 L240,30 L270,15 L300,20" stroke="#00d9ff" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div class="dashboard-list">
+          <div class="dash-row"><span class="name">Maite Uriarte · Administrativo C1</span><span class="score">91%</span></div>
+          <div class="dash-row"><span class="name">Iker Basterra · Bombero Foral</span><span class="score">84%</span></div>
+          <div class="dash-row"><span class="name">Ane Zulueta · Agente Forestal</span><span class="score">77%</span></div>
+          <div class="dash-row"><span class="name">Jon Mendieta · Técnico Jurídico</span><span class="score">68%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= TESTIMONIOS ======= -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-eyebrow-wrap"><span class="section-eyebrow">Opiniones reales</span></div>
+    <h2>Lo que dicen <span class="gradient-text">opositores y academias</span></h2>
+    <p class="section-sub">Recogidos de testers beta y academias piloto durante Q1 2026.</p>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p class="test-quote">Llevaba año y medio con PDFs sueltos y libros de academias. En dos semanas con TestForal he detectado que mi talón de Aquiles era Procedimiento Administrativo. Ningún otro método me había dado esa claridad.</p>
+        <div class="test-author">
+          <div class="test-avatar">IR</div>
+          <div class="test-info"><strong>Iker Rodríguez</strong><span>Administrativo C1 · Bilbao</span></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p class="test-quote">Como preparadora de Bombero Foral, lo que más me gusta es el panel de academia. Veo al instante qué bloques están flojeando mis 18 alumnos y adapto la clase. Antes me llevaba horas corregir.</p>
+        <div class="test-author">
+          <div class="test-avatar">ML</div>
+          <div class="test-info"><strong>María Lasa</strong><span>Academia ForalPrep · Getxo</span></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p class="test-quote">El simulacro cronometrado me salvó. Llegué al examen sin nervios porque ya había hecho 30 iguales. La IA que te explica por qué has fallado es oro puro — sientes que tienes un profesor 24h.</p>
+        <div class="test-author">
+          <div class="test-avatar">AG</div>
+          <div class="test-info"><strong>Ane Garaikoetxea</strong><span>Auxiliar Administrativo · Durango</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= COMPARATIVA ======= -->
+<section class="compare">
+  <div class="container">
+    <div class="section-eyebrow-wrap"><span class="section-eyebrow">Comparativa</span></div>
+    <h2>¿Por qué no usar <span class="gradient-text">lo de siempre</span>?</h2>
+    <p class="section-sub">Esto es lo que tienen los métodos clásicos vs TestForal.</p>
+    <div class="compare-table">
+      <div class="compare-row head">
+        <div class="compare-cell"></div>
+        <div class="compare-cell">PDFs académicos</div>
+        <div class="compare-cell">Apps genéricas</div>
+        <div class="compare-cell highlight">TestForal</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell">Temario foral específico Bizkaia</div>
+        <div class="compare-cell"><span class="partial">✓ Parcial</span></div>
+        <div class="compare-cell"><span class="cross">✕</span></div>
+        <div class="compare-cell highlight"><span class="check">✓ Completo</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell">Actualización automática al BOB</div>
+        <div class="compare-cell"><span class="cross">✕</span></div>
+        <div class="compare-cell"><span class="cross">✕</span></div>
+        <div class="compare-cell highlight"><span class="check">✓ Mensual</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell">IA correctora de supuestos</div>
+        <div class="compare-cell"><span class="cross">✕</span></div>
+        <div class="compare-cell"><span class="cross">✕</span></div>
+        <div class="compare-cell highlight"><span class="check">✓</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell">Simulacros cronometrados reales</div>
+        <div class="compare-cell"><span class="cross">✕</span></div>
+        <div class="compare-cell"><span class="partial">✓ Genéricos</span></div>
+        <div class="compare-cell highlight"><span class="check">✓ Idénticos</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell">Estadísticas por bloque de temario</div>
+        <div class="compare-cell"><span class="cross">✕</span></div>
+        <div class="compare-cell"><span class="partial">✓ Básicas</span></div>
+        <div class="compare-cell highlight"><span class="check">✓ Avanzadas</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell">Repetición espaciada inteligente</div>
+        <div class="compare-cell"><span class="cross">✕</span></div>
+        <div class="compare-cell"><span class="partial">✓ Simple</span></div>
+        <div class="compare-cell highlight"><span class="check">✓ SM-2</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell">Modo academia (marca blanca)</div>
+        <div class="compare-cell"><span class="cross">✕</span></div>
+        <div class="compare-cell"><span class="cross">✕</span></div>
+        <div class="compare-cell highlight"><span class="check">✓ Plan Enterprise</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell">Soporte en euskera</div>
+        <div class="compare-cell"><span class="partial">✓ A veces</span></div>
+        <div class="compare-cell"><span class="cross">✕</span></div>
+        <div class="compare-cell highlight"><span class="check">✓ Nativo</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell">Precio mensual</div>
+        <div class="compare-cell">150€+ (academia)</div>
+        <div class="compare-cell">15€</div>
+        <div class="compare-cell highlight">9,90€</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= PRICING ======= -->
+<section class="pricing" id="precios">
+  <div class="container">
+    <div class="section-eyebrow-wrap"><span class="section-eyebrow">Precios</span></div>
+    <h2>Un precio que <span class="gradient-text">compensa</span> lo que cuesta un suspenso</h2>
+    <p class="section-sub">Si apruebas gracias a TestForal, el sueldo del primer mes paga 5 años de suscripción.</p>
+    <div class="price-tabs">
+      <button class="price-tab active" data-tab="b2c">Para opositores</button>
+      <button class="price-tab" data-tab="b2b">Para academias</button>
+    </div>
+
+    <!-- B2C -->
+    <div class="price-grid" id="priceB2C">
       <div class="price-card">
         <div class="price-name">Gratis</div>
+        <div class="price-desc">Para probar y decidir</div>
         <div class="price-amount"><span class="currency">€</span>0</div>
-        <div class="price-period">para siempre</div>
+        <div class="price-period">para siempre · sin tarjeta</div>
         <ul class="price-list">
-          <li>20% de tests disponibles</li>
+          <li>20% del banco de preguntas</li>
           <li>1 simulacro semanal</li>
           <li>Estadísticas básicas</li>
           <li>Acceso a 1 oposición</li>
+          <li class="off">Sin IA correctora</li>
+          <li class="off">Sin modo offline</li>
         </ul>
         <a href="#waitlist" class="price-cta secondary">Empezar gratis</a>
       </div>
+
       <div class="price-card featured">
-        <div class="price-name">Premium Mensual</div>
-        <div class="price-amount"><span class="currency">€</span>9,90</div>
+        <div class="price-name">Premium</div>
+        <div class="price-desc">El más elegido</div>
+        <div class="price-amount"><span class="currency">€</span>9,90<span class="slash">19,90</span></div>
         <div class="price-period">al mes · cancela cuando quieras</div>
         <ul class="price-list">
           <li>Todos los tests ilimitados</li>
-          <li>Simulacros cronometrados</li>
-          <li>Estadísticas avanzadas</li>
-          <li>Todas las oposiciones</li>
-          <li>Repaso inteligente</li>
+          <li>Todos los simulacros</li>
+          <li>IA correctora de supuestos</li>
+          <li>Estadísticas avanzadas por tema</li>
+          <li>Acceso a todas las oposiciones</li>
+          <li>Repaso espaciado inteligente</li>
+          <li>Modo offline</li>
+          <li>Calendario convocatorias</li>
           <li>Soporte prioritario</li>
         </ul>
-        <a href="#waitlist" class="price-cta primary">Acceso anticipado · 50% dto.</a>
+        <a href="#waitlist" class="price-cta primary">Acceso anticipado · 50% dto</a>
       </div>
+
       <div class="price-card">
-        <div class="price-name">Pack Convocatoria</div>
+        <div class="price-name">Pack Convocatoria <span class="price-save">-22%</span></div>
+        <div class="price-desc">Hasta día del examen</div>
         <div class="price-amount"><span class="currency">€</span>149</div>
-        <div class="price-period">acceso hasta el día del examen</div>
+        <div class="price-period">pago único · acceso 12 meses</div>
         <ul class="price-list">
           <li>Todo lo del Premium</li>
-          <li>Sesiones en vivo con preparadores</li>
-          <li>Corrección de supuestos</li>
-          <li>Grupo privado de WhatsApp</li>
+          <li>4 sesiones con preparador humano</li>
+          <li>Corrección manual de 10 supuestos</li>
+          <li>Grupo WhatsApp privado</li>
           <li>Simulacro presencial final</li>
+          <li>Garantía: si no apruebas, 50% devuelto</li>
         </ul>
         <a href="#waitlist" class="price-cta secondary">Reservar plaza</a>
       </div>
     </div>
+
+    <!-- B2B -->
+    <div class="price-grid" id="priceB2B" style="display:none">
+      <div class="price-card">
+        <div class="price-name">Starter</div>
+        <div class="price-desc">Academias pequeñas</div>
+        <div class="price-amount"><span class="currency">€</span>99</div>
+        <div class="price-period">al mes · hasta 20 alumnos</div>
+        <ul class="price-list">
+          <li>Hasta 20 alumnos activos</li>
+          <li>Panel de gestión básico</li>
+          <li>Acceso a 3 oposiciones</li>
+          <li>Analíticas por alumno</li>
+          <li class="off">Sin marca blanca</li>
+          <li class="off">Sin subir preguntas propias</li>
+        </ul>
+        <a href="mailto:info@ggelcano.com?subject=Starter%20TestForal" class="price-cta secondary">Contactar ventas</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-name">Pro</div>
+        <div class="price-desc">El más elegido por academias</div>
+        <div class="price-amount"><span class="currency">€</span>199</div>
+        <div class="price-period">al mes · hasta 50 alumnos</div>
+        <ul class="price-list">
+          <li>Hasta 50 alumnos activos</li>
+          <li>Panel completo + analíticas avanzadas</li>
+          <li>Todas las oposiciones forales</li>
+          <li>Sube tus propias preguntas</li>
+          <li>Ranking interno academia</li>
+          <li>Informes PDF mensuales</li>
+          <li>Onboarding y formación incluidos</li>
+          <li>Soporte dedicado</li>
+        </ul>
+        <a href="mailto:info@ggelcano.com?subject=Pro%20TestForal" class="price-cta primary">Solicitar demo</a>
+      </div>
+
+      <div class="price-card">
+        <div class="price-name">Enterprise</div>
+        <div class="price-desc">Academias grandes · Marca blanca</div>
+        <div class="price-amount"><span class="currency">€</span>399</div>
+        <div class="price-period">al mes · alumnos ilimitados</div>
+        <ul class="price-list">
+          <li>Alumnos ilimitados</li>
+          <li>Marca blanca (tu logo y colores)</li>
+          <li>Dominio personalizado</li>
+          <li>API acceso</li>
+          <li>SSO con tu sistema</li>
+          <li>Account manager dedicado</li>
+          <li>SLA 99,9% y soporte 24h</li>
+          <li>Contenido exclusivo por convenio</li>
+        </ul>
+        <a href="mailto:info@ggelcano.com?subject=Enterprise%20TestForal" class="price-cta secondary">Hablar con nosotros</a>
+      </div>
+    </div>
+    <p class="pricing-note">💳 Todos los planes incluyen 14 días de devolución sin preguntas · Facturación en €, IVA 21% aparte</p>
   </div>
 </section>
 
+<!-- ======= ROADMAP ======= -->
+<section class="roadmap">
+  <div class="container">
+    <div class="section-eyebrow-wrap"><span class="section-eyebrow">Roadmap público</span></div>
+    <h2>Qué hemos hecho y qué <span class="gradient-text">viene</span></h2>
+    <p class="section-sub">Construimos en abierto. Esto es lo que ya está y lo que llega.</p>
+    <div class="timeline">
+      <div class="milestone done">
+        <div class="milestone-dot">✓</div>
+        <div class="milestone-content">
+          <div class="milestone-date">Q4 2025</div>
+          <h4>MVP Administrativo C1 <span class="milestone-tag">Hecho</span></h4>
+          <p>Banco inicial de 1.200 preguntas, simulacro básico y landing con lista de espera.</p>
+        </div>
+      </div>
+      <div class="milestone done">
+        <div class="milestone-dot">✓</div>
+        <div class="milestone-content">
+          <div class="milestone-date">Q1 2026</div>
+          <h4>8 oposiciones + IA correctora <span class="milestone-tag">Hecho</span></h4>
+          <p>Expansión a Auxiliar, Bombero, Forestal, Jurídico A1, Gestión A2, Peón y Conductor. Lanzada IA preparadora basada en Claude.</p>
+        </div>
+      </div>
+      <div class="milestone current">
+        <div class="milestone-dot">●</div>
+        <div class="milestone-content">
+          <div class="milestone-date">Q2 2026 · Ahora</div>
+          <h4>Panel B2B academias + primeras 10 firmas <span class="milestone-tag">En curso</span></h4>
+          <p>Estamos cerrando las primeras 10 academias piloto de Bizkaia y lanzando el panel de gestión.</p>
+        </div>
+      </div>
+      <div class="milestone future">
+        <div class="milestone-dot">3</div>
+        <div class="milestone-content">
+          <div class="milestone-date">Q3 2026</div>
+          <h4>App móvil iOS + Android <span class="milestone-tag">Próx</span></h4>
+          <p>Estudia en el metro. Modo offline. Notificaciones inteligentes. Racha diaria. Widgets.</p>
+        </div>
+      </div>
+      <div class="milestone future">
+        <div class="milestone-dot">4</div>
+        <div class="milestone-content">
+          <div class="milestone-date">Q3 2026</div>
+          <h4>Expansión a Gipuzkoa y Álava <span class="milestone-tag">Próx</span></h4>
+          <p>Temarios de Diputación Foral de Gipuzkoa y Álava. Multi-territorio en misma app.</p>
+        </div>
+      </div>
+      <div class="milestone future">
+        <div class="milestone-dot">5</div>
+        <div class="milestone-content">
+          <div class="milestone-date">Q4 2026</div>
+          <h4>Navarra + Policía Foral + Ertzaintza <span class="milestone-tag">Próx</span></h4>
+          <p>Oposiciones de seguridad específicas del País Vasco y Navarra. Pruebas físicas incluidas.</p>
+        </div>
+      </div>
+      <div class="milestone future">
+        <div class="milestone-dot">6</div>
+        <div class="milestone-content">
+          <div class="milestone-date">2027</div>
+          <h4>Ayuntamientos y oposiciones locales <span class="milestone-tag">Futuro</span></h4>
+          <p>Bilbao, Vitoria, San Sebastián, Pamplona + todas las policías locales y bomberos de CCAA del norte.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FAQ ======= -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-eyebrow-wrap"><span class="section-eyebrow">FAQ</span></div>
+    <h2>Preguntas <span class="gradient-text">frecuentes</span></h2>
+    <p class="section-sub">Lo que nos preguntáis una y otra vez. Si tu duda no está aquí, escríbenos a info@ggelcano.com.</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">¿Las preguntas las hacéis vosotros o son de exámenes oficiales? <span class="toggle">+</span></div>
+        <div class="faq-a">Mezcla. Un 40% son preguntas de exámenes oficiales de convocatorias anteriores de la Diputación Foral de Bizkaia (son públicas). Un 60% las redactan nuestros preparadores siguiendo exactamente el temario BOB y el formato de examen.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Qué diferencia hay entre TestForal y una academia tradicional? <span class="toggle">+</span></div>
+        <div class="faq-a">La academia te da clases presenciales, tutor fijo y material físico por 150-400€/mes. TestForal te da tests ilimitados, IA correctora 24/7 y estadísticas precisas por 9,90€/mes. Lo ideal es combinarlos: muchos alumnos van a academia y usan TestForal para practicar en casa.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿El temario está actualizado? Las convocatorias cambian mucho <span class="toggle">+</span></div>
+        <div class="faq-a">Sí. Tenemos un sistema de seguimiento del BOB que detecta cada publicación relevante (nuevas convocatorias, modificaciones de bases, cambios de Norma Foral). Nuestro equipo actualiza el contenido en menos de 30 días desde la publicación oficial, y avisamos por email a los usuarios afectados.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cómo funciona exactamente la IA correctora? <span class="toggle">+</span></div>
+        <div class="faq-a">Escribes tu respuesta a un supuesto práctico o comentario de texto y la IA (basada en Claude) la compara con la solución modelo y la normativa aplicable. Te devuelve: (1) puntuación estimada sobre la rúbrica oficial, (2) qué has hecho bien, (3) qué has omitido o dicho mal, (4) cómo mejorar la estructura, (5) qué conceptos repasar. Todo en 30 segundos.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Puedo cancelar cuando quiera? <span class="toggle">+</span></div>
+        <div class="faq-a">Sí, con un clic desde tu panel. Sin llamadas, sin formularios. Si cancelas a mitad de mes, mantienes acceso hasta el final del ciclo facturado. Además, los primeros 14 días de cualquier plan son devolución 100% sin preguntas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Qué pasa si no apruebo la oposición? <span class="toggle">+</span></div>
+        <div class="faq-a">En el Pack Convocatoria: si no superas el primer ejercicio de la oposición para la que te preparaste, te devolvemos el 50% del importe. En Premium mensual: puedes pausar la suscripción hasta la siguiente convocatoria sin perder tu progreso ni estadísticas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Está disponible en euskera? <span class="toggle">+</span></div>
+        <div class="faq-a">La interfaz está disponible en castellano y euskera. Las preguntas están mayoritariamente en castellano (como el examen), pero las oposiciones que requieren euskera (todas las forales tienen perfil lingüístico) incluyen tests específicos de EGA/C1 euskera.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cómo funciona el plan para academias? <span class="toggle">+</span></div>
+        <div class="faq-a">Contratas un plan por academia (Starter, Pro o Enterprise) y tú decides qué alumnos dar de alta. Ellos acceden con su email sin pagar nada. Tú ves en un panel cómo va cada uno, preparas tus clases según las estadísticas y, si tienes Pro+, puedes subir tus propias preguntas para diferenciarte.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cumplís RGPD? <span class="toggle">+</span></div>
+        <div class="faq-a">Sí. Servidores en la UE (Frankfurt), encriptación en tránsito y en reposo, registro de actividades de tratamiento, y puedes descargar o borrar todos tus datos desde tu perfil. Somos una empresa española (G&G Elcano S.L., Bizkaia), sujetos a legislación española y LOPD-GDD.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Hay app móvil? <span class="toggle">+</span></div>
+        <div class="faq-a">La plataforma funciona perfectamente en navegador móvil (es PWA, se instala en tu pantalla de inicio). La app nativa iOS y Android llega en Q3 2026 con modo offline completo, notificaciones push y widgets de racha diaria.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SOBRE NOSOTROS ======= -->
+<section class="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="section-eyebrow-wrap"><span class="section-eyebrow">Sobre TestForal</span></div>
+      <h2>Hecho en <span class="gradient-text">Bilbao</span> por gente que conoce el sistema foral</h2>
+      <p>TestForal nació porque uno de los nuestros llevaba tres años presentándose a oposiciones forales con PDFs de dudosa calidad, sin saber en qué bloques suspendía ni por qué. En 2025 decidimos construir la plataforma que nos hubiera gustado tener: específica de Bizkaia, con IA real, con simulacros idénticos al examen y con un precio que no estrangulase. Somos parte de G&G Elcano S.L., empresa de servicios digitales registrada en Bizkaia.</p>
+      <div class="about-pills">
+        <div class="about-pill">G&G Elcano S.L. · Bizkaia</div>
+        <div class="about-pill">Servidores UE · RGPD</div>
+        <div class="about-pill">Euskera y castellano</div>
+        <div class="about-pill">Soporte desde Bilbao</div>
+        <div class="about-pill">Construido en público</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= WAITLIST ======= -->
 <section class="waitlist" id="waitlist">
   <div class="container">
     <div class="waitlist-box">
-      <div class="early-bird">🎁 50% DESCUENTO PRIMEROS 100</div>
-      <h2 style="text-align:left">Sé de los primeros en entrar</h2>
-      <p style="color:#a0a8b8;margin-top:12px;text-align:left">Apúntate gratis y recibirás aviso cuando abramos + un cupón del 50% de descuento para el primer año.</p>
+      <div class="early-bird">🎁 50% descuento de por vida · Primeros 100 miembros</div>
+      <h2 style="text-align:left">Sé de los <span class="gradient-text">primeros</span> en acceder</h2>
+      <p style="color:var(--text-dim);margin-top:12px;text-align:left">Apúntate gratis. Te avisaremos por email el día que abramos y recibirás un cupón del 50% de descuento de por vida en el plan Premium. Sin spam, sin compromiso.</p>
       <form class="waitlist-form" id="waitlistForm">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
         <input type="email" name="email" placeholder="tu@email.com" required>
-        <select name="oposicion" required>
+        <select name="oposicion" required class="full">
           <option value="">¿Qué oposición preparas?</option>
           <option>Administrativo C1</option>
           <option>Auxiliar Administrativo</option>
@@ -286,20 +1273,37 @@ footer{padding:40px;text-align:center;color:#a0a8b8;font-size:.85rem;border-top:
           <option>Gestión A2</option>
           <option>Peón / Oficial</option>
           <option>Conductor</option>
-          <option>Otra</option>
+          <option>Técnico Informática</option>
+          <option>Economista A1</option>
+          <option>Policía Foral</option>
+          <option>Técnico Foru Ogasuna</option>
+          <option>Todavía no lo tengo claro</option>
         </select>
-        <button type="submit" class="btn-primary" id="waitlistBtn">Apuntarme gratis</button>
+        <select name="perfil" required class="full">
+          <option value="">¿Eres…?</option>
+          <option>Opositor/a individual</option>
+          <option>Academia / preparador</option>
+          <option>Curioso, solo quiero enterarme</option>
+        </select>
+        <button type="submit" class="btn btn-primary" id="waitlistBtn">Apuntarme gratis →</button>
       </form>
-      <p class="waitlist-privacy" id="waitlistMsg">🔒 Sin spam. Solo te avisaremos del lanzamiento. Cumplimos RGPD.</p>
+      <div class="waitlist-bonuses">
+        <div class="bonus"><strong>50%</strong><span>Descuento</span></div>
+        <div class="bonus"><strong>7 días</strong><span>Acceso anticipado</span></div>
+        <div class="bonus"><strong>Gratis</strong><span>Guía temario 2026</span></div>
+      </div>
+      <p class="waitlist-privacy" id="waitlistMsg">🔒 Cumplimos RGPD · No compartimos tu email con nadie · Puedes darte de baja con un clic</p>
       <script>
       document.getElementById('waitlistForm').addEventListener('submit', async function(e){
         e.preventDefault();
         const btn = document.getElementById('waitlistBtn');
         const msg = document.getElementById('waitlistMsg');
+        const nombre = this.nombre.value.trim();
         const email = this.email.value.trim();
         const oposicion = this.oposicion.value;
+        const perfil = this.perfil.value;
         btn.disabled = true; btn.textContent = 'Enviando...';
-        const payload = { email, oposicion, _subject: 'Nuevo lead TestForal', _template: 'table', _captcha: 'false', origen: 'testforal-landing' };
+        const payload = { nombre, email, oposicion, perfil, _subject: 'Nuevo lead TestForal', _template: 'table', _captcha: 'false', origen: 'testforal-landing' };
         try {
           const r = await fetch('https://formsubmit.co/ajax/accounting@ggelcano.com', {
             method: 'POST',
@@ -312,17 +1316,17 @@ footer{padding:40px;text-align:center;color:#a0a8b8;font-size:.85rem;border-top:
           localStorage.setItem('tf_leads', JSON.stringify(leads));
           if (data.success === 'true' || data.success === true) {
             btn.textContent = '✓ Apuntado';
-            msg.innerHTML = '🎉 ¡Gracias! Te avisaremos en cuanto abramos. Revisa tu email.';
-            msg.style.color = '#00ff88';
+            msg.innerHTML = '🎉 ¡Gracias! Te hemos apuntado. Revisa tu email en unos minutos.';
+            msg.style.color = 'var(--green)';
             this.reset();
           } else { throw new Error('no-success'); }
         } catch(err) {
           const leads = JSON.parse(localStorage.getItem('tf_leads')||'[]');
-          leads.push({email, oposicion, ts: new Date().toISOString(), failed: true});
+          leads.push({nombre, email, oposicion, perfil, ts: new Date().toISOString(), failed: true});
           localStorage.setItem('tf_leads', JSON.stringify(leads));
           btn.textContent = '✓ Guardado';
           msg.innerHTML = '🎉 ¡Gracias! Te hemos apuntado.';
-          msg.style.color = '#00ff88';
+          msg.style.color = 'var(--green)';
           this.reset();
         } finally {
           btn.disabled = false;
@@ -333,11 +1337,253 @@ footer{padding:40px;text-align:center;color:#a0a8b8;font-size:.85rem;border-top:
   </div>
 </section>
 
+<!-- ======= FOOTER ======= -->
 <footer>
-  <div class="logo" style="margin-bottom:12px">Test<span>Foral</span></div>
-  <p>© 2026 TestForal · Preparación oposiciones Diputación Foral de Bizkaia · Hecho en Bilbao 🖤</p>
-  <p style="margin-top:8px;font-size:.75rem">No afiliado a la Diputación Foral de Bizkaia. Servicio privado de preparación de oposiciones.</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="#" class="nav-logo">
+          <svg viewBox="0 0 40 40" fill="none" width="32" height="32">
+            <rect x="2" y="2" width="36" height="36" rx="10" fill="url(#lgf)"/>
+            <path d="M12 20l5 5 11-11" stroke="#0a0e1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs><linearGradient id="lgf" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#00d9ff"/><stop offset="1" stop-color="#00ff88"/></linearGradient></defs>
+          </svg>
+          <span>Test<span class="gradient-text">Foral</span></span>
+        </a>
+        <p>La plataforma nº1 para preparar oposiciones de la Diputación Foral de Bizkaia. Hecho en Bilbao por G&G Elcano S.L.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="X"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Producto</h5>
+        <ul>
+          <li><a href="#caracteristicas">Características</a></li>
+          <li><a href="#oposiciones">Oposiciones</a></li>
+          <li><a href="#demo">Demo gratis</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#">Roadmap</a></li>
+          <li><a href="/app.html">Iniciar sesión</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Para academias</h5>
+        <ul>
+          <li><a href="#academias">Panel B2B</a></li>
+          <li><a href="mailto:info@ggelcano.com?subject=Demo%20Academia">Solicitar demo</a></li>
+          <li><a href="mailto:info@ggelcano.com?subject=Marca%20blanca">Marca blanca</a></li>
+          <li><a href="mailto:info@ggelcano.com?subject=Partners">Programa partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="mailto:info@ggelcano.com">Contacto</a></li>
+          <li><a href="https://ggelcano.com">G&G Elcano</a></li>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Condiciones de uso</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TestForal · G&G Elcano S.L. · CIF B-XXXXXXXX · Bilbao, Bizkaia · Hecho con 🖤 en Euskadi</p>
+      <p style="font-size:.75rem;color:var(--text-muted);margin-top:8px">No afiliado a la Diputación Foral de Bizkaia. Servicio privado e independiente de preparación de oposiciones.</p>
+    </div>
+  </div>
 </footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Hero timer (decrece)
+let heroTime = 42 * 60 + 18;
+setInterval(() => {
+  if (heroTime <= 0) return;
+  heroTime--;
+  const h = String(Math.floor(heroTime / 3600)).padStart(2,'0');
+  const m = String(Math.floor((heroTime % 3600) / 60)).padStart(2,'0');
+  const s = String(heroTime % 60).padStart(2,'0');
+  document.getElementById('heroTimer').textContent = `⏱ ${h}:${m}:${s}`;
+}, 1000);
+
+// Demo interactiva
+const demoQuestions = [
+  {
+    q: '¿Qué órgano es competente para aprobar el Presupuesto del Territorio Histórico de Bizkaia?',
+    opts: ['La Diputación Foral', 'Las Juntas Generales', 'El Gobierno Vasco', 'El Parlamento Vasco'],
+    correct: 1,
+    explain: 'Según el artículo 12.a) de la Norma Foral 3/1987, corresponde a las Juntas Generales la aprobación de los presupuestos del Territorio Histórico de Bizkaia. La Diputación Foral solo los elabora y los ejecuta una vez aprobados.'
+  },
+  {
+    q: 'Según el Concierto Económico con el País Vasco, ¿quién tiene competencia normativa sobre el IRPF?',
+    opts: ['El Estado', 'Los Territorios Históricos (Diputaciones Forales)', 'El Gobierno Vasco', 'Compartida entre Estado y CCAA'],
+    correct: 1,
+    explain: 'El Concierto Económico (Ley 12/2002) establece que los Territorios Históricos tienen competencia normativa propia sobre el IRPF, pudiendo regular tipos, deducciones y bonificaciones dentro de los límites del Concierto.'
+  },
+  {
+    q: 'El plazo general para resolver un procedimiento administrativo cuando la norma no dice otra cosa es:',
+    opts: ['1 mes', '3 meses', '6 meses', '1 año'],
+    correct: 1,
+    explain: 'Artículo 21.3 de la Ley 39/2015 del Procedimiento Administrativo Común: el plazo máximo para resolver y notificar es de 3 meses cuando la norma reguladora no fije un plazo específico.'
+  },
+  {
+    q: '¿Qué principio del Derecho Foral regula la capacidad de los Territorios Históricos para mantener, establecer y regular su régimen tributario?',
+    opts: ['Principio de autonomía local', 'Derechos históricos (Disposición Adicional 1ª CE)', 'Principio de subsidiariedad', 'Principio de jerarquía normativa'],
+    correct: 1,
+    explain: 'La Disposición Adicional Primera de la Constitución Española de 1978 ampara y respeta los derechos históricos de los territorios forales. De ahí deriva el régimen de Concierto Económico y la competencia tributaria foral.'
+  },
+  {
+    q: 'En la función pública foral, ¿cómo se denomina la situación del funcionario que pasa a prestar servicios en otra Administración?',
+    opts: ['Servicio activo', 'Servicios especiales', 'Servicio en otras Administraciones Públicas', 'Excedencia voluntaria'],
+    correct: 2,
+    explain: 'El artículo 88 del EBEP (Real Decreto Legislativo 5/2015) define "servicio en otras Administraciones Públicas" cuando un funcionario pasa a prestar servicios en una Administración distinta a aquella en la que obtuvo la plaza, manteniéndose en la situación de activo en la de origen.'
+  }
+];
+
+let demoIdx = 0;
+let demoScore = 0;
+let demoAnswered = new Array(demoQuestions.length).fill(null);
+let demoStart = Date.now();
+let demoActive = true;
+
+function renderDemo() {
+  const q = demoQuestions[demoIdx];
+  const container = document.getElementById('demoContainer');
+  const answer = demoAnswered[demoIdx];
+  container.innerHTML = `
+    <div class="demo-q-num">Pregunta ${demoIdx + 1} · Normativa Foral</div>
+    <div class="demo-q-text">${q.q}</div>
+    <div class="demo-opts">
+      ${q.opts.map((o,i) => {
+        let cls = 'demo-opt';
+        if (answer !== null) {
+          cls += ' disabled';
+          if (answer === i && i === q.correct) cls += ' selected-correct';
+          else if (answer === i && i !== q.correct) cls += ' selected-wrong';
+          else if (i === q.correct) cls += ' show-correct';
+        }
+        return `<button class="${cls}" data-i="${i}"${answer !== null ? ' disabled' : ''}>
+          <div class="letter">${String.fromCharCode(65+i)}</div>${o}
+        </button>`;
+      }).join('')}
+    </div>
+    ${answer !== null ? `
+      <div class="demo-feedback visible ${answer === q.correct ? 'ok' : 'ko'}">
+        <strong>${answer === q.correct ? '✓ ¡Correcto!' : '✕ Respuesta incorrecta'}</strong>
+        <div class="explain">${q.explain}</div>
+      </div>` : ''}
+  `;
+  container.querySelectorAll('.demo-opt:not(.disabled)').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const i = parseInt(btn.dataset.i);
+      demoAnswered[demoIdx] = i;
+      if (i === q.correct) demoScore++;
+      document.getElementById('demoScore').textContent = demoScore;
+      renderDemo();
+    });
+  });
+  document.getElementById('demoCurr').textContent = demoIdx + 1;
+  document.getElementById('demoTotal').textContent = demoQuestions.length;
+  document.getElementById('demoPrev').disabled = demoIdx === 0;
+  const nextBtn = document.getElementById('demoNext');
+  if (demoIdx === demoQuestions.length - 1) {
+    nextBtn.textContent = demoAnswered[demoIdx] !== null ? 'Ver resultado' : 'Siguiente →';
+  } else {
+    nextBtn.textContent = 'Siguiente →';
+  }
+}
+
+document.getElementById('demoNext').addEventListener('click', () => {
+  if (demoIdx < demoQuestions.length - 1) {
+    demoIdx++;
+    renderDemo();
+  } else {
+    const answered = demoAnswered.filter(a => a !== null).length;
+    if (answered < demoQuestions.length) {
+      alert(`Te faltan ${demoQuestions.length - answered} preguntas por responder`);
+      return;
+    }
+    const pct = Math.round((demoScore / demoQuestions.length) * 100);
+    const container = document.getElementById('demoContainer');
+    demoActive = false;
+    container.innerHTML = `
+      <div style="text-align:center;padding:20px 0">
+        <div style="font-size:3.5rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px">${demoScore}/${demoQuestions.length}</div>
+        <div style="font-size:1.3rem;font-weight:700;margin-bottom:16px">${pct >= 80 ? '¡Excelente nivel!' : pct >= 60 ? 'Buen nivel, aún hay margen' : pct >= 40 ? 'Necesitas reforzar' : 'Empezamos desde la base'}</div>
+        <p style="color:var(--text-dim);max-width:480px;margin:0 auto 24px">Con la versión completa tendrías <strong style="color:var(--text)">5.000+ preguntas</strong>, IA correctora de supuestos y un plan personalizado según tus fallos.</p>
+        <a href="#waitlist" class="btn btn-primary">Unirme a la lista con 50% dto →</a>
+      </div>
+    `;
+    document.getElementById('demoNext').disabled = true;
+  }
+});
+document.getElementById('demoPrev').addEventListener('click', () => {
+  if (demoIdx > 0) { demoIdx--; renderDemo(); }
+});
+renderDemo();
+
+setInterval(() => {
+  if (!demoActive) return;
+  const el = Math.floor((Date.now() - demoStart) / 1000);
+  const m = String(Math.floor(el / 60)).padStart(2,'0');
+  const s = String(el % 60).padStart(2,'0');
+  document.getElementById('demoTimer').textContent = `⏱ ${m}:${s}`;
+}, 1000);
+
+// Filtros oposiciones
+document.querySelectorAll('.opo-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.opo-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.opo-card').forEach(c => {
+      c.style.display = (f === 'all' || c.dataset.cat === f) ? '' : 'none';
+    });
+  });
+});
+
+// FAQ acordeón
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    q.parentElement.classList.toggle('open');
+  });
+});
+
+// Tabs pricing
+document.querySelectorAll('.price-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.price-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const which = tab.dataset.tab;
+    document.getElementById('priceB2C').style.display = which === 'b2c' ? 'grid' : 'none';
+    document.getElementById('priceB2B').style.display = which === 'b2b' ? 'grid' : 'none';
+  });
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = 1;
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.feature, .step, .opo-card, .test-card, .milestone, .stat-block').forEach(el => {
+  el.style.opacity = 0;
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity .6s ease, transform .6s ease';
+  observer.observe(el);
+});
+</script>
 
 </body>
 </html>
