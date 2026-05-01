@@ -132,6 +132,22 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .modal-emoji{font-size:64px;margin-bottom:12px}
 .modal-title{font-size:22px;font-weight:900;margin-bottom:8px}
 .modal-text{font-size:14px;color:var(--text-light);font-weight:700;margin-bottom:20px}
+
+/* ===== MASCOT (Foralín, el pájaro opositor) ===== */
+.mascot-wrap{display:flex;align-items:flex-end;gap:10px;margin:0 0 18px 0;min-height:120px}
+.mascot{width:108px;flex-shrink:0;animation:mascot-idle 3s ease-in-out infinite}
+.mascot.bounce{animation:mascot-bounce .6s ease}
+.mascot.shake{animation:mascot-shake .5s ease}
+@keyframes mascot-idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes mascot-bounce{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-14px) rotate(-6deg)}60%{transform:translateY(-4px) rotate(4deg)}}
+@keyframes mascot-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px) rotate(-3deg)}75%{transform:translateX(6px) rotate(3deg)}}
+.mascot-bubble{position:relative;background:#fff;border:2px solid var(--line);border-bottom-width:3px;border-radius:14px;padding:10px 12px;font-size:13px;font-weight:800;color:var(--text);max-width:220px;line-height:1.35}
+.mascot-bubble:before{content:'';position:absolute;left:-10px;bottom:14px;border:6px solid transparent;border-right-color:var(--line)}
+.mascot-bubble:after{content:'';position:absolute;left:-7px;bottom:14px;border:6px solid transparent;border-right-color:#fff}
+.mascot-bubble.ok{border-color:var(--green);color:var(--green-d)}
+.mascot-bubble.ok:before{border-right-color:var(--green)}
+.mascot-bubble.bad{border-color:var(--red);color:var(--red-d)}
+.mascot-bubble.bad:before{border-right-color:var(--red)}
 </style>
 </head>
 <body>
@@ -159,6 +175,85 @@ const STATE = {
 };
 
 let state = STATE.load();
+
+// ============ MASCOT · Foralín ============
+// Pájaro opositor: traje gris, corbata roja, gafas, carpeta de apuntes
+function mascotSVG(){
+  return `
+  <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-label="Foralín">
+    <defs>
+      <radialGradient id="bodyG" cx="50%" cy="40%" r="65%">
+        <stop offset="0%" stop-color="#5BC0EB"/>
+        <stop offset="100%" stop-color="#1CB0F6"/>
+      </radialGradient>
+      <linearGradient id="suitG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#3A4A6B"/>
+        <stop offset="100%" stop-color="#2A364F"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Patas -->
+    <path d="M48 128 L48 134 M44 134 L52 134 M40 132 L48 134" stroke="#FF9600" stroke-width="3" stroke-linecap="round"/>
+    <path d="M72 128 L72 134 M68 134 L76 134 M80 132 L72 134" stroke="#FF9600" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Carpeta de apuntes -->
+    <g transform="translate(78 70) rotate(8)">
+      <rect x="0" y="0" width="28" height="36" rx="2" fill="#FFC800" stroke="#D4A700" stroke-width="2"/>
+      <rect x="0" y="0" width="28" height="6" fill="#E0AC00"/>
+      <line x1="4" y1="14" x2="24" y2="14" stroke="#3C3C3C" stroke-width="1.2"/>
+      <line x1="4" y1="20" x2="24" y2="20" stroke="#3C3C3C" stroke-width="1.2"/>
+      <line x1="4" y1="26" x2="20" y2="26" stroke="#3C3C3C" stroke-width="1.2"/>
+      <text x="14" y="11" text-anchor="middle" font-family="Nunito,sans-serif" font-weight="900" font-size="5" fill="#3C3C3C">OPOS</text>
+    </g>
+
+    <!-- Cuerpo (con traje) -->
+    <ellipse cx="60" cy="92" rx="32" ry="34" fill="url(#suitG)"/>
+    <!-- Camisa -->
+    <path d="M40 92 Q60 80 80 92 L80 120 Q60 126 40 120 Z" fill="#fff"/>
+    <!-- Solapas traje -->
+    <path d="M42 92 L52 102 L48 118 L40 118 Z" fill="url(#suitG)"/>
+    <path d="M78 92 L68 102 L72 118 L80 118 Z" fill="url(#suitG)"/>
+    <!-- Corbata -->
+    <path d="M58 96 L62 96 L64 102 L60 116 L56 102 Z" fill="#FF4B4B"/>
+    <path d="M58 96 L62 96 L63 99 L57 99 Z" fill="#EA2B2B"/>
+
+    <!-- Ala con la carpeta -->
+    <ellipse cx="84" cy="86" rx="9" ry="13" fill="url(#bodyG)" transform="rotate(20 84 86)"/>
+
+    <!-- Cabeza -->
+    <circle cx="60" cy="48" r="30" fill="url(#bodyG)"/>
+    <!-- Mejilla destello -->
+    <ellipse cx="48" cy="56" rx="6" ry="4" fill="#fff" opacity="0.18"/>
+
+    <!-- Mechón -->
+    <path d="M58 22 Q62 14 66 22 Q70 18 70 26" fill="none" stroke="#0E8DCB" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Gafas (look opositor) -->
+    <circle cx="50" cy="46" r="9" fill="#fff" stroke="#3C3C3C" stroke-width="2.2"/>
+    <circle cx="70" cy="46" r="9" fill="#fff" stroke="#3C3C3C" stroke-width="2.2"/>
+    <line x1="59" y1="46" x2="61" y2="46" stroke="#3C3C3C" stroke-width="2"/>
+    <line x1="41" y1="44" x2="38" y2="42" stroke="#3C3C3C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="79" y1="44" x2="82" y2="42" stroke="#3C3C3C" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Ojos -->
+    <circle cx="50" cy="46" r="3.5" fill="#3C3C3C" class="eye eye-l"/>
+    <circle cx="70" cy="46" r="3.5" fill="#3C3C3C" class="eye eye-r"/>
+    <circle cx="51" cy="45" r="1" fill="#fff"/>
+    <circle cx="71" cy="45" r="1" fill="#fff"/>
+
+    <!-- Pico -->
+    <path d="M55 56 L65 56 L60 64 Z" fill="#FF9600" stroke="#E08600" stroke-width="1.2" stroke-linejoin="round"/>
+  </svg>
+  `;
+}
+
+const MASCOT_LINES = {
+  start: ['¡A por todas, opositor/a!','¿Listo/a para hincar codos?','Vamos al lío con el temario.','Hoy toca repasar. ¡Sin miedo!'],
+  ok: ['¡Bien hecho!','¡Eso es!','¡Apruebas seguro!','¡Genio del temario!','Otra al saco 💼'],
+  bad: ['Tranqui, esa cae siempre','Apúntalo en mi carpeta','Repasa esto un poco','Hasta los inspectores fallan','¡Al ataque otra vez!']
+};
+function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
 
 function regenLives(){
   if(state.vidas>=5) return;
@@ -340,6 +435,10 @@ function renderLesson(ctx){
         <span class="topbar-stat lives" style="font-size:14px">❤️${state.vidas}</span>
       </div>
       <div class="lesson-content">
+        <div class="mascot-wrap">
+          <div class="mascot" id="mascot">${mascotSVG()}</div>
+          <div class="mascot-bubble" id="mascot-bubble">${pick(MASCOT_LINES.start)}</div>
+        </div>
         <div class="q-text">${q.pregunta}</div>
         <div class="options" id="options">
           ${q.opciones.map((o,i)=>`
@@ -392,6 +491,17 @@ function answerQ(ctx){
     if(i===q.correcta) b.classList.add('ok');
     if(i===ctx.selectedIdx && !ok) b.classList.add('bad');
   });
+
+  const mascot = document.getElementById('mascot');
+  const bubble = document.getElementById('mascot-bubble');
+  if(mascot && bubble){
+    mascot.classList.remove('bounce','shake');
+    void mascot.offsetWidth;
+    mascot.classList.add(ok?'bounce':'shake');
+    bubble.classList.remove('ok','bad');
+    bubble.classList.add(ok?'ok':'bad');
+    bubble.textContent = pick(ok?MASCOT_LINES.ok:MASCOT_LINES.bad);
+  }
 
   const ab = document.getElementById('action-bar');
   ab.innerHTML = `
