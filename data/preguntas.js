@@ -198,6 +198,99 @@ window.PREGUNTAS = [
 
 // b3u20 — Aduanas
 { unidad: 'b3u20', pregunta: '¿Qué normativa regula el régimen aduanero europeo?', opciones: ['Ley General Tributaria','Código Aduanero de la Unión (Reglamento UE 952/2013)','Ley del IVA','Solo normativa interna'], correcta: 1, explicacion: 'CAU - Reglamento (UE) 952/2013.' },
-{ unidad: 'b3u20', pregunta: '¿Quién gestiona los derechos arancelarios en España?', opciones: ['Hacienda Foral','La AEAT (Departamento de Aduanas)','El Ministerio de Industria','La UE directamente'], correcta: 1, explicacion: 'Aduanas es competencia exclusiva del Estado, gestionada por la AEAT (Dpto. de Aduanas e IIEE).' }
+{ unidad: 'b3u20', pregunta: '¿Quién gestiona los derechos arancelarios en España?', opciones: ['Hacienda Foral','La AEAT (Departamento de Aduanas)','El Ministerio de Industria','La UE directamente'], correcta: 1, explicacion: 'Aduanas es competencia exclusiva del Estado, gestionada por la AEAT (Dpto. de Aduanas e IIEE).' },
+{ unidad: 'b3u20', pregunta: '¿Qué es el DUA?', opciones: ['Documento Único Administrativo, declaración aduanera','Un certificado de origen','Una factura comercial','Un permiso de importación'], correcta: 0, explicacion: 'DUA: Documento Único Administrativo, declaración aduanera principal en la UE.' },
+{ unidad: 'b3u20', pregunta: '¿Qué es el TARIC?', opciones: ['Un impuesto','La nomenclatura arancelaria comunitaria integrada','Una autoridad aduanera','Un certificado'], correcta: 1, explicacion: 'TARIC: Tarifa Integrada Comunitaria, codifica las medidas comunitarias y arancelarias.' },
+
+// ===== AMPLIACIÓN: temas con más preguntas =====
+
+// b3u14 IRPF extra
+{ unidad: 'b3u14', pregunta: 'En IRPF Bizkaia, ¿qué se considera renta exenta?', opciones: ['Todas las indemnizaciones','Indemnizaciones por despido en cuantía obligatoria, becas públicas, prestaciones por hijos a cargo, entre otras','Solo las indemnizaciones laborales','Solo las prestaciones públicas'], correcta: 1, explicacion: 'Art. 9 NF IRPF Bizkaia enumera rentas exentas.' },
+{ unidad: 'b3u14', pregunta: '¿Qué tipo de renta es la renta de actividades económicas?', opciones: ['Renta del ahorro','Renta general','Exenta','No tributable'], correcta: 1, explicacion: 'Las rentas de actividades económicas se integran en la renta general.' },
+{ unidad: 'b3u14', pregunta: 'En Bizkaia, ¿cuándo se aplica el régimen de imputación de rentas inmobiliarias?', opciones: ['Sobre vivienda habitual','Sobre inmuebles urbanos no afectos ni alquilados, distintos de la vivienda habitual','Sobre cualquier inmueble','Nunca'], correcta: 1, explicacion: 'Inmuebles urbanos a disposición de sus titulares, distintos de la vivienda habitual y no afectos a actividades.' },
+{ unidad: 'b3u14', pregunta: 'La unidad familiar en IRPF Bizkaia comprende...', opciones: ['Solo cónyuges','Cónyuges no separados legalmente y sus hijos menores no emancipados o mayores incapacitados, o progenitor con sus hijos en monoparental','Padres e hijos siempre','Cualquier convivencia'], correcta: 1, explicacion: 'Art. 98 NF IRPF Bizkaia.' },
+
+// b3u15 IRPF Base extra
+{ unidad: 'b3u15', pregunta: 'En la base liquidable del IRPF, las reducciones por aportaciones a EPSV se aplican...', opciones: ['Sin límite','Con límite anual establecido en la Norma Foral','No se permiten','Solo para autónomos'], correcta: 1, explicacion: 'NF IRPF Bizkaia: las aportaciones a EPSV (Entidades de Previsión Social Voluntaria) tienen límites anuales de reducción.' },
+{ unidad: 'b3u15', pregunta: '¿Qué tipo de renta tributa al ahorro?', opciones: ['Trabajo','Rendimientos de capital mobiliario y ganancias patrimoniales por transmisión','Actividades económicas','Imputaciones'], correcta: 1, explicacion: 'Renta del ahorro: capital mobiliario (intereses, dividendos) y ganancias/pérdidas por transmisión.' },
+{ unidad: 'b3u15', pregunta: '¿Qué cuota se obtiene aplicando la escala a la base liquidable general?', opciones: ['Cuota líquida','Cuota íntegra','Cuota diferencial','Cuota tributaria'], correcta: 1, explicacion: 'Cuota íntegra = base liquidable × escala. Cuota líquida = íntegra − deducciones.' },
+
+// b3u17 IS extra
+{ unidad: 'b3u17', pregunta: '¿Qué es la microempresa en el IS Bizkaia?', opciones: ['Empresa con menos de 10 empleados y volumen ≤ 2M€','Empresa con menos de 5 empleados','Cualquier autónomo','No existe ese concepto foral'], correcta: 0, explicacion: 'NF 11/2013 IS Bizkaia: microempresa: hasta 10 empleados y 2M€ volumen de operaciones.' },
+{ unidad: 'b3u17', pregunta: 'El régimen de consolidación fiscal en Bizkaia exige...', opciones: ['Una única sociedad','Grupo de sociedades con dominante mínimo 75% participación, residentes en territorio foral','Cualquier empresa','Solo cooperativas'], correcta: 1, explicacion: 'Régimen especial de grupos en NF IS Bizkaia.' },
+{ unidad: 'b3u17', pregunta: 'El periodo impositivo del IS coincide normalmente con...', opciones: ['Año natural','Ejercicio económico de la entidad','Trimestre','Semestre'], correcta: 1, explicacion: 'Coincide con el ejercicio económico, sin exceder de 12 meses.' },
+{ unidad: 'b3u17', pregunta: '¿Qué es la deducción por reinversión de beneficios extraordinarios?', opciones: ['Una reducción en base','Una deducción en cuota cuando se reinvierten beneficios de transmisión de elementos del inmovilizado','Una bonificación de IRPF','Inexistente'], correcta: 1, explicacion: 'Mecanismo foral para incentivar la reinversión de beneficios extraordinarios.' },
+
+// b3u18 IVA extra
+{ unidad: 'b3u18', pregunta: '¿Cuál es el lugar de realización de la entrega de bienes con transporte?', opciones: ['Donde se entrega','Donde se inicia la expedición o transporte','Donde el comprador tiene sede','Donde se factura'], correcta: 1, explicacion: 'Art. 68.Dos LIVA: lugar de inicio del transporte.' },
+{ unidad: 'b3u18', pregunta: '¿Qué es una operación intracomunitaria?', opciones: ['Cualquier venta','Operaciones entre Estados miembros UE entre empresarios','Compras a particulares','Importaciones de fuera UE'], correcta: 1, explicacion: 'Adquisición/entrega intracomunitaria: entre empresarios en distintos EEMM.' },
+{ unidad: 'b3u18', pregunta: '¿Qué requiere una entrega intracomunitaria de bienes para estar exenta?', opciones: ['Nada','Que el destinatario sea empresario identificado a efectos de IVA en otro EM, transporte fuera de España','Solo factura','Solo declaración'], correcta: 1, explicacion: 'Art. 25 LIVA: condiciones de exención de EIB.' },
+
+// b3u19 IVA Base/Tipos extra
+{ unidad: 'b3u19', pregunta: '¿Qué tipo reducido se aplica (10%) en general?', opciones: ['Productos de lujo','Hostelería, transporte, alimentación general, vivienda nueva, etc.','Servicios profesionales','Energía'], correcta: 1, explicacion: 'Art. 91.Uno LIVA: tipo del 10%.' },
+{ unidad: 'b3u19', pregunta: 'El IVA repercutido y el IVA soportado se relacionan con...', opciones: ['IVA pagado y cobrado al cliente respectivamente','IVA cobrado al cliente y IVA pagado a proveedores respectivamente','Lo mismo','Solo en exportaciones'], correcta: 1, explicacion: 'Repercutido = al cliente; soportado = a proveedores.' },
+{ unidad: 'b3u19', pregunta: 'En Bizkaia, ¿qué Norma Foral regula el IVA?', opciones: ['NF 7/1994','NF 13/2013','Ley 37/1992 estatal (concertado)','NF 2/2005'], correcta: 0, explicacion: 'NF 7/1994 del IVA, en línea con la Ley 37/1992 estatal por ser tributo concertado de normativa común.' },
+{ unidad: 'b3u19', pregunta: '¿Cuándo procede la inversión del sujeto pasivo en IVA?', opciones: ['En operaciones interiores comunes','En supuestos como entregas de oro de inversión, ejecuciones de obra inmobiliaria a empresarios, ciertos servicios B2B intracomunitarios','Siempre','Nunca'], correcta: 1, explicacion: 'Art. 84.Uno.2º LIVA enumera los supuestos.' },
+
+// b3u3 LGT extra
+{ unidad: 'b3u3', pregunta: '¿Qué principio impide tributar dos veces por el mismo hecho?', opciones: ['Capacidad económica','No confiscatoriedad','Doble imposición / non bis in idem tributario','Reserva de ley'], correcta: 2, explicacion: 'Principio de no doble imposición.' },
+{ unidad: 'b3u3', pregunta: 'La reserva de ley tributaria significa que solo por ley puede regularse...', opciones: ['Cualquier aspecto fiscal','Hecho imponible, sujeto pasivo, base, tipo, cuota, beneficios fiscales','Solo el tipo','Solo la base'], correcta: 1, explicacion: 'Art. 8 LGT.' },
+
+// b1u1 Constitución extra
+{ unidad: 'b1u1', pregunta: '¿Qué establece el artículo 9.3 CE?', opciones: ['Solo legalidad','Principios: legalidad, jerarquía normativa, publicidad, irretroactividad sancionadora desfavorable, seguridad jurídica, responsabilidad e interdicción de la arbitrariedad','Solo seguridad jurídica','Solo igualdad'], correcta: 1, explicacion: 'Art. 9.3 CE.' },
+{ unidad: 'b1u1', pregunta: '¿Qué instituciones componen el Tribunal Constitucional?', opciones: ['12 magistrados','11 magistrados','12 magistrados nombrados por 9 años, renovados por tercios','15 vocales'], correcta: 2, explicacion: 'Art. 159 CE: 12 magistrados, 9 años, renovación por tercios cada 3 años.' },
+
+// b3u4 Obligados extra
+{ unidad: 'b3u4', pregunta: '¿Quién es retenedor a efectos tributarios?', opciones: ['Cualquier pagador','Persona o entidad que por imposición legal está obligada a detraer e ingresar parte de los importes que satisface','Solo empresas','El sujeto pasivo'], correcta: 1, explicacion: 'Art. 37 LGT.' },
+{ unidad: 'b3u4', pregunta: '¿Qué responsabilidad tienen los administradores de personas jurídicas en deudas tributarias?', opciones: ['Ninguna','Subsidiaria por las deudas no satisfechas si no realizaron los actos necesarios para su cumplimiento','Solidaria siempre','Penal'], correcta: 1, explicacion: 'Art. 43 LGT: responsabilidad subsidiaria de administradores.' },
+
+// b3u2 AEAT extra
+{ unidad: 'b3u2', pregunta: '¿Quién nombra al Presidente de la AEAT?', opciones: ['El Rey','El Gobierno mediante Real Decreto, a propuesta del Ministro de Hacienda','El Congreso','Las CCAA'], correcta: 1, explicacion: 'Real Decreto del Consejo de Ministros, propuesta del Ministerio de Hacienda.' },
+
+// b3u5 Obligaciones tributarias extra
+{ unidad: 'b3u5', pregunta: '¿Qué son los pagos a cuenta?', opciones: ['Pagos voluntarios','Pagos fraccionados, retenciones e ingresos a cuenta como anticipo de la cuota','Sanciones','Recargos'], correcta: 1, explicacion: 'Art. 23 LGT: tres modalidades de pagos a cuenta.' },
+
+// b3u6 Aplicación tributos extra
+{ unidad: 'b3u6', pregunta: '¿Cuándo se interrumpe la prescripción tributaria?', opciones: ['Solo por el pago','Por cualquier acción de la Administración con conocimiento formal del obligado, o por acto del propio obligado','Solo en sanciones','Nunca'], correcta: 1, explicacion: 'Art. 68 LGT: actos de la Administración o del obligado interrumpen la prescripción.' },
+{ unidad: 'b3u6', pregunta: '¿Cuáles son los procedimientos de gestión más comunes?', opciones: ['Solo verificación de datos','Verificación de datos, comprobación limitada, comprobación de valores, devolución y rectificación','Solo inspección','Solo apremio'], correcta: 1, explicacion: 'Cap. III Tít. III LGT.' },
+
+// b3u7 Gestión tributaria extra
+{ unidad: 'b3u7', pregunta: '¿En qué consiste la verificación de datos?', opciones: ['Procedimiento de inspección profunda','Comprobación rápida sobre defectos formales o discrepancias entre datos declarados y los que constan en la Administración','Una sanción','Un recurso'], correcta: 1, explicacion: 'Art. 131 LGT.' },
+{ unidad: 'b3u7', pregunta: '¿Qué es la comprobación de valores?', opciones: ['Un recurso','Procedimiento para comprobar el valor de las rentas, productos, bienes y elementos del hecho imponible','Solo en IS','Inexistente'], correcta: 1, explicacion: 'Art. 134 LGT.' },
+
+// b3u8 Inspección extra
+{ unidad: 'b3u8', pregunta: '¿Cuál es el alcance del procedimiento inspector?', opciones: ['Siempre general','General o parcial, según se comprueben todos o algunos elementos del tributo','Solo general','Solo el periodo'], correcta: 1, explicacion: 'Art. 148 LGT.' },
+{ unidad: 'b3u8', pregunta: '¿Quién puede ser representante del obligado en la inspección?', opciones: ['Solo abogado','Cualquier persona con capacidad de obrar, debidamente acreditada','Solo familiar','El propio obligado'], correcta: 1, explicacion: 'Art. 46 LGT: representación voluntaria con capacidad de obrar.' },
+
+// b3u9 Recaudación extra
+{ unidad: 'b3u9', pregunta: '¿Qué es la providencia de apremio?', opciones: ['Una sanción','Acto administrativo que despacha la ejecución contra el patrimonio del obligado','Un recurso','Una notificación cualquiera'], correcta: 1, explicacion: 'Art. 167 LGT: título suficiente para iniciar el procedimiento de apremio.' },
+{ unidad: 'b3u9', pregunta: '¿Cuándo prescribe el derecho a recaudar?', opciones: ['1 año','2 años','4 años','10 años'], correcta: 2, explicacion: 'Art. 66 LGT: 4 años para exigir el pago de las deudas liquidadas y autoliquidadas.' },
+
+// b3u10 Aplazamientos extra
+{ unidad: 'b3u10', pregunta: '¿Qué garantía suele exigirse en aplazamientos de cierta cuantía?', opciones: ['Ninguna','Aval bancario u otra garantía suficiente, salvo dispensa por dificultades tesorería','Hipoteca obligatoria','Seguro'], correcta: 1, explicacion: 'Art. 82 LGT y normativa de desarrollo: aval o garantía equivalente; dispensa motivada en ciertos casos.' },
+{ unidad: 'b3u10', pregunta: '¿Qué efecto tiene la solicitud de aplazamiento dentro del periodo voluntario?', opciones: ['Suspende automáticamente','Impide el inicio del periodo ejecutivo mientras no se resuelva','Es una sanción','No tiene efecto'], correcta: 1, explicacion: 'Reglamento General de Recaudación: la solicitud en voluntario impide el ejecutivo hasta resolución.' },
+{ unidad: 'b3u10', pregunta: '¿Qué interés se devenga durante el aplazamiento?', opciones: ['Ninguno','Interés de demora, salvo aval bancario en cuyo caso se aplica el interés legal del dinero','Solo recargo','Interés de mora del 20%'], correcta: 1, explicacion: 'Art. 65 LGT.' },
+
+// b3u11 Apremio extra
+{ unidad: 'b3u11', pregunta: '¿Qué bienes se embargan primero en el procedimiento de apremio?', opciones: ['Inmuebles siempre','Por orden: dinero efectivo o cuentas, créditos, sueldos, inmuebles, intereses, joyas, etc.','Solo lo que diga el deudor','Cualquier bien'], correcta: 1, explicacion: 'Art. 169 LGT establece el orden de prelación de embargo.' },
+{ unidad: 'b3u11', pregunta: '¿Cuándo finaliza el procedimiento de apremio?', opciones: ['A los 30 días','Por pago, declaración de fallido, acuerdo que extinga la deuda o cancelación','Tras 1 año','Nunca'], correcta: 1, explicacion: 'Art. 173 LGT.' },
+{ unidad: 'b3u11', pregunta: '¿Qué motivos tasados existen para oponerse al apremio?', opciones: ['Cualquier motivo','Pago, prescripción, aplazamiento, falta de notificación, anulación, error u omisión en la providencia','Solo el pago','Disconformidad'], correcta: 1, explicacion: 'Art. 167.3 LGT enumera 6 motivos tasados.' },
+
+// b3u12 Sanciones extra
+{ unidad: 'b3u12', pregunta: '¿Qué reducción se aplica por pago en periodo voluntario sin recurso?', opciones: ['10%','20%','40%','50%'], correcta: 2, explicacion: 'Art. 188.3 LGT: reducción del 40% por pronto pago y no impugnación.' },
+{ unidad: 'b3u12', pregunta: '¿Cuál es el plazo de prescripción de las sanciones tributarias?', opciones: ['1 año','2 años','4 años','5 años'], correcta: 2, explicacion: 'Art. 189 LGT: 4 años.' },
+
+// b3u13 Revisión extra
+{ unidad: 'b3u13', pregunta: '¿Qué procedimientos especiales de revisión existen?', opciones: ['Solo recurso','Revisión de actos nulos de pleno derecho, declaración de lesividad, revocación, rectificación errores y devolución de ingresos indebidos','Solo recurso de reposición','Inexistentes'], correcta: 1, explicacion: 'Art. 216 LGT enumera procedimientos especiales.' },
+{ unidad: 'b3u13', pregunta: '¿Cuándo cabe la revocación?', opciones: ['Cualquier momento','Cuando los actos infringen manifiestamente la ley, circunstancias sobrevenidas afecten a una situación jurídica particular o se haya producido indefensión','Solo en sanciones','Nunca'], correcta: 1, explicacion: 'Art. 219 LGT.' },
+
+// b3u16 IRPF Gestión extra
+{ unidad: 'b3u16', pregunta: '¿Quiénes están obligados a declarar el IRPF en Bizkaia?', opciones: ['Todos los contribuyentes','Quienes superen los umbrales fijados anualmente por la Hacienda Foral, salvo excepciones','Solo asalariados','Solo autónomos'], correcta: 1, explicacion: 'NF IRPF + Decreto Foral anual de campaña.' },
+{ unidad: 'b3u16', pregunta: '¿Qué es el modelo 100?', opciones: ['Modelo de IVA','Declaración anual de IRPF (modelo equivalente foral)','Modelo de IS','Modelo de retenciones'], correcta: 1, explicacion: 'En estatal es el modelo 100; en Bizkaia se usa el modelo 109 / formularios forales equivalentes.' },
+{ unidad: 'b3u16', pregunta: '¿Qué retención se aplica a los rendimientos del trabajo?', opciones: ['Tipo fijo 20%','Porcentaje variable según ingresos y circunstancias personales y familiares','Sin retención','Solo IRPF anual'], correcta: 1, explicacion: 'Las retenciones del trabajo se calculan según escala progresiva foral.' },
+
+// b3u20 Aduanas extra
+{ unidad: 'b3u20', pregunta: '¿Qué son los Impuestos Especiales (IIEE)?', opciones: ['Impuestos directos','Impuestos indirectos sobre consumos específicos: alcohol, tabaco, hidrocarburos, electricidad, etc.','Tasas','Contribuciones'], correcta: 1, explicacion: 'Ley 38/1992 de IIEE (en Bizkaia, normativa concertada equivalente).' },
+{ unidad: 'b3u20', pregunta: '¿Es la unión aduanera europea un mercado único?', opciones: ['No, son zonas separadas','Sí, con arancel exterior común y libre circulación interna de mercancías','Solo libre comercio','Solo unión monetaria'], correcta: 1, explicacion: 'La unión aduanera UE: arancel exterior común y libre circulación interior.' }
 
 ];
