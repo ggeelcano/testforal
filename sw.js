@@ -1,14 +1,13 @@
-// Service Worker TestForal — cache offline-first de la app
-const CACHE = 'testforal-v1';
+// Service Worker TestForal — cache offline-first de la app (v2 Duolingo)
+const CACHE = 'testforal-v2';
 const ASSETS = [
   './app.html',
-  './app.js',
-  './preguntas.js',
   './manifest.json',
-  './icon.svg',
-  './icon-192.svg',
-  './icon-512.svg',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap'
+  './data/oposiciones.js',
+  './data/preguntas.js',
+  './icon-192.png',
+  './icon-512.png',
+  'https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap'
 ];
 
 self.addEventListener('install', e => {

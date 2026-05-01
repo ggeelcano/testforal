@@ -2,370 +2,481 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TestForal · App de tests</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>TestForal · Hacienda Bizkaia</title>
 <link rel="manifest" href="manifest.json">
-<link rel="icon" type="image/svg+xml" href="icon.svg">
-<meta name="theme-color" content="#0a0e1a">
+<link rel="icon" type="image/png" href="icon-512.png">
+<meta name="theme-color" content="#58CC02">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="TestForal">
 <link rel="apple-touch-icon" href="icon-512.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',system-ui,sans-serif;background:#0a0e1a;color:#e4e7ee;line-height:1.6;min-height:100vh}
-
-.wrap{max-width:780px;margin:0 auto;padding:24px;min-height:100vh;display:flex;flex-direction:column}
-
-header{display:flex;justify-content:space-between;align-items:center;padding:16px 0;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,.08)}
-.logo{font-weight:900;font-size:1.2rem;background:linear-gradient(135deg,#00d9ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.logo span{color:#e4e7ee;-webkit-text-fill-color:#e4e7ee}
-.timer{font-family:'Courier New',monospace;color:#00ff88;font-weight:700;font-size:1.1rem;background:rgba(0,255,136,.08);padding:8px 16px;border-radius:10px;border:1px solid rgba(0,255,136,.2)}
-.timer.warn{color:#fbbf24;background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.2)}
-.timer.danger{color:#ef4444;background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.2)}
-
-/* Progress */
-.progress{display:flex;justify-content:space-between;margin-bottom:12px;font-size:.85rem;color:#a0a8b8}
-.bar{height:6px;background:rgba(255,255,255,.05);border-radius:100px;overflow:hidden;margin-bottom:32px}
-.bar-fill{height:100%;background:linear-gradient(90deg,#00d9ff,#00ff88);transition:width .3s;border-radius:100px}
-
-/* Screens */
-.screen{display:none;flex:1;flex-direction:column}
-.screen.active{display:flex}
-
-/* Home */
-.home{align-items:center;justify-content:center;text-align:center;padding:40px 0}
-.home h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;margin-bottom:16px;letter-spacing:-.02em}
-.home h1 .gradient{background:linear-gradient(135deg,#00d9ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.home p{color:#a0a8b8;margin-bottom:32px;max-width:500px}
-
-.opo-picker{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;width:100%;max-width:600px;margin-bottom:32px}
-.opo-btn{padding:20px 16px;background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.1);border-radius:14px;color:#e4e7ee;cursor:pointer;transition:all .2s;text-align:left;font-family:inherit}
-.opo-btn:hover{border-color:rgba(0,217,255,.4);background:rgba(0,217,255,.05)}
-.opo-btn:disabled{opacity:.4;cursor:not-allowed}
-.opo-btn .icon{font-size:1.8rem;display:block;margin-bottom:8px}
-.opo-btn .n{font-weight:700;font-size:.95rem}
-.opo-btn .c{font-size:.8rem;color:#00ff88;margin-top:4px}
-.opo-btn .soon{font-size:.7rem;color:#fbbf24;margin-top:4px}
-
-.start-btn{padding:16px 40px;background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a;font-weight:800;font-size:1.05rem;border:none;border-radius:12px;cursor:pointer;transition:transform .2s;font-family:inherit}
-.start-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,217,255,.3)}
-.start-btn:disabled{opacity:.3;cursor:not-allowed;transform:none;box-shadow:none}
-
-.mode-row{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;justify-content:center}
-.mode{padding:10px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:100px;cursor:pointer;font-size:.9rem;transition:all .2s;font-family:inherit;color:#e4e7ee}
-.mode.sel{background:rgba(0,217,255,.1);border-color:#00d9ff;color:#00d9ff}
-
-/* Quiz */
-.quiz{gap:24px}
-.question{background:linear-gradient(135deg,#121828,#0f1422);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;box-shadow:0 20px 40px rgba(0,0,0,.3)}
-.q-num{font-size:.85rem;color:#00d9ff;font-weight:700;margin-bottom:12px;letter-spacing:.05em}
-.q-text{font-size:1.15rem;font-weight:600;line-height:1.5;margin-bottom:24px}
-.options{display:flex;flex-direction:column;gap:10px}
-.opt{padding:16px 18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;cursor:pointer;transition:all .2s;display:flex;align-items:flex-start;gap:12px;font-size:.98rem;text-align:left;font-family:inherit;color:#e4e7ee;line-height:1.45}
-.opt:hover:not(.locked){background:rgba(0,217,255,.06);border-color:rgba(0,217,255,.3)}
-.opt .letter{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0;margin-top:-2px}
-.opt.selected{background:rgba(0,217,255,.1);border-color:#00d9ff}
-.opt.selected .letter{background:#00d9ff;color:#0a0e1a}
-.opt.correct{background:rgba(0,255,136,.1);border-color:#00ff88;color:#00ff88}
-.opt.correct .letter{background:#00ff88;color:#0a0e1a}
-.opt.wrong{background:rgba(239,68,68,.1);border-color:#ef4444;color:#ef4444}
-.opt.wrong .letter{background:#ef4444;color:#fff}
-.opt.locked{cursor:default}
-
-.explain{margin-top:18px;padding:14px 16px;background:rgba(0,217,255,.05);border-left:3px solid #00d9ff;border-radius:8px;font-size:.9rem;color:#a0cee8;display:none}
-.explain.show{display:block}
-.explain b{color:#00d9ff}
-
-.controls{display:flex;gap:12px;justify-content:space-between}
-.btn{padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;cursor:pointer;border:none;transition:all .2s;font-family:inherit}
-.btn-primary{background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a}
-.btn-primary:hover{transform:translateY(-1px)}
-.btn-primary:disabled{opacity:.3;cursor:not-allowed;transform:none}
-.btn-ghost{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#e4e7ee}
-.btn-ghost:hover{background:rgba(255,255,255,.08)}
-
-/* Result */
-.result{align-items:center;text-align:center;padding:20px 0}
-.score-ring{width:180px;height:180px;position:relative;margin-bottom:24px}
-.score-ring svg{transform:rotate(-90deg);width:100%;height:100%}
-.score-ring circle{fill:none;stroke-width:10}
-.score-ring .bg{stroke:rgba(255,255,255,.05)}
-.score-ring .fg{stroke:url(#grad);stroke-linecap:round;transition:stroke-dashoffset 1s ease}
-.score-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.score-pct{font-size:3rem;font-weight:900;background:linear-gradient(135deg,#00d9ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
-.score-lbl{font-size:.85rem;color:#a0a8b8;margin-top:4px}
-.result h2{font-size:2rem;font-weight:800;margin-bottom:12px}
-.result-msg{color:#a0a8b8;max-width:500px;margin-bottom:32px}
-
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px;width:100%;max-width:500px}
-.stat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
-.stat-v{font-size:1.5rem;font-weight:800}
-.stat-v.ok{color:#00ff88}
-.stat-v.bad{color:#ef4444}
-.stat-v.time{color:#00d9ff}
-.stat-l{font-size:.75rem;color:#a0a8b8;margin-top:4px}
-
-.result-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-
-/* Review list */
-.review{margin-top:32px;width:100%}
-.review h3{font-size:1.1rem;margin-bottom:16px;color:#a0a8b8}
-.r-item{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:14px 16px;margin-bottom:8px;font-size:.85rem;text-align:left;display:flex;gap:10px}
-.r-item.ok{border-left:3px solid #00ff88}
-.r-item.bad{border-left:3px solid #ef4444}
-.r-item .mark{flex-shrink:0}
-.r-item .qtxt{color:#e4e7ee;margin-bottom:4px}
-.r-item .atxt{color:#a0a8b8;font-size:.8rem}
-
-#syncBtn:hover{background:rgba(0,217,255,.15) !important;border-color:#00d9ff !important}
-@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-#syncIcon{display:inline-block}
-
-/* Calendario */
-.home-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:20px}
-.btn-cal{padding:12px 24px;background:rgba(0,217,255,.08);border:1px solid rgba(0,217,255,.3);color:#00d9ff;font-weight:700;border-radius:10px;cursor:pointer;font-family:inherit;font-size:.95rem;transition:all .2s}
-.btn-cal:hover{background:rgba(0,217,255,.15);transform:translateY(-1px)}
-.cal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;gap:12px;flex-wrap:wrap}
-.cal-title{font-size:1.6rem;font-weight:800;letter-spacing:-.02em}
-.cal-sub{color:#a0a8b8;font-size:.9rem;margin-bottom:24px}
-.cal-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
-.cal-chip{padding:8px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:100px;color:#a0a8b8;font-size:.82rem;cursor:pointer;font-family:inherit;transition:all .2s}
-.cal-chip.active{background:rgba(0,217,255,.1);border-color:#00d9ff;color:#00d9ff}
-.cal-list{display:flex;flex-direction:column;gap:12px}
-.cal-card{background:linear-gradient(135deg,#121828,#0f1422);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px;transition:all .2s;border-left:3px solid #00d9ff}
-.cal-card:hover{border-color:rgba(0,217,255,.3);transform:translateX(2px)}
-.cal-card.abierta{border-left-color:#00ff88}
-.cal-card.examen-proximo{border-left-color:#fbbf24}
-.cal-card.prevista{border-left-color:#00d9ff}
-.cal-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;flex-wrap:wrap}
-.cal-name{font-size:1.1rem;font-weight:700;display:flex;align-items:center;gap:10px}
-.cal-icon{font-size:1.6rem}
-.cal-status{font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
-.cal-dates{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:14px 0}
-.cal-date{background:rgba(255,255,255,.03);border-radius:10px;padding:10px 12px}
-.cal-date-lbl{font-size:.7rem;color:#a0a8b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
-.cal-date-val{font-size:.92rem;font-weight:700;color:#e4e7ee}
-.cal-date-val.highlight{color:#00ff88}
-.cal-date-val.warn{color:#fbbf24}
-.cal-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:.82rem;color:#a0a8b8;padding-top:12px;border-top:1px solid rgba(255,255,255,.06)}
-.cal-meta strong{color:#e4e7ee}
-.cal-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
-.cal-btn{padding:8px 14px;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;font-family:inherit;transition:all .2s}
-.cal-btn-primary{background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a}
-.cal-btn-ghost{background:rgba(255,255,255,.05);color:#e4e7ee;border:1px solid rgba(255,255,255,.1)}
-.cal-btn:hover{transform:translateY(-1px)}
-.countdown{display:inline-block;padding:3px 10px;background:rgba(0,255,136,.1);color:#00ff88;border-radius:100px;font-size:.75rem;font-weight:700;margin-left:8px}
-.countdown.urgent{background:rgba(239,68,68,.12);color:#ef4444}
-.countdown.soon{background:rgba(251,191,36,.12);color:#fbbf24}
-
-/* IA Fiscal */
-.btn-fiscal{padding:12px 24px;background:linear-gradient(135deg,rgba(168,85,247,.15),rgba(236,72,153,.1));border:1px solid rgba(168,85,247,.4);color:#c4b5fd;font-weight:700;border-radius:10px;cursor:pointer;font-family:inherit;font-size:.95rem;transition:all .2s}
-.btn-fiscal:hover{background:linear-gradient(135deg,rgba(168,85,247,.25),rgba(236,72,153,.15));transform:translateY(-1px);color:#fff}
-.fiscal{padding:0}
-.fiscal-header{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
-.fiscal-title{font-size:1.3rem;font-weight:800;display:flex;align-items:center;gap:10px}
-.fiscal-title .robot{font-size:1.6rem}
-.powered-ai{font-size:.65rem;font-weight:700;padding:3px 10px;background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;border-radius:100px;letter-spacing:.5px;vertical-align:middle;animation:aiPulse 2s ease-in-out infinite}
-@keyframes aiPulse{0%,100%{box-shadow:0 0 0 0 rgba(168,85,247,.5)}50%{box-shadow:0 0 0 6px rgba(168,85,247,0)}}
-.btn-fiscal .ai-tag{display:inline-block;margin-left:6px;font-size:.65rem;padding:2px 8px;background:rgba(168,85,247,.25);border-radius:100px;font-weight:800;letter-spacing:.5px;color:#fff}
-.fiscal-title-sub{font-size:.75rem;color:#a0a8b8;font-weight:500;margin-top:2px}
-.fiscal-actions{display:flex;gap:8px}
-.fiscal-icon-btn{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:#a0a8b8;width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:1rem;transition:all .2s;display:flex;align-items:center;justify-content:center}
-.fiscal-icon-btn:hover{background:rgba(168,85,247,.15);border-color:#a855f7;color:#c4b5fd}
-.fiscal-chat{flex:1;overflow-y:auto;padding:8px 4px;display:flex;flex-direction:column;gap:14px;min-height:400px;max-height:calc(100vh - 280px)}
-.fiscal-welcome{text-align:center;padding:40px 20px;color:#a0a8b8}
-.fiscal-avatar{font-size:3rem;margin-bottom:12px}
-.fiscal-welcome h3{color:#e4e7ee;margin-bottom:8px;font-size:1.3rem}
-.fiscal-welcome p{font-size:.92rem;max-width:400px;margin:0 auto}
-.fiscal-msg{display:flex;animation:fadeIn .3s}
-.fiscal-msg-user{justify-content:flex-end}
-.fiscal-msg-assistant{justify-content:flex-start}
-.fiscal-bubble{max-width:85%;padding:12px 16px;border-radius:14px;font-size:.93rem;line-height:1.55}
-.fiscal-msg-user .fiscal-bubble{background:linear-gradient(135deg,#00d9ff,#00ff88);color:#0a0e1a;border-bottom-right-radius:4px;font-weight:500}
-.fiscal-msg-assistant .fiscal-bubble{background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);color:#e4e7ee;border-bottom-left-radius:4px}
-.fiscal-bubble p{margin:0 0 8px}
-.fiscal-bubble p:last-child{margin:0}
-.fiscal-bubble strong{color:#c4b5fd}
-.fiscal-msg-user .fiscal-bubble strong{color:#0a0e1a}
-.fiscal-bubble code{background:rgba(0,0,0,.25);padding:2px 6px;border-radius:4px;font-family:'Courier New',monospace;font-size:.85em}
-.fiscal-bubble pre{background:rgba(0,0,0,.3);padding:12px;border-radius:8px;overflow-x:auto;margin:8px 0;font-size:.82em}
-.fiscal-bubble ul{margin:6px 0 6px 20px}
-.fiscal-bubble li{margin-bottom:4px}
-.fiscal-bubble h3,.fiscal-bubble h4{margin:10px 0 6px;color:#c4b5fd;font-size:1rem}
-.fiscal-dots{display:inline-flex;gap:4px}
-.fiscal-dots span{width:8px;height:8px;background:#c4b5fd;border-radius:50%;animation:fiscalDot 1.2s infinite}
-.fiscal-dots span:nth-child(2){animation-delay:.2s}
-.fiscal-dots span:nth-child(3){animation-delay:.4s}
-@keyframes fiscalDot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
-@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
-.fiscal-sugerencias{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}
-.fiscal-sug{padding:8px 14px;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.25);color:#c4b5fd;font-size:.82rem;border-radius:100px;cursor:pointer;font-family:inherit;transition:all .2s}
-.fiscal-sug:hover{background:rgba(168,85,247,.18);border-color:#a855f7;color:#fff}
-.fiscal-input-row{display:flex;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);margin-top:auto}
-.fiscal-input{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px;color:#e4e7ee;font-family:inherit;font-size:.95rem;outline:none;transition:border-color .2s;resize:none}
-.fiscal-input:focus{border-color:#a855f7;background:rgba(168,85,247,.05)}
-.fiscal-send{padding:0 20px;background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;font-weight:700;border:none;border-radius:12px;cursor:pointer;font-family:inherit;font-size:.95rem;transition:transform .15s}
-.fiscal-send:hover{transform:scale(1.03)}
-.fiscal-send:disabled{opacity:.5;cursor:not-allowed}
-
-.fiscal-opciones{display:flex;flex-direction:column;gap:6px;margin-top:12px;padding-top:12px;border-top:1px dashed rgba(168,85,247,.25)}
-.fiscal-opcion{text-align:left;padding:10px 14px;background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.2);color:#c4b5fd;font-family:inherit;font-size:.87rem;border-radius:10px;cursor:pointer;transition:all .15s;line-height:1.35}
-.fiscal-opcion:hover{background:rgba(168,85,247,.18);border-color:#a855f7;color:#fff;transform:translateX(3px)}
-.fiscal-opcion-no{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);color:#a0a8b8;font-size:.82rem;margin-top:2px}
-.fiscal-opcion-no:hover{background:rgba(255,255,255,.06);color:#e4e7ee;transform:none}
-
-@media(max-width:600px){
-  #syncBtn span:last-child{display:none}
-  #syncBtn{padding:6px 10px !important}
-  .wrap{padding:16px}
-  .question{padding:20px}
-  .q-text{font-size:1.05rem}
-  .stats-grid{grid-template-columns:repeat(3,1fr);gap:8px}
-  .stat{padding:12px 8px}
-  .stat-v{font-size:1.2rem}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --green:#58CC02; --green-d:#58A700; --green-l:#89E219;
+  --orange:#FF9600; --orange-d:#E08600;
+  --red:#FF4B4B; --red-d:#EA2B2B;
+  --blue:#1CB0F6; --blue-d:#0E8DCB;
+  --purple:#CE82FF; --purple-d:#B45EFF;
+  --gold:#FFC800;
+  --bg:#FFFFFF; --bg-2:#F7F7F7; --bg-3:#E5E5E5;
+  --text:#3C3C3C; --text-light:#777;
+  --line:#E5E5E5;
 }
+html,body{height:100%;font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);overscroll-behavior:none}
+body{-webkit-user-select:none;user-select:none}
+button{font-family:inherit;border:none;cursor:pointer;background:none}
+.app{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;background:var(--bg);position:relative}
+
+/* ===== TOP BAR ===== */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:2px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:10}
+.topbar-stat{display:flex;align-items:center;gap:6px;font-weight:800;font-size:18px}
+.topbar-stat .icon{font-size:22px}
+.topbar-stat.streak{color:var(--orange)}
+.topbar-stat.lives{color:var(--red)}
+.topbar-stat.gem{color:var(--blue)}
+.topbar-back{font-size:24px;color:var(--text-light);padding:4px 10px;font-weight:800}
+
+/* ===== ONBOARDING ===== */
+.onb{padding:24px 20px;flex:1;display:flex;flex-direction:column}
+.onb h1{font-size:26px;font-weight:900;margin-bottom:8px}
+.onb p.lead{color:var(--text-light);font-size:15px;margin-bottom:24px;font-weight:600}
+.opo-card{background:var(--bg);border:2px solid var(--line);border-bottom-width:4px;border-radius:16px;padding:18px;margin-bottom:14px;cursor:pointer;transition:transform .1s}
+.opo-card:active{transform:translateY(2px);border-bottom-width:2px}
+.opo-card.disabled{opacity:.55;cursor:not-allowed}
+.opo-card .opo-title{font-size:18px;font-weight:900;margin-bottom:4px}
+.opo-card .opo-org{font-size:13px;color:var(--text-light);font-weight:700;margin-bottom:8px}
+.opo-card .opo-desc{font-size:13px;color:var(--text);font-weight:600;line-height:1.5}
+.opo-meta{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.opo-pill{background:var(--bg-2);padding:4px 10px;border-radius:12px;font-size:12px;font-weight:800;color:var(--text-light)}
+.opo-pill.live{background:#D7FFB8;color:var(--green-d)}
+.opo-pill.soon{background:#FFE5B0;color:var(--orange-d)}
+
+/* ===== TREE ===== */
+.tree{padding:12px 20px 100px;flex:1}
+.section-header{margin:24px 0 16px;text-align:center}
+.section-header.first{margin-top:8px}
+.section-banner{background:var(--green);color:#fff;padding:14px 18px;border-radius:14px;display:flex;align-items:center;gap:12px;border-bottom:4px solid var(--green-d);font-weight:900}
+.section-banner .emoji{font-size:32px}
+.section-banner .title{font-size:14px;text-transform:uppercase;opacity:.85;letter-spacing:.5px}
+.section-banner .sub{font-size:18px}
+.unit-row{display:flex;justify-content:center;margin:14px 0;position:relative}
+.unit-row.r0{justify-content:center}
+.unit-row.r1{justify-content:flex-start;padding-left:25%}
+.unit-row.r2{justify-content:flex-end;padding-right:25%}
+.unit-row.r3{justify-content:flex-start;padding-left:15%}
+.unit-row.r4{justify-content:flex-end;padding-right:15%}
+.unit{position:relative;text-align:center}
+.unit-btn{width:84px;height:84px;border-radius:50%;background:var(--green);border-bottom:6px solid var(--green-d);display:flex;align-items:center;justify-content:center;font-size:36px;color:#fff;cursor:pointer;transition:transform .1s;box-shadow:0 0 0 0 transparent}
+.unit-btn:active{transform:translateY(3px);border-bottom-width:3px}
+.unit.locked .unit-btn{background:var(--bg-3);border-bottom-color:#A0A0A0;color:#fff;cursor:not-allowed}
+.unit.locked .unit-btn:active{transform:none;border-bottom-width:6px}
+.unit.done .unit-btn{background:var(--gold);border-bottom-color:#D4A700}
+.unit-label{margin-top:8px;font-size:12px;font-weight:800;color:var(--text);max-width:130px;line-height:1.25}
+.unit.locked .unit-label{color:var(--text-light)}
+.unit-bubble{position:absolute;top:-44px;left:50%;transform:translateX(-50%);background:#fff;border:2px solid var(--green);color:var(--green);padding:6px 12px;border-radius:18px;font-size:11px;font-weight:900;text-transform:uppercase;white-space:nowrap;border-bottom-width:3px}
+.unit-bubble:after{content:'';position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--green)}
+
+/* ===== LESSON ===== */
+.lesson{flex:1;display:flex;flex-direction:column;padding:0}
+.progress-bar-wrap{padding:14px 16px;display:flex;align-items:center;gap:12px}
+.progress-bar{flex:1;height:14px;background:var(--bg-3);border-radius:8px;overflow:hidden}
+.progress-bar .fill{height:100%;background:var(--green);border-radius:8px;transition:width .3s;box-shadow:inset 0 -3px 0 var(--green-d)}
+.progress-close{font-size:22px;color:var(--text-light);font-weight:900;padding:0 8px}
+.lesson-content{flex:1;padding:20px;display:flex;flex-direction:column}
+.q-text{font-size:21px;font-weight:800;line-height:1.35;margin-bottom:24px;flex-shrink:0}
+.options{display:flex;flex-direction:column;gap:12px}
+.opt{background:#fff;border:2px solid var(--line);border-bottom-width:4px;border-radius:14px;padding:14px 16px;text-align:left;font-size:16px;font-weight:700;color:var(--text);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:12px}
+.opt:active{transform:translateY(2px);border-bottom-width:2px}
+.opt-num{width:30px;height:30px;border-radius:8px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--text-light);font-weight:800;flex-shrink:0}
+.opt.selected{border-color:var(--blue);background:#DDF4FF;color:var(--blue-d)}
+.opt.selected .opt-num{border-color:var(--blue);color:var(--blue);background:#fff}
+.opt.ok{border-color:var(--green);background:#D7FFB8;color:var(--green-d)}
+.opt.ok .opt-num{border-color:var(--green);color:var(--green);background:#fff}
+.opt.bad{border-color:var(--red);background:#FFDFE0;color:var(--red-d)}
+.opt.bad .opt-num{border-color:var(--red);color:var(--red);background:#fff}
+.feedback{margin-top:auto;padding:18px 20px;border-top:2px solid var(--line);background:var(--bg)}
+.feedback.ok{background:#D7FFB8;border-top-color:var(--green-l)}
+.feedback.bad{background:#FFDFE0;border-top-color:var(--red)}
+.feedback-title{font-size:18px;font-weight:900;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.feedback.ok .feedback-title{color:var(--green-d)}
+.feedback.bad .feedback-title{color:var(--red-d)}
+.feedback-explain{font-size:14px;font-weight:600;color:var(--text);line-height:1.5;margin-bottom:14px}
+.btn{display:block;width:100%;padding:16px;border-radius:14px;font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;border-bottom:4px solid transparent;transition:transform .1s}
+.btn:active{transform:translateY(2px);border-bottom-width:2px}
+.btn.primary{background:var(--green);color:#fff;border-bottom-color:var(--green-d)}
+.btn.danger{background:var(--red);color:#fff;border-bottom-color:var(--red-d)}
+.btn.outline{background:#fff;color:var(--text);border:2px solid var(--line);border-bottom:4px solid var(--line)}
+.btn.disabled{background:var(--bg-3);color:#fff;border-bottom-color:#A0A0A0;cursor:not-allowed}
+.btn.disabled:active{transform:none;border-bottom-width:4px}
+
+/* ===== RESULT ===== */
+.result{flex:1;padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.result-emoji{font-size:80px;margin-bottom:16px}
+.result-title{font-size:28px;font-weight:900;color:var(--green);margin-bottom:8px}
+.result-title.fail{color:var(--red)}
+.result-sub{font-size:15px;color:var(--text-light);margin-bottom:32px;font-weight:700}
+.result-stats{display:flex;gap:14px;margin-bottom:36px;flex-wrap:wrap;justify-content:center}
+.stat-card{background:#fff;border:2px solid var(--line);border-bottom-width:4px;border-radius:14px;padding:14px 16px;min-width:130px}
+.stat-card .stat-label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.stat-card.xp .stat-label{color:var(--gold)}
+.stat-card.acc .stat-label{color:var(--green)}
+.stat-card.time .stat-label{color:var(--blue)}
+.stat-card .stat-value{font-size:24px;font-weight:900}
+
+/* ===== EMPTY / NO LIVES ===== */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center;z-index:100}
+.modal{background:#fff;width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:24px 20px;text-align:center}
+.modal-emoji{font-size:64px;margin-bottom:12px}
+.modal-title{font-size:22px;font-weight:900;margin-bottom:8px}
+.modal-text{font-size:14px;color:var(--text-light);font-weight:700;margin-bottom:20px}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="app" id="app"></div>
 
-  <header>
-    <div class="logo">Test<span>Foral</span></div>
-    <div style="display:flex;gap:10px;align-items:center">
-      <button id="syncBtn" title="Forzar actualización de preguntas desde el servidor" style="background:rgba(0,217,255,.08);border:1px solid rgba(0,217,255,.25);color:#00d9ff;font-family:inherit;font-size:.75rem;padding:6px 12px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s"><span id="syncIcon">⟳</span><span id="syncStatus">Sincronizar</span></button>
-      <div class="timer" id="timer" style="display:none">⏱ 00:00</div>
-    </div>
-  </header>
-
-  <!-- HOME -->
-  <section class="screen home active" id="home">
-    <h1>Prepara las <span class="gradient">oposiciones forales</span></h1>
-    <p>Elige una oposición y un modo. Los tests usan preguntas reales del temario de la Diputación Foral de Bizkaia.</p>
-
-    <div class="mode-row">
-      <button class="mode sel" data-mode="rapido" data-n="10" data-t="600">⚡ Rápido · 10 preguntas · 10 min</button>
-      <button class="mode" data-mode="medio" data-n="20" data-t="1200">🎯 Medio · 20 preguntas · 20 min</button>
-      <button class="mode" data-mode="simulacro" data-n="30" data-t="2700">🏆 Simulacro · 30 preguntas · 45 min</button>
-    </div>
-
-    <div class="opo-picker" id="opoPicker"></div>
-
-    <button class="start-btn" id="startBtn" disabled>Selecciona una oposición</button>
-
-    <div class="home-actions">
-      <button class="btn-cal" id="openCalBtn">📅 Calendario de convocatorias</button>
-      <button class="btn-fiscal" id="openFiscalBtn">🤖 Asesor Fiscal <span class="ai-tag">AI</span></button>
-    </div>
-  </section>
-
-  <!-- FISCAL IA -->
-  <section class="screen fiscal" id="fiscal">
-    <div class="fiscal-header">
-      <div>
-        <div class="fiscal-title"><span class="robot">🤖</span>Asesor Fiscal Foral <span class="powered-ai">⚡ Powered by AI</span></div>
-        <div class="fiscal-title-sub">Fiscalidad foral de Bizkaia · Respuestas instantáneas</div>
-      </div>
-      <div class="fiscal-actions">
-        <button class="fiscal-icon-btn" id="fiscalClearBtn" title="Borrar conversación">🗑</button>
-        <button class="fiscal-icon-btn" id="backFiscalBtn" title="Volver">←</button>
-      </div>
-    </div>
-
-    <div class="fiscal-sugerencias" id="fiscalSugerencias"></div>
-    <div class="fiscal-chat" id="fiscalChat"></div>
-
-    <div class="fiscal-input-row">
-      <textarea class="fiscal-input" id="fiscalInput" rows="1" placeholder="Pregunta sobre IRPF foral, IS, IVA, tributos locales, Concierto Económico..."></textarea>
-      <button class="fiscal-send" id="fiscalSendBtn">Enviar</button>
-    </div>
-  </section>
-
-  <!-- CALENDARIO -->
-  <section class="screen calendar" id="calendar">
-    <div class="cal-header">
-      <div>
-        <div class="cal-title">📅 Calendario de convocatorias</div>
-        <div class="cal-sub">Oposiciones de la Diputación Foral de Bizkaia · Fechas oficiales y previstas</div>
-      </div>
-      <button class="btn btn-ghost" id="backCalBtn">← Volver</button>
-    </div>
-
-    <div class="cal-filters" id="calFilters"></div>
-    <div class="cal-list" id="calList"></div>
-  </section>
-
-  <!-- QUIZ -->
-  <section class="screen quiz" id="quiz">
-    <div>
-      <div class="progress">
-        <span id="progressTxt">Pregunta 1 / 10</span>
-        <span id="progressScore">0 aciertos</span>
-      </div>
-      <div class="bar"><div class="bar-fill" id="barFill" style="width:0"></div></div>
-    </div>
-
-    <div class="question">
-      <div class="q-num" id="qNum">PREGUNTA 1</div>
-      <div class="q-text" id="qText">...</div>
-      <div class="options" id="qOpts"></div>
-      <div class="explain" id="qExplain"></div>
-    </div>
-
-    <div class="controls">
-      <button class="btn btn-ghost" id="quitBtn">Salir</button>
-      <button class="btn btn-primary" id="nextBtn" disabled>Siguiente →</button>
-    </div>
-  </section>
-
-  <!-- RESULT -->
-  <section class="screen result" id="result">
-    <div class="score-ring">
-      <svg viewBox="0 0 200 200">
-        <defs>
-          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#00d9ff"/>
-            <stop offset="100%" stop-color="#00ff88"/>
-          </linearGradient>
-        </defs>
-        <circle class="bg" cx="100" cy="100" r="88"/>
-        <circle class="fg" id="scoreRing" cx="100" cy="100" r="88" stroke-dasharray="552.9" stroke-dashoffset="552.9"/>
-      </svg>
-      <div class="score-text">
-        <div class="score-pct" id="scorePct">0%</div>
-        <div class="score-lbl">Nota</div>
-      </div>
-    </div>
-    <h2 id="resultTitle">Resultado</h2>
-    <p class="result-msg" id="resultMsg"></p>
-
-    <div class="stats-grid">
-      <div class="stat"><div class="stat-v ok" id="sOk">0</div><div class="stat-l">Aciertos</div></div>
-      <div class="stat"><div class="stat-v bad" id="sBad">0</div><div class="stat-l">Fallos</div></div>
-      <div class="stat"><div class="stat-v time" id="sTime">0:00</div><div class="stat-l">Tiempo</div></div>
-    </div>
-
-    <div class="result-actions">
-      <button class="btn btn-primary" id="againBtn">🔄 Otro test</button>
-      <button class="btn btn-ghost" id="homeBtn">← Inicio</button>
-    </div>
-
-    <div class="review" id="review"></div>
-  </section>
-
-</div>
-
-<script src="preguntas.js"></script>
-<script src="preguntas-loader.js"></script>
-<script src="convocatorias.js"></script>
-<script src="fiscal-kb.js"></script>
-<script src="fiscal-kb-auto.js" onerror="window.FISCAL_KB_AUTO=[]"></script>
-<script src="fiscal-ia.js"></script>
-<script src="app.js"></script>
+<script src="data/oposiciones.js"></script>
+<script src="data/preguntas.js"></script>
 <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
+// ============ STATE ============
+const STATE = {
+  load(){
+    const raw = localStorage.getItem('testforal_state_v2');
+    if(raw){ try{ return JSON.parse(raw); }catch(e){} }
+    return {
+      oposicion: null,
+      xp: 0,
+      racha: 0,
+      ultimoDia: null,
+      vidas: 5,
+      vidasReset: null,
+      progreso: {} // unidadId: { stars: 0-3, lessonesCompletadas: n }
+    };
+  },
+  save(s){ localStorage.setItem('testforal_state_v2', JSON.stringify(s)); }
+};
+
+let state = STATE.load();
+
+function regenLives(){
+  if(state.vidas>=5) return;
+  if(!state.vidasReset) return;
+  const now = Date.now();
+  const elapsedMin = Math.floor((now - state.vidasReset)/60000);
+  const regen = Math.floor(elapsedMin/30);
+  if(regen>0){
+    state.vidas = Math.min(5, state.vidas+regen);
+    state.vidasReset = state.vidas>=5 ? null : state.vidasReset + regen*30*60000;
+    STATE.save(state);
+  }
 }
+
+function bumpRacha(){
+  const today = new Date().toISOString().slice(0,10);
+  if(state.ultimoDia === today) return;
+  const yesterday = new Date(Date.now()-86400000).toISOString().slice(0,10);
+  state.racha = state.ultimoDia === yesterday ? state.racha+1 : 1;
+  state.ultimoDia = today;
+  STATE.save(state);
+}
+
+// ============ ROUTER ============
+const app = document.getElementById('app');
+
+function render(view, ctx){
+  regenLives();
+  app.innerHTML = '';
+  if(view==='onb') renderOnboarding();
+  else if(view==='tree') renderTree();
+  else if(view==='lesson') renderLesson(ctx);
+  else if(view==='result') renderResult(ctx);
+}
+
+function topBar(showBack=true, onBack){
+  const html = `
+    <div class="topbar">
+      ${showBack ? `<button class="topbar-back" id="back">←</button>` : `<span></span>`}
+      <div style="display:flex;gap:14px;align-items:center">
+        <span class="topbar-stat streak"><span class="icon">🔥</span>${state.racha}</span>
+        <span class="topbar-stat gem"><span class="icon">💎</span>${state.xp}</span>
+        <span class="topbar-stat lives"><span class="icon">❤️</span>${state.vidas}</span>
+      </div>
+    </div>
+  `;
+  return html;
+}
+
+// ============ ONBOARDING ============
+function renderOnboarding(){
+  app.innerHTML = `
+    ${topBar(false)}
+    <div class="onb">
+      <h1>¿A qué oposición te presentas?</h1>
+      <p class="lead">Tests específicos de Hacienda en Bizkaia</p>
+      <div id="opos"></div>
+    </div>
+  `;
+  const c = document.getElementById('opos');
+  OPOSICIONES.forEach(op=>{
+    const live = op.estado === 'activa';
+    const c1 = document.createElement('div');
+    c1.className = 'opo-card'+(live?'':' disabled');
+    c1.innerHTML = `
+      <div class="opo-title">${op.nombre}</div>
+      <div class="opo-org">${op.organismo}</div>
+      <div class="opo-desc">${op.descripcion}</div>
+      <div class="opo-meta">
+        <span class="opo-pill ${live?'live':'soon'}">${live?'Disponible':'Próximamente'}</span>
+        ${op.plazas?`<span class="opo-pill">${op.plazas} plazas</span>`:''}
+        <span class="opo-pill">${op.convocatoria}</span>
+      </div>
+    `;
+    if(live){
+      c1.onclick = ()=>{
+        state.oposicion = op.id;
+        STATE.save(state);
+        render('tree');
+      };
+    }
+    c.appendChild(c1);
+  });
+}
+
+// ============ TREE ============
+function getOpo(){ return OPOSICIONES.find(o=>o.id===state.oposicion); }
+
+function renderTree(){
+  const op = getOpo();
+  if(!op){ render('onb'); return; }
+  const sectionsHTML = op.secciones.map(sec=>{
+    const unitsHTML = sec.unidades.map((u,i)=>{
+      const prog = state.progreso[u.id] || {stars:0, completed:false};
+      let cls = '';
+      if(prog.completed) cls = 'done';
+      else if(i>0 && !state.progreso[sec.unidades[i-1].id]?.completed && !state.progreso[u.id]) cls = 'locked';
+      const isCurrent = !prog.completed && cls!=='locked';
+      const row = i % 5;
+      return `
+        <div class="unit-row r${row}">
+          <div class="unit ${cls}" data-uid="${u.id}">
+            ${isCurrent?`<div class="unit-bubble">EMPIEZA</div>`:''}
+            <button class="unit-btn">${prog.completed?'⭐':u.icono}</button>
+            <div class="unit-label">${u.nombre}</div>
+          </div>
+        </div>
+      `;
+    }).join('');
+    return `
+      <div class="section-header">
+        <div class="section-banner" style="background:${sec.color};border-bottom-color:${sec.color}cc">
+          <span class="emoji">${sec.emoji}</span>
+          <div style="flex:1;text-align:left">
+            <div class="title">Sección</div>
+            <div class="sub">${sec.nombre}</div>
+          </div>
+        </div>
+      </div>
+      ${unitsHTML}
+    `;
+  }).join('');
+
+  app.innerHTML = `
+    ${topBar(true)}
+    <div class="tree">
+      <div style="text-align:center;font-size:22px;font-weight:900;margin:8px 0 4px">${op.nombre}</div>
+      <div style="text-align:center;font-size:13px;color:var(--text-light);font-weight:700;margin-bottom:8px">${op.organismo}</div>
+      ${sectionsHTML}
+    </div>
+  `;
+  document.getElementById('back').onclick = ()=>{
+    state.oposicion = null;
+    STATE.save(state);
+    render('onb');
+  };
+  document.querySelectorAll('.unit:not(.locked)').forEach(el=>{
+    el.onclick = ()=>{
+      const uid = el.dataset.uid;
+      startLesson(uid);
+    };
+  });
+}
+
+// ============ LESSON ============
+function startLesson(unitId){
+  if(state.vidas<=0){
+    showNoLivesModal();
+    return;
+  }
+  const pool = PREGUNTAS.filter(p=>p.unidad===unitId);
+  if(pool.length===0){
+    alert('Esta unidad aún no tiene preguntas. Próximamente.');
+    return;
+  }
+  const shuffled = [...pool].sort(()=>Math.random()-0.5);
+  const N = Math.min(5, shuffled.length);
+  const ctx = {
+    unitId,
+    questions: shuffled.slice(0,N),
+    idx: 0,
+    correct: 0,
+    wrong: 0,
+    selectedIdx: null,
+    answered: false,
+    startTime: Date.now()
+  };
+  render('lesson', ctx);
+}
+
+function renderLesson(ctx){
+  const q = ctx.questions[ctx.idx];
+  const pct = Math.round(ctx.idx/ctx.questions.length*100);
+  app.innerHTML = `
+    <div class="lesson">
+      <div class="progress-bar-wrap">
+        <button class="progress-close" id="quit">✕</button>
+        <div class="progress-bar"><div class="fill" style="width:${pct}%"></div></div>
+        <span class="topbar-stat lives" style="font-size:14px">❤️${state.vidas}</span>
+      </div>
+      <div class="lesson-content">
+        <div class="q-text">${q.pregunta}</div>
+        <div class="options" id="options">
+          ${q.opciones.map((o,i)=>`
+            <button class="opt" data-i="${i}">
+              <div class="opt-num">${String.fromCharCode(65+i)}</div>
+              <div>${o}</div>
+            </button>
+          `).join('')}
+        </div>
+      </div>
+      <div id="action-bar" style="padding:18px 20px;border-top:2px solid var(--line)">
+        <button class="btn disabled" id="check">Comprobar</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('quit').onclick = ()=>{ if(confirm('¿Salir de la lección? Perderás el progreso.')) render('tree'); };
+  document.querySelectorAll('.opt').forEach(b=>{
+    b.onclick = ()=>{
+      if(ctx.answered) return;
+      ctx.selectedIdx = +b.dataset.i;
+      document.querySelectorAll('.opt').forEach(x=>x.classList.remove('selected'));
+      b.classList.add('selected');
+      const btn = document.getElementById('check');
+      btn.classList.remove('disabled');
+      btn.classList.add('primary');
+    };
+  });
+  document.getElementById('check').onclick = ()=>{
+    if(ctx.selectedIdx===null) return;
+    if(ctx.answered) return nextQ(ctx);
+    answerQ(ctx);
+  };
+}
+
+function answerQ(ctx){
+  const q = ctx.questions[ctx.idx];
+  const ok = ctx.selectedIdx === q.correcta;
+  ctx.answered = true;
+  if(ok){ ctx.correct++; state.xp += 10; }
+  else{
+    ctx.wrong++;
+    state.vidas = Math.max(0, state.vidas-1);
+    if(state.vidas===0) state.vidasReset = Date.now();
+    else if(!state.vidasReset) state.vidasReset = Date.now();
+  }
+  STATE.save(state);
+
+  document.querySelectorAll('.opt').forEach((b,i)=>{
+    b.classList.remove('selected');
+    if(i===q.correcta) b.classList.add('ok');
+    if(i===ctx.selectedIdx && !ok) b.classList.add('bad');
+  });
+
+  const ab = document.getElementById('action-bar');
+  ab.innerHTML = `
+    <div class="feedback ${ok?'ok':'bad'}" style="margin:0;padding:14px 16px;border-radius:14px;border-top:0">
+      <div class="feedback-title">${ok?'✅ ¡Correcto!':'❌ Incorrecto'}</div>
+      <div class="feedback-explain">${q.explicacion||''}</div>
+      <button class="btn ${ok?'primary':'danger'}" id="next">Continuar</button>
+    </div>
+  `;
+  document.getElementById('next').onclick = ()=>nextQ(ctx);
+
+  if(state.vidas===0){
+    setTimeout(()=>showNoLivesModal(), 800);
+  }
+}
+
+function nextQ(ctx){
+  ctx.idx++;
+  ctx.selectedIdx = null;
+  ctx.answered = false;
+  if(ctx.idx >= ctx.questions.length){
+    finishLesson(ctx);
+  } else {
+    renderLesson(ctx);
+  }
+}
+
+function finishLesson(ctx){
+  const total = ctx.questions.length;
+  const acc = Math.round(ctx.correct/total*100);
+  const passed = ctx.correct >= Math.ceil(total*0.6);
+  if(passed){
+    state.progreso[ctx.unitId] = {completed:true, stars:acc>=90?3:acc>=70?2:1};
+    state.xp += 20;
+    bumpRacha();
+    STATE.save(state);
+  }
+  render('result', {ctx, passed, acc, time: Math.round((Date.now()-ctx.startTime)/1000)});
+}
+
+// ============ RESULT ============
+function renderResult({ctx, passed, acc, time}){
+  app.innerHTML = `
+    <div class="result">
+      <div class="result-emoji">${passed?'🎉':'😢'}</div>
+      <div class="result-title ${passed?'':'fail'}">${passed?'¡Lección completada!':'Inténtalo de nuevo'}</div>
+      <div class="result-sub">${passed?'Has dominado este tema':'Necesitas al menos 60% de aciertos'}</div>
+      <div class="result-stats">
+        <div class="stat-card xp"><div class="stat-label">XP</div><div class="stat-value">+${ctx.correct*10 + (passed?20:0)}</div></div>
+        <div class="stat-card acc"><div class="stat-label">Aciertos</div><div class="stat-value">${acc}%</div></div>
+        <div class="stat-card time"><div class="stat-label">Tiempo</div><div class="stat-value">${time}s</div></div>
+      </div>
+      <button class="btn primary" id="continue" style="max-width:300px">Continuar</button>
+    </div>
+  `;
+  document.getElementById('continue').onclick = ()=>render('tree');
+}
+
+// ============ NO LIVES MODAL ============
+function showNoLivesModal(){
+  const minutes = state.vidasReset ? Math.max(1, 30 - Math.floor((Date.now()-state.vidasReset)/60000)) : 30;
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  overlay.innerHTML = `
+    <div class="modal">
+      <div class="modal-emoji">💔</div>
+      <div class="modal-title">¡Sin vidas!</div>
+      <div class="modal-text">Recuperarás una vida en unos ${minutes} min.<br>Mientras tanto repasa los temas que ya hiciste.</div>
+      <button class="btn primary" id="m-ok">Entendido</button>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  overlay.querySelector('#m-ok').onclick = ()=>{
+    overlay.remove();
+    render('tree');
+  };
+}
+
+// ============ INIT ============
+function init(){
+  if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+  if(!state.oposicion) render('onb');
+  else render('tree');
+}
+init();
 </script>
 </body>
 </html>
