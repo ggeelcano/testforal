@@ -42,20 +42,26 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .btn-exit:active{transform:translateY(2px);border-bottom-width:1px}
 .btn-exit .ic{font-size:15px}
 
-/* ===== ONBOARDING ===== */
-.onb{padding:24px 20px;flex:1;display:flex;flex-direction:column}
-.onb h1{font-size:26px;font-weight:900;margin-bottom:8px}
-.onb p.lead{color:var(--text-light);font-size:15px;margin-bottom:24px;font-weight:600}
-.opo-card{background:var(--bg);border:2px solid var(--line);border-bottom-width:4px;border-radius:16px;padding:18px;margin-bottom:14px;cursor:pointer;transition:transform .1s}
+/* ===== ONBOARDING (estilo Duolingo) ===== */
+.onb{padding:14px 20px 28px;flex:1;display:flex;flex-direction:column}
+.onb-mascot{display:flex;align-items:flex-start;gap:10px;margin:6px 0 22px}
+.onb-mascot .m{width:130px;flex-shrink:0;animation:mascot-idle 3s ease-in-out infinite}
+.onb-mascot .b{position:relative;background:#fff;border:2px solid var(--line);border-bottom-width:3px;border-radius:14px;padding:12px 14px;font-size:15px;font-weight:800;color:var(--text);line-height:1.35;margin-top:30px;flex:1}
+.onb-mascot .b:before{content:'';position:absolute;left:-10px;top:18px;border:7px solid transparent;border-right-color:var(--line)}
+.onb-mascot .b:after{content:'';position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff}
+.onb-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.opo-card{background:#fff;border:2px solid var(--line);border-bottom-width:4px;border-radius:14px;padding:14px;cursor:pointer;transition:transform .1s;display:flex;align-items:center;gap:14px;text-align:left}
 .opo-card:active{transform:translateY(2px);border-bottom-width:2px}
-.opo-card.disabled{opacity:.55;cursor:not-allowed}
-.opo-card .opo-title{font-size:18px;font-weight:900;margin-bottom:4px}
-.opo-card .opo-org{font-size:13px;color:var(--text-light);font-weight:700;margin-bottom:8px}
-.opo-card .opo-desc{font-size:13px;color:var(--text);font-weight:600;line-height:1.5}
-.opo-meta{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-.opo-pill{background:var(--bg-2);padding:4px 10px;border-radius:12px;font-size:12px;font-weight:800;color:var(--text-light)}
+.opo-card.disabled{opacity:.5;cursor:not-allowed}
+.opo-card.disabled:active{transform:none;border-bottom-width:4px}
+.opo-icon{width:44px;height:44px;border-radius:10px;background:var(--bg-2);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.opo-body{flex:1;min-width:0}
+.opo-card .opo-title{font-size:15px;font-weight:900;line-height:1.2;margin-bottom:3px}
+.opo-card .opo-org{font-size:11px;color:var(--text-light);font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+.opo-pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.4px;margin-top:6px}
 .opo-pill.live{background:#D7FFB8;color:var(--green-d)}
 .opo-pill.soon{background:#FFE5B0;color:var(--orange-d)}
+.opo-lock{font-size:18px;color:var(--text-light)}
 
 /* ===== TREE ===== */
 .tree{padding:12px 20px 100px;flex:1}
@@ -179,73 +185,111 @@ const STATE = {
 
 let state = STATE.load();
 
-// ============ MASCOT · Foralín ============
-// Pájaro opositor: traje gris, corbata roja, gafas, carpeta de apuntes
+// ============ MASCOT · Foralín, el león opositor ============
+// León con traje gris, corbata, gafas de pasta y carpeta de apuntes
 function mascotSVG(){
   return `
-  <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-label="Foralín">
+  <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-label="Foralín, el león opositor">
     <defs>
-      <radialGradient id="bodyG" cx="50%" cy="40%" r="65%">
-        <stop offset="0%" stop-color="#5BC0EB"/>
-        <stop offset="100%" stop-color="#1CB0F6"/>
+      <radialGradient id="furG" cx="50%" cy="40%" r="65%">
+        <stop offset="0%" stop-color="#FFD27A"/>
+        <stop offset="100%" stop-color="#F5A742"/>
       </radialGradient>
+      <linearGradient id="maneG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#A05A1F"/>
+        <stop offset="100%" stop-color="#7A3D14"/>
+      </linearGradient>
       <linearGradient id="suitG" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="#3A4A6B"/>
         <stop offset="100%" stop-color="#2A364F"/>
       </linearGradient>
     </defs>
 
-    <!-- Patas -->
-    <path d="M48 128 L48 134 M44 134 L52 134 M40 132 L48 134" stroke="#FF9600" stroke-width="3" stroke-linecap="round"/>
-    <path d="M72 128 L72 134 M68 134 L76 134 M80 132 L72 134" stroke="#FF9600" stroke-width="3" stroke-linecap="round"/>
+    <!-- Cola con borla detrás -->
+    <path d="M88 110 Q108 108 102 92" fill="none" stroke="#E0942A" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="103" cy="89" rx="6" ry="7" fill="url(#maneG)"/>
 
-    <!-- Carpeta de apuntes -->
-    <g transform="translate(78 70) rotate(8)">
-      <rect x="0" y="0" width="28" height="36" rx="2" fill="#FFC800" stroke="#D4A700" stroke-width="2"/>
-      <rect x="0" y="0" width="28" height="6" fill="#E0AC00"/>
-      <line x1="4" y1="14" x2="24" y2="14" stroke="#3C3C3C" stroke-width="1.2"/>
-      <line x1="4" y1="20" x2="24" y2="20" stroke="#3C3C3C" stroke-width="1.2"/>
-      <line x1="4" y1="26" x2="20" y2="26" stroke="#3C3C3C" stroke-width="1.2"/>
-      <text x="14" y="11" text-anchor="middle" font-family="Nunito,sans-serif" font-weight="900" font-size="5" fill="#3C3C3C">OPOS</text>
+    <!-- Patas traseras -->
+    <ellipse cx="48" cy="130" rx="7" ry="5" fill="#E0942A"/>
+    <ellipse cx="72" cy="130" rx="7" ry="5" fill="#E0942A"/>
+
+    <!-- Cuerpo con traje -->
+    <ellipse cx="60" cy="96" rx="32" ry="32" fill="url(#suitG)"/>
+    <!-- Camisa -->
+    <path d="M40 96 Q60 84 80 96 L80 122 Q60 128 40 122 Z" fill="#fff"/>
+    <!-- Solapas -->
+    <path d="M42 96 L52 106 L48 120 L40 120 Z" fill="url(#suitG)"/>
+    <path d="M78 96 L68 106 L72 120 L80 120 Z" fill="url(#suitG)"/>
+    <!-- Corbata -->
+    <path d="M58 100 L62 100 L64 106 L60 120 L56 106 Z" fill="#FF4B4B"/>
+    <path d="M58 100 L62 100 L63 103 L57 103 Z" fill="#EA2B2B"/>
+    <!-- Botones -->
+    <circle cx="44" cy="108" r="1.4" fill="#1a1f2e"/>
+    <circle cx="44" cy="116" r="1.4" fill="#1a1f2e"/>
+
+    <!-- Pata sosteniendo carpeta -->
+    <ellipse cx="86" cy="100" rx="9" ry="12" fill="url(#furG)" transform="rotate(18 86 100)"/>
+    <!-- Carpeta de apuntes "OPOS" -->
+    <g transform="translate(74 76) rotate(10)">
+      <rect x="0" y="0" width="30" height="38" rx="3" fill="#FFC800" stroke="#D4A700" stroke-width="2"/>
+      <rect x="0" y="0" width="30" height="7" fill="#E0AC00"/>
+      <line x1="4" y1="16" x2="26" y2="16" stroke="#3C3C3C" stroke-width="1.2"/>
+      <line x1="4" y1="22" x2="26" y2="22" stroke="#3C3C3C" stroke-width="1.2"/>
+      <line x1="4" y1="28" x2="22" y2="28" stroke="#3C3C3C" stroke-width="1.2"/>
+      <text x="15" y="13" text-anchor="middle" font-family="Nunito,sans-serif" font-weight="900" font-size="5.5" fill="#3C3C3C">OPOS</text>
     </g>
 
-    <!-- Cuerpo (con traje) -->
-    <ellipse cx="60" cy="92" rx="32" ry="34" fill="url(#suitG)"/>
-    <!-- Camisa -->
-    <path d="M40 92 Q60 80 80 92 L80 120 Q60 126 40 120 Z" fill="#fff"/>
-    <!-- Solapas traje -->
-    <path d="M42 92 L52 102 L48 118 L40 118 Z" fill="url(#suitG)"/>
-    <path d="M78 92 L68 102 L72 118 L80 118 Z" fill="url(#suitG)"/>
-    <!-- Corbata -->
-    <path d="M58 96 L62 96 L64 102 L60 116 L56 102 Z" fill="#FF4B4B"/>
-    <path d="M58 96 L62 96 L63 99 L57 99 Z" fill="#EA2B2B"/>
+    <!-- Melena (detrás de la cabeza) -->
+    <g>
+      <circle cx="38" cy="42" r="11" fill="url(#maneG)"/>
+      <circle cx="30" cy="50" r="11" fill="url(#maneG)"/>
+      <circle cx="32" cy="34" r="10" fill="url(#maneG)"/>
+      <circle cx="44" cy="26" r="10" fill="url(#maneG)"/>
+      <circle cx="60" cy="20" r="11" fill="url(#maneG)"/>
+      <circle cx="76" cy="26" r="10" fill="url(#maneG)"/>
+      <circle cx="88" cy="34" r="10" fill="url(#maneG)"/>
+      <circle cx="90" cy="50" r="11" fill="url(#maneG)"/>
+      <circle cx="82" cy="42" r="11" fill="url(#maneG)"/>
+      <circle cx="60" cy="74" r="10" fill="url(#maneG)"/>
+    </g>
 
-    <!-- Ala con la carpeta -->
-    <ellipse cx="84" cy="86" rx="9" ry="13" fill="url(#bodyG)" transform="rotate(20 84 86)"/>
+    <!-- Cara -->
+    <circle cx="60" cy="50" r="26" fill="url(#furG)"/>
 
-    <!-- Cabeza -->
-    <circle cx="60" cy="48" r="30" fill="url(#bodyG)"/>
-    <!-- Mejilla destello -->
-    <ellipse cx="48" cy="56" rx="6" ry="4" fill="#fff" opacity="0.18"/>
+    <!-- Orejas -->
+    <ellipse cx="44" cy="30" rx="5" ry="6" fill="url(#furG)" transform="rotate(-18 44 30)"/>
+    <ellipse cx="44" cy="30" rx="2.5" ry="3.5" fill="#E08AB0" transform="rotate(-18 44 30)"/>
+    <ellipse cx="76" cy="30" rx="5" ry="6" fill="url(#furG)" transform="rotate(18 76 30)"/>
+    <ellipse cx="76" cy="30" rx="2.5" ry="3.5" fill="#E08AB0" transform="rotate(18 76 30)"/>
 
-    <!-- Mechón -->
-    <path d="M58 22 Q62 14 66 22 Q70 18 70 26" fill="none" stroke="#0E8DCB" stroke-width="3" stroke-linecap="round"/>
+    <!-- Mejillas (hocico) -->
+    <ellipse cx="52" cy="60" rx="8" ry="7" fill="#FFEAC2"/>
+    <ellipse cx="68" cy="60" rx="8" ry="7" fill="#FFEAC2"/>
 
-    <!-- Gafas (look opositor) -->
-    <circle cx="50" cy="46" r="9" fill="#fff" stroke="#3C3C3C" stroke-width="2.2"/>
-    <circle cx="70" cy="46" r="9" fill="#fff" stroke="#3C3C3C" stroke-width="2.2"/>
+    <!-- Bigotes -->
+    <line x1="38" y1="58" x2="46" y2="60" stroke="#3C3C3C" stroke-width="1" stroke-linecap="round"/>
+    <line x1="38" y1="62" x2="46" y2="62" stroke="#3C3C3C" stroke-width="1" stroke-linecap="round"/>
+    <line x1="82" y1="58" x2="74" y2="60" stroke="#3C3C3C" stroke-width="1" stroke-linecap="round"/>
+    <line x1="82" y1="62" x2="74" y2="62" stroke="#3C3C3C" stroke-width="1" stroke-linecap="round"/>
+
+    <!-- Nariz -->
+    <path d="M56 54 L64 54 L60 60 Z" fill="#3C3C3C" stroke="#000" stroke-width="0.5"/>
+
+    <!-- Boca (sonrisa) -->
+    <path d="M60 60 L60 64 M52 65 Q60 70 68 65" stroke="#3C3C3C" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+    <!-- Gafas de pasta -->
+    <circle cx="50" cy="46" r="9" fill="#fff" fill-opacity="0.25" stroke="#3C3C3C" stroke-width="2.2"/>
+    <circle cx="70" cy="46" r="9" fill="#fff" fill-opacity="0.25" stroke="#3C3C3C" stroke-width="2.2"/>
     <line x1="59" y1="46" x2="61" y2="46" stroke="#3C3C3C" stroke-width="2"/>
-    <line x1="41" y1="44" x2="38" y2="42" stroke="#3C3C3C" stroke-width="2" stroke-linecap="round"/>
-    <line x1="79" y1="44" x2="82" y2="42" stroke="#3C3C3C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="41" y1="44" x2="34" y2="42" stroke="#3C3C3C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="79" y1="44" x2="86" y2="42" stroke="#3C3C3C" stroke-width="2" stroke-linecap="round"/>
 
     <!-- Ojos -->
-    <circle cx="50" cy="46" r="3.5" fill="#3C3C3C" class="eye eye-l"/>
-    <circle cx="70" cy="46" r="3.5" fill="#3C3C3C" class="eye eye-r"/>
+    <circle cx="50" cy="46" r="3.2" fill="#3C3C3C"/>
+    <circle cx="70" cy="46" r="3.2" fill="#3C3C3C"/>
     <circle cx="51" cy="45" r="1" fill="#fff"/>
     <circle cx="71" cy="45" r="1" fill="#fff"/>
-
-    <!-- Pico -->
-    <path d="M55 56 L65 56 L60 64 Z" fill="#FF9600" stroke="#E08600" stroke-width="1.2" stroke-linejoin="round"/>
   </svg>
   `;
 }
@@ -310,28 +354,36 @@ function topBar(mode){
 }
 
 // ============ ONBOARDING ============
+const OPO_ICONS = {
+  'agente-hacienda':'🏛️',
+  'subinspector-tributos':'🔍',
+  'administrativo-foral':'📋',
+  'liquidador-tmgaf':'🧾'
+};
+
 function renderOnboarding(){
   app.innerHTML = `
     ${topBar('none')}
     <div class="onb">
-      <h1>¿A qué oposición te presentas?</h1>
-      <p class="lead">Tests específicos de Hacienda en Bizkaia</p>
-      <div id="opos"></div>
+      <div class="onb-mascot">
+        <div class="m">${mascotSVG()}</div>
+        <div class="b">¿A qué oposición te presentas?</div>
+      </div>
+      <div class="onb-grid" id="opos"></div>
     </div>
   `;
   const c = document.getElementById('opos');
   OPOSICIONES.forEach(op=>{
     const live = op.estado === 'activa';
+    const icon = OPO_ICONS[op.id] || '📚';
     const c1 = document.createElement('div');
     c1.className = 'opo-card'+(live?'':' disabled');
     c1.innerHTML = `
-      <div class="opo-title">${op.nombre}</div>
-      <div class="opo-org">${op.organismo}</div>
-      <div class="opo-desc">${op.descripcion}</div>
-      <div class="opo-meta">
+      <div class="opo-icon">${live?icon:'🔒'}</div>
+      <div class="opo-body">
+        <div class="opo-title">${op.nombre}</div>
+        <div class="opo-org">${op.organismo}</div>
         <span class="opo-pill ${live?'live':'soon'}">${live?'Disponible':'Próximamente'}</span>
-        ${op.plazas?`<span class="opo-pill">${op.plazas} plazas</span>`:''}
-        <span class="opo-pill">${op.convocatoria}</span>
       </div>
     `;
     if(live){
