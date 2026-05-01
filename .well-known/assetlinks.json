@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.ggeelcano.twa",
+        "sha256_cert_fingerprints": ["60:8F:FD:F4:6B:AC:9C:82:68:67:E4:13:65:31:BA:0E:D2:53:C2:A0:96:AF:37:21:06:BE:D9:75:63:E1:75:92"]
+      }
+    }]

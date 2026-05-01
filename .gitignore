@@ -1,0 +1,5 @@
+node_modules/
+play-package/
+*.keystore
+signing-key-info.txt
+.env
