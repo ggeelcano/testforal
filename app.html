@@ -38,6 +38,9 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .topbar-stat.lives{color:var(--red)}
 .topbar-stat.gem{color:var(--blue)}
 .topbar-back{font-size:24px;color:var(--text-light);padding:4px 10px;font-weight:800}
+.btn-exit{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px solid var(--line);border-bottom-width:3px;border-radius:12px;padding:6px 12px;font-size:13px;font-weight:900;color:var(--text-light);cursor:pointer;text-transform:uppercase;letter-spacing:.4px}
+.btn-exit:active{transform:translateY(2px);border-bottom-width:1px}
+.btn-exit .ic{font-size:15px}
 
 /* ===== ONBOARDING ===== */
 .onb{padding:24px 20px;flex:1;display:flex;flex-direction:column}
@@ -289,10 +292,14 @@ function render(view, ctx){
   else if(view==='result') renderResult(ctx);
 }
 
-function topBar(showBack=true, onBack){
-  const html = `
+function topBar(mode){
+  // mode: 'none' | 'exit'  (en el arbol mostramos boton Salir; en onboarding nada)
+  const left = mode==='exit'
+    ? `<button class="btn-exit" id="exit"><span class="ic">🚪</span>Salir</button>`
+    : `<span></span>`;
+  return `
     <div class="topbar">
-      ${showBack ? `<button class="topbar-back" id="back">←</button>` : `<span></span>`}
+      ${left}
       <div style="display:flex;gap:14px;align-items:center">
         <span class="topbar-stat streak"><span class="icon">🔥</span>${state.racha}</span>
         <span class="topbar-stat gem"><span class="icon">💎</span>${state.xp}</span>
@@ -300,13 +307,12 @@ function topBar(showBack=true, onBack){
       </div>
     </div>
   `;
-  return html;
 }
 
 // ============ ONBOARDING ============
 function renderOnboarding(){
   app.innerHTML = `
-    ${topBar(false)}
+    ${topBar('none')}
     <div class="onb">
       <h1>¿A qué oposición te presentas?</h1>
       <p class="lead">Tests específicos de Hacienda en Bizkaia</p>
@@ -378,14 +384,15 @@ function renderTree(){
   }).join('');
 
   app.innerHTML = `
-    ${topBar(true)}
+    ${topBar('exit')}
     <div class="tree">
       <div style="text-align:center;font-size:22px;font-weight:900;margin:8px 0 4px">${op.nombre}</div>
       <div style="text-align:center;font-size:13px;color:var(--text-light);font-weight:700;margin-bottom:8px">${op.organismo}</div>
       ${sectionsHTML}
     </div>
   `;
-  document.getElementById('back').onclick = ()=>{
+  document.getElementById('exit').onclick = ()=>{
+    if(!confirm('¿Salir y elegir otra oposición?\nTu progreso se guarda igual.')) return;
     state.oposicion = null;
     STATE.save(state);
     render('onb');
