@@ -157,6 +157,119 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .mascot-bubble.ok:before{border-right-color:var(--green)}
 .mascot-bubble.bad{border-color:var(--red);color:var(--red-d)}
 .mascot-bubble.bad:before{border-right-color:var(--red)}
+
+/* ===== EXAM CTA (banner en arbol) ===== */
+.exam-cta{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#7C3AED,#A855F7);color:#fff;padding:14px 16px;border-radius:16px;border-bottom:4px solid #5B21B6;margin:8px 0 16px;cursor:pointer;transition:transform .1s;text-align:left;width:100%}
+.exam-cta:active{transform:translateY(2px);border-bottom-width:2px}
+.exam-cta .ec-icon{font-size:34px;flex-shrink:0}
+.exam-cta .ec-body{flex:1;min-width:0}
+.exam-cta .ec-title{font-size:16px;font-weight:900;line-height:1.2;margin-bottom:3px}
+.exam-cta .ec-sub{font-size:12px;font-weight:700;opacity:.9}
+.exam-cta .ec-arrow{font-size:22px;font-weight:900}
+
+/* ===== EXAM CONFIG ===== */
+.exam-cfg{padding:18px 20px;flex:1;display:flex;flex-direction:column}
+.exam-cfg h2{font-size:22px;font-weight:900;margin-bottom:6px}
+.exam-cfg .sub{font-size:13px;color:var(--text-light);font-weight:700;margin-bottom:18px}
+.exam-cfg .info{background:#FFF6E0;border:2px solid #FFC800;border-bottom-width:3px;border-radius:12px;padding:10px 12px;font-size:12px;font-weight:800;color:#7A5A00;margin-bottom:18px;line-height:1.45}
+.exam-cfg .mode-card{background:#fff;border:2px solid var(--line);border-bottom-width:4px;border-radius:14px;padding:14px;cursor:pointer;display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;transition:transform .1s}
+.exam-cfg .mode-card:active{transform:translateY(2px);border-bottom-width:2px}
+.exam-cfg .mode-card.sel{border-color:#7C3AED;background:#F5EEFF}
+.exam-cfg .mode-card .radio{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center}
+.exam-cfg .mode-card.sel .radio{border-color:#7C3AED}
+.exam-cfg .mode-card.sel .radio:after{content:'';width:10px;height:10px;border-radius:50%;background:#7C3AED}
+.exam-cfg .mode-card .mc-title{font-size:15px;font-weight:900;margin-bottom:3px}
+.exam-cfg .mode-card .mc-sub{font-size:12px;color:var(--text-light);font-weight:700;line-height:1.4}
+.exam-cfg .topics-wrap{margin-top:12px;background:var(--bg-2);border-radius:12px;padding:12px;max-height:340px;overflow-y:auto}
+.exam-cfg .topic-row{display:flex;align-items:center;gap:10px;padding:8px;border-radius:10px;cursor:pointer;font-size:13px;font-weight:800}
+.exam-cfg .topic-row:hover{background:#fff}
+.exam-cfg .topic-row .cb{width:22px;height:22px;border-radius:6px;border:2px solid var(--line);background:#fff;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff}
+.exam-cfg .topic-row.sel .cb{background:#7C3AED;border-color:#7C3AED}
+.exam-cfg .topic-row.sel .cb:after{content:'\2713'}
+.exam-cfg .topic-row .ti{font-size:18px;width:22px;text-align:center}
+.exam-cfg .topic-row .tn{flex:1;color:var(--text)}
+.exam-cfg .topic-row .tc{font-size:11px;color:var(--text-light);font-weight:800}
+.exam-cfg .section-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;color:var(--text-light);padding:10px 8px 4px}
+.exam-cfg .topics-actions{display:flex;gap:8px;padding:6px 8px 4px}
+.exam-cfg .topics-actions button{font-size:11px;font-weight:900;text-transform:uppercase;color:#7C3AED;background:none;cursor:pointer;letter-spacing:.4px}
+.exam-cfg .pool-info{margin-top:14px;text-align:center;font-size:13px;font-weight:800;color:var(--text-light)}
+.exam-cfg .pool-info b{color:var(--text)}
+.exam-cfg .pool-info.warn{color:var(--red-d)}
+.exam-cfg .actions{padding:16px 0 8px;display:flex;flex-direction:column;gap:10px}
+.btn-exam{background:#7C3AED;color:#fff;border-bottom-color:#5B21B6}
+
+/* ===== EXAM RUNNING ===== */
+.exam{flex:1;display:flex;flex-direction:column}
+.exam-bar{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#fff;border-bottom:2px solid var(--line);position:sticky;top:0;z-index:5}
+.exam-timer{display:flex;align-items:center;gap:6px;background:#F5EEFF;color:#5B21B6;padding:6px 12px;border-radius:20px;font-weight:900;font-size:15px;font-variant-numeric:tabular-nums}
+.exam-timer.warn{background:#FFE5B0;color:#9A4F00}
+.exam-timer.danger{background:#FFDFE0;color:var(--red-d);animation:tick 1s ease-in-out infinite}
+@keyframes tick{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.exam-counter{font-weight:900;font-size:14px;color:var(--text-light);flex:1;text-align:center}
+.exam-counter b{color:var(--text)}
+.exam-quit{background:#fff;border:2px solid var(--line);border-bottom-width:3px;border-radius:10px;padding:5px 10px;font-size:12px;font-weight:900;color:var(--text-light);cursor:pointer;text-transform:uppercase;letter-spacing:.4px}
+.exam-quit:active{transform:translateY(1px);border-bottom-width:1px}
+.exam-body{flex:1;padding:18px 20px;overflow-y:auto}
+.exam-q{font-size:18px;font-weight:800;line-height:1.4;margin-bottom:18px}
+.exam-num{display:inline-block;background:#F5EEFF;color:#5B21B6;padding:3px 10px;border-radius:10px;font-size:12px;font-weight:900;margin-bottom:10px;letter-spacing:.4px}
+.exam-opts{display:flex;flex-direction:column;gap:10px}
+.exam-opt{background:#fff;border:2px solid var(--line);border-bottom-width:4px;border-radius:14px;padding:13px 14px;text-align:left;font-size:15px;font-weight:700;color:var(--text);cursor:pointer;display:flex;align-items:center;gap:12px;transition:all .1s}
+.exam-opt:active{transform:translateY(2px);border-bottom-width:2px}
+.exam-opt.selected{border-color:#7C3AED;background:#F5EEFF;color:#5B21B6}
+.exam-opt .opt-num{width:28px;height:28px;border-radius:8px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--text-light);font-weight:900;flex-shrink:0}
+.exam-opt.selected .opt-num{border-color:#7C3AED;color:#7C3AED;background:#fff}
+.exam-mark{margin-top:14px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--text-light);cursor:pointer;padding:8px;border-radius:10px}
+.exam-mark .mb{width:22px;height:22px;border-radius:6px;border:2px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-size:14px}
+.exam-mark.on .mb{background:var(--orange);border-color:var(--orange);color:#fff}
+.exam-mark.on{color:var(--orange-d)}
+.exam-foot{padding:12px 14px;border-top:2px solid var(--line);background:#fff;display:flex;gap:8px}
+.exam-foot .btn{flex:1;padding:13px;font-size:14px}
+.exam-foot .btn.outline.disabled{opacity:.4;cursor:not-allowed}
+.exam-foot .btn.outline.disabled:active{transform:none;border-bottom-width:4px}
+.exam-grid-wrap{padding:14px 20px;background:var(--bg-2);border-top:2px solid var(--line)}
+.exam-grid-wrap h4{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;color:var(--text-light);margin-bottom:8px}
+.exam-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:6px}
+.exam-cell{aspect-ratio:1;border-radius:8px;background:#fff;border:2px solid var(--line);font-size:11px;font-weight:900;color:var(--text-light);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.exam-cell.done{background:#DDF4FF;border-color:var(--blue);color:var(--blue-d)}
+.exam-cell.mark{background:#FFE5B0;border-color:var(--orange);color:var(--orange-d)}
+.exam-cell.done.mark{background:#FFD9A0;border-color:var(--orange-d)}
+.exam-cell.cur{outline:3px solid #7C3AED;outline-offset:1px}
+
+/* ===== EXAM RESULT ===== */
+.exam-res{flex:1;padding:24px 20px 80px;display:flex;flex-direction:column}
+.exam-res .verdict{text-align:center;margin-bottom:18px}
+.exam-res .verdict-emoji{font-size:64px;margin-bottom:6px}
+.exam-res .verdict-title{font-size:24px;font-weight:900;margin-bottom:4px}
+.exam-res .verdict-title.apto{color:var(--green)}
+.exam-res .verdict-title.no{color:var(--red)}
+.exam-res .verdict-sub{font-size:13px;color:var(--text-light);font-weight:700}
+.exam-res .nota-circle{margin:0 auto 18px;width:170px;height:170px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:8px solid;position:relative;background:#fff}
+.exam-res .nota-circle.apto{border-color:var(--green);color:var(--green-d)}
+.exam-res .nota-circle.no{border-color:var(--red);color:var(--red-d)}
+.exam-res .nota-circle .nota-num{font-size:54px;font-weight:900;line-height:1}
+.exam-res .nota-circle .nota-de{font-size:14px;font-weight:900;opacity:.7}
+.exam-res .nota-circle .nota-cap{position:absolute;bottom:-12px;background:#fff;padding:2px 12px;border-radius:12px;border:2px solid;font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase}
+.exam-res .nota-circle.apto .nota-cap{border-color:var(--green)}
+.exam-res .nota-circle.no .nota-cap{border-color:var(--red)}
+.exam-res .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
+.exam-res .stat{background:#fff;border:2px solid var(--line);border-bottom-width:3px;border-radius:12px;padding:10px 6px;text-align:center}
+.exam-res .stat .lbl{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.4px;color:var(--text-light);margin-bottom:3px}
+.exam-res .stat .val{font-size:20px;font-weight:900}
+.exam-res .stat.ok .val{color:var(--green-d)}
+.exam-res .stat.ko .val{color:var(--red-d)}
+.exam-res .stat.bl .val{color:var(--text-light)}
+.exam-res .stat.tm .val{color:var(--blue-d)}
+.exam-res .review-h{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;color:var(--text-light);margin:12px 0 10px;padding-top:14px;border-top:2px solid var(--line)}
+.exam-res .rev{background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px;margin-bottom:8px;border-left:4px solid var(--red)}
+.exam-res .rev.bl{border-left-color:var(--text-light)}
+.exam-res .rev .rev-q{font-size:13px;font-weight:800;line-height:1.4;margin-bottom:8px}
+.exam-res .rev .rev-line{font-size:12px;font-weight:700;line-height:1.4;margin:3px 0}
+.exam-res .rev .rev-line .lab{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.4px;padding:1px 6px;border-radius:6px;margin-right:6px}
+.exam-res .rev .rev-line.ko .lab{background:#FFDFE0;color:var(--red-d)}
+.exam-res .rev .rev-line.ok .lab{background:#D7FFB8;color:var(--green-d)}
+.exam-res .rev .rev-line.bl .lab{background:var(--bg-3);color:var(--text-light)}
+.exam-res .rev .rev-exp{font-size:12px;color:var(--text);font-weight:600;line-height:1.45;margin-top:6px;padding-top:6px;border-top:1px dashed var(--line)}
+.exam-res .actions{margin-top:14px;display:flex;flex-direction:column;gap:8px}
 </style>
 </head>
 <body>
@@ -177,13 +290,15 @@ const STATE = {
       ultimoDia: null,
       vidas: 5,
       vidasReset: null,
-      progreso: {} // unidadId: { stars: 0-3, lessonesCompletadas: n }
+      progreso: {}, // unidadId: { stars: 0-3, lessonesCompletadas: n }
+      examenes: [] // historico simulacros: {ts, modo, unidades, total, aciertos, fallos, blancos, nota, tiempoSeg}
     };
   },
   save(s){ localStorage.setItem('testforal_state_v2', JSON.stringify(s)); }
 };
 
 let state = STATE.load();
+if(!state.examenes) state.examenes = [];
 
 // ============ MASCOT · Foralín, el león opositor ============
 // León con traje gris, corbata, gafas de pasta y carpeta de apuntes
@@ -328,12 +443,16 @@ function bumpRacha(){
 const app = document.getElementById('app');
 
 function render(view, ctx){
+  if(window._examTimer && view!=='exam'){ clearInterval(window._examTimer); window._examTimer = null; }
   regenLives();
   app.innerHTML = '';
   if(view==='onb') renderOnboarding();
   else if(view==='tree') renderTree();
   else if(view==='lesson') renderLesson(ctx);
   else if(view==='result') renderResult(ctx);
+  else if(view==='examConfig') renderExamConfig();
+  else if(view==='exam') renderExam(ctx);
+  else if(view==='examResult') renderExamResult(ctx);
 }
 
 function topBar(mode){
@@ -435,14 +554,31 @@ function renderTree(){
     `;
   }).join('');
 
+  const totalPool = (window.PREGUNTAS||[]).filter(p=>op.secciones.some(s=>s.unidades.some(u=>u.id===p.unidad))).length;
+  const ultimoExam = (state.examenes||[]).slice().reverse().find(e=>e.opo===op.id);
+  const examSubtitle = ultimoExam
+    ? `Tu ultima nota: <b>${ultimoExam.nota.toFixed(1)}/10</b> &middot; ${ultimoExam.aciertos}/${ultimoExam.total} aciertos`
+    : `50 preguntas &middot; 60 min &middot; nota /10 con regla 3:1`;
+  const examEnabled = totalPool >= 50;
   app.innerHTML = `
     ${topBar('exit')}
     <div class="tree">
       <div style="text-align:center;font-size:22px;font-weight:900;margin:8px 0 4px">${op.nombre}</div>
       <div style="text-align:center;font-size:13px;color:var(--text-light);font-weight:700;margin-bottom:8px">${op.organismo}</div>
+      <button class="exam-cta" id="exam-cta" ${examEnabled?'':'disabled style="opacity:.55;cursor:not-allowed"'}>
+        <div class="ec-icon">📝</div>
+        <div class="ec-body">
+          <div class="ec-title">${examEnabled?'Simulacro de examen':'Simulacro (proximamente)'}</div>
+          <div class="ec-sub">${examEnabled?examSubtitle:`Faltan preguntas: hay ${totalPool}/50 minimo`}</div>
+        </div>
+        <div class="ec-arrow">›</div>
+      </button>
       ${sectionsHTML}
     </div>
   `;
+  if(examEnabled){
+    document.getElementById('exam-cta').onclick = ()=>render('examConfig');
+  }
   document.getElementById('exit').onclick = ()=>{
     if(!confirm('¿Salir y elegir otra oposición?\nTu progreso se guarda igual.')) return;
     state.oposicion = null;
@@ -617,6 +753,372 @@ function renderResult({ctx, passed, acc, time}){
     </div>
   `;
   document.getElementById('continue').onclick = ()=>render('tree');
+}
+
+// ============ EXAM ============
+const EXAM_CFG = { N: 50, MIN_SEG: 60*60, PEN: 3 }; // 50 preguntas, 60 min, 3 fallos = 1 acierto
+
+let examConfigDraft = null; // { modo:'mix'|'temas', unidades:Set<string> }
+
+function getOpoUnidades(op){
+  const out = [];
+  op.secciones.forEach(s=>{
+    s.unidades.forEach(u=>{
+      const count = (window.PREGUNTAS||[]).filter(p=>p.unidad===u.id).length;
+      out.push({ ...u, secNombre: s.nombre, secColor: s.color, secEmoji: s.emoji, count });
+    });
+  });
+  return out;
+}
+
+function poolForExam(op, modo, unidadesSet){
+  const allowed = new Set();
+  op.secciones.forEach(s=>s.unidades.forEach(u=>{
+    if(modo==='mix' || unidadesSet.has(u.id)) allowed.add(u.id);
+  }));
+  return (window.PREGUNTAS||[]).filter(p=>allowed.has(p.unidad));
+}
+
+function renderExamConfig(){
+  const op = getOpo();
+  if(!op){ render('onb'); return; }
+  if(!examConfigDraft || examConfigDraft._opo !== op.id){
+    examConfigDraft = { _opo: op.id, modo: 'mix', unidades: new Set() };
+  }
+  const unidades = getOpoUnidades(op);
+  const totalGlobal = unidades.reduce((s,u)=>s+u.count, 0);
+
+  // Agrupar por seccion para el listado
+  const seccionesHTML = op.secciones.map(sec=>{
+    const us = unidades.filter(u=>sec.unidades.some(x=>x.id===u.id));
+    const rows = us.map(u=>{
+      const sel = examConfigDraft.unidades.has(u.id);
+      return `
+        <div class="topic-row ${sel?'sel':''}" data-uid="${u.id}">
+          <div class="cb"></div>
+          <div class="ti">${u.icono}</div>
+          <div class="tn">${u.nombre}</div>
+          <div class="tc">${u.count}</div>
+        </div>
+      `;
+    }).join('');
+    return `<div class="section-name">${sec.emoji} ${sec.nombre}</div>${rows}`;
+  }).join('');
+
+  app.innerHTML = `
+    ${topBar('none')}
+    <div class="exam-cfg">
+      <h2>📝 Simulacro de examen</h2>
+      <div class="sub">${op.nombre}</div>
+      <div class="info">⏱️ <b>50 preguntas</b> en <b>60 minutos</b>. Penalizacion: <b>3 fallos = 1 acierto</b>. Las preguntas en blanco no penalizan. Apto a partir de <b>5/10</b>.</div>
+
+      <div class="mode-card ${examConfigDraft.modo==='mix'?'sel':''}" id="mode-mix">
+        <div class="radio"></div>
+        <div>
+          <div class="mc-title">Mix global</div>
+          <div class="mc-sub">50 preguntas aleatorias de todo el temario (${totalGlobal} disponibles)</div>
+        </div>
+      </div>
+      <div class="mode-card ${examConfigDraft.modo==='temas'?'sel':''}" id="mode-temas">
+        <div class="radio"></div>
+        <div>
+          <div class="mc-title">Por temas</div>
+          <div class="mc-sub">Tu eliges los temas. Util para repasar bloques concretos.</div>
+        </div>
+      </div>
+
+      <div id="topics-block" style="display:${examConfigDraft.modo==='temas'?'block':'none'}">
+        <div class="topics-actions">
+          <button id="t-all">Marcar todo</button>
+          <button id="t-none">Quitar todo</button>
+        </div>
+        <div class="topics-wrap" id="topics">${seccionesHTML}</div>
+      </div>
+
+      <div class="pool-info" id="pool-info"></div>
+
+      <div class="actions">
+        <button class="btn btn-exam primary" id="start-exam">Empezar examen</button>
+        <button class="btn outline" id="back-exam">Volver al arbol</button>
+      </div>
+    </div>
+  `;
+
+  function refreshPool(){
+    const pool = poolForExam(op, examConfigDraft.modo, examConfigDraft.unidades);
+    const el = document.getElementById('pool-info');
+    const startBtn = document.getElementById('start-exam');
+    if(pool.length < EXAM_CFG.N){
+      el.classList.add('warn');
+      el.innerHTML = `Solo hay <b>${pool.length}</b> preguntas en la seleccion. Necesitas al menos <b>${EXAM_CFG.N}</b>.`;
+      startBtn.classList.add('disabled');
+      startBtn.classList.remove('primary');
+    } else {
+      el.classList.remove('warn');
+      el.innerHTML = `<b>${pool.length}</b> preguntas en la seleccion. Se eligiran ${EXAM_CFG.N} al azar.`;
+      startBtn.classList.remove('disabled');
+      startBtn.classList.add('primary');
+    }
+  }
+  refreshPool();
+
+  document.getElementById('mode-mix').onclick = ()=>{ examConfigDraft.modo='mix'; renderExamConfig(); };
+  document.getElementById('mode-temas').onclick = ()=>{ examConfigDraft.modo='temas'; renderExamConfig(); };
+  document.getElementById('back-exam').onclick = ()=>render('tree');
+
+  document.querySelectorAll('.topic-row').forEach(r=>{
+    r.onclick = ()=>{
+      const uid = r.dataset.uid;
+      if(examConfigDraft.unidades.has(uid)) examConfigDraft.unidades.delete(uid);
+      else examConfigDraft.unidades.add(uid);
+      r.classList.toggle('sel');
+      refreshPool();
+    };
+  });
+
+  const tAll = document.getElementById('t-all');
+  const tNone = document.getElementById('t-none');
+  if(tAll) tAll.onclick = ()=>{ unidades.forEach(u=>{ if(u.count>0) examConfigDraft.unidades.add(u.id); }); renderExamConfig(); };
+  if(tNone) tNone.onclick = ()=>{ examConfigDraft.unidades.clear(); renderExamConfig(); };
+
+  document.getElementById('start-exam').onclick = ()=>{
+    const pool = poolForExam(op, examConfigDraft.modo, examConfigDraft.unidades);
+    if(pool.length < EXAM_CFG.N) return;
+    if(examConfigDraft.modo==='temas' && examConfigDraft.unidades.size===0) return;
+    if(!confirm(`¿Empezar simulacro?\n\n${EXAM_CFG.N} preguntas en ${EXAM_CFG.MIN_SEG/60} min.\nNo se pierden vidas.`)) return;
+    startExam(pool);
+  };
+}
+
+function startExam(pool){
+  const shuffled = [...pool].sort(()=>Math.random()-0.5).slice(0, EXAM_CFG.N);
+  const ctx = {
+    questions: shuffled,
+    idx: 0,
+    respuestas: new Array(shuffled.length).fill(null),
+    marcadas: new Array(shuffled.length).fill(false),
+    inicioTs: Date.now(),
+    tiempoRestante: EXAM_CFG.MIN_SEG,
+    modo: examConfigDraft.modo,
+    unidades: examConfigDraft.modo==='temas' ? Array.from(examConfigDraft.unidades) : null,
+    finalizado: false
+  };
+  render('exam', ctx);
+}
+
+function fmtTimer(s){
+  const m = Math.floor(s/60);
+  const ss = s%60;
+  return `${m.toString().padStart(2,'0')}:${ss.toString().padStart(2,'0')}`;
+}
+
+function renderExam(ctx){
+  const q = ctx.questions[ctx.idx];
+  const total = ctx.questions.length;
+  const respondidas = ctx.respuestas.filter(r=>r!==null).length;
+
+  const cellsHTML = ctx.questions.map((_,i)=>{
+    const cls = [];
+    if(ctx.respuestas[i]!==null) cls.push('done');
+    if(ctx.marcadas[i]) cls.push('mark');
+    if(i===ctx.idx) cls.push('cur');
+    return `<button class="exam-cell ${cls.join(' ')}" data-i="${i}">${i+1}</button>`;
+  }).join('');
+
+  const optsHTML = q.opciones.map((o,i)=>{
+    const sel = ctx.respuestas[ctx.idx] === i;
+    return `
+      <button class="exam-opt ${sel?'selected':''}" data-i="${i}">
+        <div class="opt-num">${String.fromCharCode(65+i)}</div>
+        <div>${o}</div>
+      </button>
+    `;
+  }).join('');
+
+  const isLast = ctx.idx === total-1;
+  const isFirst = ctx.idx === 0;
+  const marked = ctx.marcadas[ctx.idx];
+
+  app.innerHTML = `
+    <div class="exam">
+      <div class="exam-bar">
+        <div class="exam-timer" id="timer">⏱️ ${fmtTimer(ctx.tiempoRestante)}</div>
+        <div class="exam-counter">Pregunta <b>${ctx.idx+1}</b> / ${total} &middot; respondidas <b>${respondidas}</b></div>
+        <button class="exam-quit" id="quit-exam">Salir</button>
+      </div>
+      <div class="exam-body">
+        <div class="exam-num">PREGUNTA ${ctx.idx+1}</div>
+        <div class="exam-q">${q.pregunta}</div>
+        <div class="exam-opts">${optsHTML}</div>
+        <button class="exam-mark ${marked?'on':''}" id="mark"><span class="mb">${marked?'★':''}</span> Marcar para revisar</button>
+      </div>
+      <div class="exam-grid-wrap">
+        <h4>Navegacion (${respondidas}/${total} respondidas)</h4>
+        <div class="exam-grid">${cellsHTML}</div>
+      </div>
+      <div class="exam-foot">
+        <button class="btn outline ${isFirst?'disabled':''}" id="prev">‹ Anterior</button>
+        ${isLast
+          ? `<button class="btn danger" id="finish">Finalizar</button>`
+          : `<button class="btn btn-exam primary" id="next">Siguiente ›</button>`}
+      </div>
+    </div>
+  `;
+
+  // Timer (1 unico interval por sesion)
+  if(window._examTimer){ clearInterval(window._examTimer); }
+  window._examTimer = setInterval(()=>{
+    if(ctx.finalizado){ clearInterval(window._examTimer); window._examTimer=null; return; }
+    ctx.tiempoRestante = Math.max(0, ctx.tiempoRestante - 1);
+    const t = document.getElementById('timer');
+    if(t){
+      t.textContent = `⏱️ ${fmtTimer(ctx.tiempoRestante)}`;
+      t.classList.toggle('warn', ctx.tiempoRestante<=300 && ctx.tiempoRestante>60);
+      t.classList.toggle('danger', ctx.tiempoRestante<=60);
+    }
+    if(ctx.tiempoRestante<=0){
+      clearInterval(window._examTimer); window._examTimer=null;
+      finishExam(ctx, true);
+    }
+  }, 1000);
+
+  document.querySelectorAll('.exam-opt').forEach(b=>{
+    b.onclick = ()=>{
+      const i = +b.dataset.i;
+      ctx.respuestas[ctx.idx] = (ctx.respuestas[ctx.idx]===i) ? null : i;
+      renderExam(ctx);
+    };
+  });
+  document.querySelectorAll('.exam-cell').forEach(c=>{
+    c.onclick = ()=>{ ctx.idx = +c.dataset.i; renderExam(ctx); };
+  });
+  document.getElementById('mark').onclick = ()=>{
+    ctx.marcadas[ctx.idx] = !ctx.marcadas[ctx.idx];
+    renderExam(ctx);
+  };
+  const prev = document.getElementById('prev');
+  if(prev) prev.onclick = ()=>{ if(ctx.idx>0){ ctx.idx--; renderExam(ctx); } };
+  const next = document.getElementById('next');
+  if(next) next.onclick = ()=>{ if(ctx.idx<total-1){ ctx.idx++; renderExam(ctx); } };
+  const fin = document.getElementById('finish');
+  if(fin) fin.onclick = ()=>{
+    const sinResp = ctx.respuestas.filter(r=>r===null).length;
+    const msg = sinResp>0
+      ? `Te quedan ${sinResp} preguntas en blanco.\n¿Finalizar de todos modos?`
+      : `¿Finalizar el examen?`;
+    if(confirm(msg)) finishExam(ctx, false);
+  };
+  document.getElementById('quit-exam').onclick = ()=>{
+    if(confirm('¿Salir del examen? Se perdera el progreso del simulacro.')){
+      ctx.finalizado = true;
+      if(window._examTimer){ clearInterval(window._examTimer); window._examTimer=null; }
+      render('tree');
+    }
+  };
+}
+
+function finishExam(ctx, porTiempo){
+  ctx.finalizado = true;
+  if(window._examTimer){ clearInterval(window._examTimer); window._examTimer=null; }
+  const total = ctx.questions.length;
+  let aciertos=0, fallos=0, blancos=0;
+  ctx.questions.forEach((q,i)=>{
+    const r = ctx.respuestas[i];
+    if(r===null) blancos++;
+    else if(r===q.correcta) aciertos++;
+    else fallos++;
+  });
+  const netos = aciertos - fallos/EXAM_CFG.PEN;
+  const nota = Math.max(0, (netos/total)*10);
+  const tiempoSeg = Math.round((Date.now()-ctx.inicioTs)/1000);
+  const apto = nota >= 5;
+
+  // Histroico
+  const op = getOpo();
+  state.examenes = state.examenes || [];
+  state.examenes.push({
+    ts: Date.now(),
+    opo: op?.id || null,
+    modo: ctx.modo,
+    unidades: ctx.unidades,
+    total, aciertos, fallos, blancos,
+    nota: Math.round(nota*10)/10,
+    tiempoSeg,
+    apto,
+    porTiempo: !!porTiempo
+  });
+  // Bonus XP
+  state.xp += aciertos*5 + (apto ? 100 : 0);
+  if(apto) bumpRacha();
+  STATE.save(state);
+
+  render('examResult', { ctx, total, aciertos, fallos, blancos, nota, tiempoSeg, apto, porTiempo });
+}
+
+function renderExamResult(r){
+  const { ctx, total, aciertos, fallos, blancos, nota, tiempoSeg, apto, porTiempo } = r;
+  const notaStr = nota.toFixed(1).replace('.', ',');
+  const min = Math.floor(tiempoSeg/60);
+  const sec = tiempoSeg%60;
+
+  const fallosArr = ctx.questions.map((q,i)=>{
+    const resp = ctx.respuestas[i];
+    return { q, i, resp };
+  }).filter(x => x.resp===null || x.resp!==x.q.correcta);
+
+  const revHTML = fallosArr.map(x=>{
+    const blank = x.resp===null;
+    const yourLine = blank
+      ? `<div class="rev-line bl"><span class="lab">Sin responder</span></div>`
+      : `<div class="rev-line ko"><span class="lab">Tu</span> ${String.fromCharCode(65+x.resp)}. ${x.q.opciones[x.resp]}</div>`;
+    return `
+      <div class="rev ${blank?'bl':''}">
+        <div class="rev-q">${x.i+1}. ${x.q.pregunta}</div>
+        ${yourLine}
+        <div class="rev-line ok"><span class="lab">Correcta</span> ${String.fromCharCode(65+x.q.correcta)}. ${x.q.opciones[x.q.correcta]}</div>
+        ${x.q.explicacion?`<div class="rev-exp">${x.q.explicacion}</div>`:''}
+      </div>
+    `;
+  }).join('') || `<div style="text-align:center;color:var(--text-light);font-weight:800;padding:14px">Sin fallos. ¡Perfecto!</div>`;
+
+  const verdictTitle = apto ? '¡Apto!' : 'No apto';
+  const verdictSub = porTiempo
+    ? 'Se acabo el tiempo'
+    : (apto ? 'Has superado el simulacro' : 'Necesitas un 5/10 para aprobar');
+  const emoji = apto ? '🎉' : '💪';
+
+  app.innerHTML = `
+    ${topBar('none')}
+    <div class="exam-res">
+      <div class="verdict">
+        <div class="verdict-emoji">${emoji}</div>
+        <div class="verdict-title ${apto?'apto':'no'}">${verdictTitle}</div>
+        <div class="verdict-sub">${verdictSub}</div>
+      </div>
+      <div class="nota-circle ${apto?'apto':'no'}">
+        <div class="nota-num">${notaStr}</div>
+        <div class="nota-de">/ 10</div>
+        <div class="nota-cap">${apto?'APTO':'NO APTO'}</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat ok"><div class="lbl">Aciertos</div><div class="val">${aciertos}</div></div>
+        <div class="stat ko"><div class="lbl">Fallos</div><div class="val">${fallos}</div></div>
+        <div class="stat bl"><div class="lbl">Blanco</div><div class="val">${blancos}</div></div>
+        <div class="stat tm"><div class="lbl">Tiempo</div><div class="val">${min}:${sec.toString().padStart(2,'0')}</div></div>
+      </div>
+      <div style="text-align:center;font-size:12px;color:var(--text-light);font-weight:700;margin-bottom:8px">
+        ${aciertos} aciertos &minus; ${fallos}/${EXAM_CFG.PEN} = <b>${(aciertos - fallos/EXAM_CFG.PEN).toFixed(2)}</b> netos sobre ${total}
+      </div>
+      <div class="actions">
+        <button class="btn btn-exam primary" id="r-again">Hacer otro simulacro</button>
+        <button class="btn outline" id="r-tree">Volver al arbol</button>
+      </div>
+      <div class="review-h">Revision (${fallosArr.length})</div>
+      ${revHTML}
+    </div>
+  `;
+  document.getElementById('r-again').onclick = ()=>render('examConfig');
+  document.getElementById('r-tree').onclick = ()=>render('tree');
 }
 
 // ============ NO LIVES MODAL ============
