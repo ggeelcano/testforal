@@ -25,13 +25,13 @@
   --text:#3C3C3C; --text-light:#777;
   --line:#E5E5E5;
 }
-html,body{height:100%;font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);overscroll-behavior:none}
-body{-webkit-user-select:none;user-select:none}
+html,body{height:100%;font-family:'Nunito',sans-serif;color:var(--text);overscroll-behavior:none}
+body{-webkit-user-select:none;user-select:none;background-color:#fff;background-image:linear-gradient(180deg,#C7F4A0 0%,#E1FBC9 22%,#F4FFE8 45%,#FFFFFF 70%);background-attachment:fixed;background-repeat:no-repeat}
 button{font-family:inherit;border:none;cursor:pointer;background:none}
-.app{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;background:var(--bg);position:relative}
+.app{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;background:transparent;position:relative}
 
 /* ===== TOP BAR ===== */
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:2px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:10}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid rgba(0,0,0,.06);background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);position:sticky;top:0;z-index:10}
 .topbar-stat{display:flex;align-items:center;gap:6px;font-weight:800;font-size:18px}
 .topbar-stat .icon{font-size:22px}
 .topbar-stat.streak{color:var(--orange)}
@@ -270,6 +270,22 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .exam-res .rev .rev-line.bl .lab{background:var(--bg-3);color:var(--text-light)}
 .exam-res .rev .rev-exp{font-size:12px;color:var(--text);font-weight:600;line-height:1.45;margin-top:6px;padding-top:6px;border-top:1px dashed var(--line)}
 .exam-res .actions{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+
+/* ===== SPLASH ===== */
+.splash{flex:1;background:linear-gradient(140deg,#58CC02 0%,#7BD81F 55%,#89E219 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;padding:40px 20px;position:relative;overflow:hidden;animation:splash-in .35s ease-out}
+.splash:before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 12%, rgba(255,255,255,.18) 0 60px, transparent 61px),radial-gradient(circle at 85% 80%, rgba(255,255,255,.14) 0 90px, transparent 91px),radial-gradient(circle at 70% 22%, rgba(255,255,255,.10) 0 40px, transparent 41px);pointer-events:none}
+.splash-mascot{width:170px;animation:splash-bounce 1s ease-in-out infinite;filter:drop-shadow(0 10px 14px rgba(0,0,0,.18));z-index:1}
+@keyframes splash-bounce{0%,100%{transform:translateY(0) rotate(0)}45%{transform:translateY(-18px) rotate(-4deg)}55%{transform:translateY(-18px) rotate(4deg)}}
+.splash-logo{font-size:42px;font-weight:900;letter-spacing:.5px;margin-top:22px;text-shadow:0 3px 0 rgba(0,0,0,.18);z-index:1;animation:splash-fadein .55s ease-out .12s both}
+.splash-tag{font-size:13px;font-weight:900;letter-spacing:2px;text-transform:uppercase;opacity:.95;margin-top:6px;z-index:1;animation:splash-fadein .55s ease-out .25s both}
+.splash-bar{width:200px;height:8px;background:rgba(255,255,255,.28);border-radius:6px;overflow:hidden;margin-top:42px;z-index:1;animation:splash-fadein .55s ease-out .4s both}
+.splash-fill{height:100%;width:0;background:#fff;border-radius:6px;box-shadow:0 0 14px rgba(255,255,255,.7);animation:splash-load 1.6s cubic-bezier(.22,.9,.36,1) forwards}
+.splash-loadtext{font-size:11px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;opacity:.85;margin-top:14px;z-index:1;animation:splash-fadein .55s ease-out .55s both}
+@keyframes splash-load{0%{width:0}100%{width:100%}}
+@keyframes splash-fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes splash-in{from{opacity:0}to{opacity:1}}
+.splash-out{animation:splash-out .35s ease-in forwards}
+@keyframes splash-out{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(1.04)}}
 </style>
 </head>
 <body>
@@ -446,13 +462,35 @@ function render(view, ctx){
   if(window._examTimer && view!=='exam'){ clearInterval(window._examTimer); window._examTimer = null; }
   regenLives();
   app.innerHTML = '';
-  if(view==='onb') renderOnboarding();
+  if(view==='splash') renderSplash();
+  else if(view==='onb') renderOnboarding();
   else if(view==='tree') renderTree();
   else if(view==='lesson') renderLesson(ctx);
   else if(view==='result') renderResult(ctx);
   else if(view==='examConfig') renderExamConfig();
   else if(view==='exam') renderExam(ctx);
   else if(view==='examResult') renderExamResult(ctx);
+}
+
+// ============ SPLASH ============
+function renderSplash(){
+  app.innerHTML = `
+    <div class="splash" id="splash">
+      <div class="splash-mascot">${mascotSVG()}</div>
+      <div class="splash-logo">TestForal</div>
+      <div class="splash-tag">Oposiciones de Bizkaia</div>
+      <div class="splash-bar"><div class="splash-fill"></div></div>
+      <div class="splash-loadtext">Preparando tu temario…</div>
+    </div>
+  `;
+  setTimeout(()=>{
+    const s = document.getElementById('splash');
+    if(s) s.classList.add('splash-out');
+    setTimeout(()=>{
+      if(!state.oposicion) render('onb');
+      else render('tree');
+    }, 320);
+  }, 1700);
 }
 
 function topBar(mode){
@@ -1144,8 +1182,7 @@ function showNoLivesModal(){
 // ============ INIT ============
 function init(){
   if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
-  if(!state.oposicion) render('onb');
-  else render('tree');
+  render('splash');
 }
 init();
 </script>
