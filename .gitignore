@@ -1,5 +1,1 @@
-node_modules/
-play-package/
-*.keystore
-signing-key-info.txt
-.env
+archivo-oficial/_download.ps1
