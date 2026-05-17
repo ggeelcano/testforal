@@ -33,16 +33,26 @@
   var adm  = (window.PREGUNTAS_ADMINISTRATIVO_2022 || []);
   var tm22 = (window.PREGUNTAS_TMGAF_2022 || []);
   var tm26 = (window.PREGUNTAS_TMGAF_2026 || []);
+  var afc  = (window.PREGUNTAS_AFC_2024 || []);
+  var eco  = (window.PREGUNTAS_ECONOMISTA_2022 || []);
+  var tg23 = (window.PREGUNTAS_TAG_2023 || []);
+  var tg26 = (window.PREGUNTAS_TAG_2026 || []);
   window.PREGUNTAS = [].concat(
     tag(sub,  'sub'),
     tag(adm,  'adm'),
     tag(tm22, 'tmgaf'),
-    tag(tm26, 'tmgaf')
+    tag(tm26, 'tmgaf'),
+    tag(afc,  'afc'),
+    tag(eco,  'eco'),
+    tag(tg23, 'tag'),
+    tag(tg26, 'tag')
   );
   // Resumen para depuración
   if (typeof console !== 'undefined') {
     console.log('[TestForal] Preguntas cargadas:', window.PREGUNTAS.length,
       'sub=' + sub.length, 'adm=' + adm.length,
-      'tmgaf=' + (tm22.length + tm26.length));
+      'tmgaf=' + (tm22.length + tm26.length),
+      'afc=' + afc.length, 'eco=' + eco.length,
+      'tag=' + (tg23.length + tg26.length));
   }
 })();

@@ -1,0 +1,1239 @@
+Administración General, Subescala administrativa
+Primer ejercicio: Primera parte de carácter teórico.
+
+           PROCESO ORDINARIO-TURNO LIBRE
+
+   1 DE CONFORMIDAD CON LO ESTABLECIDO EN EL ARTÍCULO 6 DE LA LEY 39/2015, DE 1
+            DE OCTUBRE, DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS
+            ADMINISTRACIONES PÚBLICAS LOS REGISTROS MERCANTILES, DE LA PROPIEDAD, Y DE
+            LOS PROTOCOLOS NOTARIALES SERÁN INTEROPERABLES CON:
+
+   a) Los registros electrónicos singulares y particulares de apoderamientos.
+   b) Los registros electrónicos singulares de apoderamientos.
+   c) Los registros electrónicos individuales y generales de apoderamientos
+   d) Los registros electrónicos generales y particulares de apoderamientos.
+
+   2 EN VIRTUD DE LO DISPUESTO EN EL ARTÍCULO 6 DE LA LEY 39/2015 DE 1 DE OCTUBRE, DEL
+            PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES PÚBLICAS, EN
+            EL REGISTRO ELECTRÓNICO DE APODERAMIENTOS:
+
+   a) Cada Administración aprobará los modelos de poderes inscribibles en el registro
+            cuando se circunscriba a actuaciones ante su respectiva Administración.
+
+   b) Los poderes inscritos en el registro tendrán una validez determinada máxima de
+            cinco años a contar desde la fecha de inscripción.
+
+   c) Los poderes inscritos en el registro tendrán una validez determinada máxima de
+            cinco años a contar desde la fecha de solicitud de inscripción.
+
+   d) Las prórrogas otorgadas por el apoderado al registro tendrán una validez
+            determinada máxima de cinco años a contar desde la fecha de inscripción.
+
+   3 DE CONFORMIDAD CON LO ESTABLECIDO EN ARTÍCULO 11 DE LA NORMA FORAL
+            3/1987, DE 13 DE FEBRERO, SOBRE ELECCIÓN, ORGANIZACIÓN, RÉGIMEN Y
+            FUNCIONAMIENTO DE LAS INSTITUCIONES FORALES DEL TERRITORIO HISTÓRICO DE
+            BIZKAIA, LAS JUNTAS GENERALES PODRÁN DELEGAR EN LA DIPUTACIÓN FORAL DE
+            BIZKAIA:
+
+   a) La potestad de dictar disposiciones normativas que afectan al Ordenamiento básico
+            de la Diputación Foral o al Régimen Jurídico de la Administración del Territorio
+            Histórico.
+
+   b) La potestad de dictar disposiciones normativas que afectan a la Organización del
+            Territorio Histórico.
+
+   c) La potestad de dictar disposiciones normativas sobre el Régimen electoral del
+            Territorio Histórico.
+
+   d) Todas aquellas Normas que por su carácter institucional no requieran un
+            procedimiento especial para su aprobación.
+
+   4 DE CONFORMIDAD CON LO ESTABLECIDO EN EL ARTÍCULO 21 DE LA LEY 39/2015, DE 1
+            DE OCTUBRE, DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS
+            ADMINISTRACIONES PÚBLICAS, LA ADMINISTRACIÓN DEBERÁ DICTAR RESOLUCIÓN
+            EXPRESA
+
+   a) Únicamente en los procedimientos iniciados a solicitud del interesado.
+   b) En los procedimientos iniciados a solicitud del interesado, siempre que una norma de
+
+            derecho de la unión europea o de derecho internacional aplicable en España no
+            establezcan lo contrario.
+   c) En todos los procedimientos iniciados a solicitud del interesado, salvo los supuestos
+            de terminación del procedimiento por pacto o convenio, así como los
+            procedimientos relativos al ejercicio de derechos sometidos únicamente al deber de
+            declaración responsable o comunicación a la administración.
+   d) En todos, cualquiera que sea su forma de finalización.
+5 DE CONFORMIDAD CON LO ESTABLECIDO EN LA LEY 39/2015, DE 1 DE OCTUBRE, DEL
+        PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES PÚBLICAS, LOS
+        PLAZOS EXPRESADOS EN HORAS SE CONTARÁN:
+
+a) De hora en hora y no podrá ser superior a cuarenta y ocho horas.
+b) En horas y no podrán tener una duración inferior a veinticuatro horas.
+c) De hora en hora y de minuto en minuto desde la hora y minuto en que tenga lugar
+
+        la notificación.
+d) En horas y no podrán tener una duración superior a doce horas.
+
+6 SEGÚN LO ESTABLECIDO EN EL ARTÍCULO 17 DE LA LEY 39/2015, DE 1 DE OCTUBRE, DEL
+        PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES PÚBLICAS, EL
+        ARCHIVO DE DOCUMENTOS:
+
+a) Las Administraciones deberán mantener archivos electrónicos de los documentos
+        electrónicos que correspondan a procedimientos finalizados, en los términos
+        establecidos en la normativa reguladora aplicable.
+
+b) Los documentos deberán conservarse en un formato que permita garantizar la
+        autenticidad, integridad y conservación del documento, así como su consulta con
+        dependencia del tiempo transcurrido desde su emisión.
+
+c) Se asegurará en todo caso la posibilidad de trasladar los datos a otros formatos y
+        soportes que garanticen el acceso desde diferentes aplicaciones.
+
+d) Los medios o soportes en que se almacenen documentos deberán contar con
+        medidas de seguridad, de acuerdo con lo previsto en el Esquema Nacional de
+        Interoperabilidad, que garanticen la integridad, autenticidad, confidencialidad,
+        calidad, protección y conservación de los documentos almacenados. En particular,
+        asegurarán la identificación de los usuarios y el control de accesos, así como el
+        cumplimiento de las garantías previstas en la legislación de protección de datos.
+
+7 DE CONFORMIDAD CON LO ESTABLECIDO EN EL ARTÍCULO 34 DE LA LEY 39/2015, DE 1
+        DE OCTUBRE, DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS
+        ADMINISTRACIONES PÚBLICAS, EN RELACIÓN CON EL CONTENIDO DE LOS ACTOS
+        ADMINISTRATIVOS, ÉSTE SE AJUSTARÁ:
+
+a) A los fines de aquéllos y servir al interés general.
+b) A lo dispuesto por el ordenamiento jurídico y servir equitativamente al interés
+
+        general.
+c) A lo dispuesto por el ordenamiento jurídico y será determinado y adecuado a los
+
+        fines de aquéllos.
+d) A los fines de aquéllos y será determinado y adecuado por el ordenamiento jurídico.
+
+8 DE CONFORMIDAD CON LO ESTABLECIDO EN LA LEY 39/2015, DE 1 DE OCTUBRE, DEL
+        PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES PÚBLICAS, LA
+        EFICACIA DE LOS ACTOS:
+
+a) Los actos de las Administraciones Públicas se presumirán válidos y producirán efectos
+        desde la fecha en que se dicten, salvo que en ellos se disponga otra cosa.
+
+b) La eficacia quedará demorada cuando así lo exija el contenido del acto y esté
+        supeditada a su notificación, publicación o aprobación superior
+
+c) Excepcionalmente, podrá otorgarse eficacia retroactiva a los actos cuando se
+        dicten en sustitución de actos anulados.
+
+d) Los actos de las Administraciones Públicas sujetos al Derecho Administrativo serán
+        ejecutivos con arreglo a lo dispuesto en este Reglamento.
+
+                                                                                                                                                    2
+9 DE CONFORMIDAD CON LO ESTABLECIDO EN LA LEY 39/2015, DE 1 DE OCTUBRE, DEL
+        PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES PÚBLICAS,
+        CUANDO SE PRACTICA LA NOTIFICACIÓN EN PAPEL Y EL INTERESADO ACCEDIERA AL
+        CONTENIDO DE LA NOTIFICACIÓN EN SEDE ELECTRÓNICA:
+
+a) El resto de las notificaciones se realizarán a través de medios electrónicos.
+b) Se le ofrecerá la posibilidad de que el resto de las notificaciones se puedan realizar a
+
+        través de medios electrónicos.
+c) El resto de las notificaciones se realizarán a través de medios electrónicos excepto la
+
+        resolución que ponga fin al procedimiento.
+d) Ninguna de las respuestas anteriores es correcta.
+
+10 SEGÚN LO ESTABLECIDO EN EL ARTÍCULO 7 DE LA NORMA FORAL 3/1987, DE 13 DE
+        FEBRERO, SOBRE SOBRE ELECCIÓN, ORGANIZACIÓN, RÉGIMEN Y FUNCIONAMIENTO DE
+        LAS INSTITUCIONES FORALES DEL TERRITORIO HISTÓRICO DE BIZKAIA, LA CESIÓN DE
+        COMPETENCIAS A LAS INSTITUCIONES COMUNES:
+
+a) Debe ser ratificada por las Juntas Generales.
+b) Debe ser aprobada por las Juntas Generales.
+c) Debe ser ratificada por la Diputación Foral de Bizkaia.
+d) Debe ser aprobada por la Diputada General de Bizkaia.
+
+11 SEGÚN LO ESTABLECIDO EN EL ARTÍCULO 69 DE LA EN LA LEY 39/2015, DE 1 DE
+        OCTUBRE, DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES
+        PÚBLICAS, EN RELACIÓN CON LA DECLARACIÓN RESPONSABLE:
+
+a) Las Administraciones podrán requerir en cualquier momento que se aporte la
+        documentación que acredite el cumplimiento de los requisitos de la declaración
+        responsable y el interesado podrá aportarla.
+
+b) La declaración responsable es el documento suscrito por un interesado en el que
+        éste manifiesta, bajo su responsabilidad, que cumple con los requisitos establecidos
+        en la normativa vigente para obtener el reconocimiento de un derecho o facultad o
+        para su ejercicio.
+
+c) La falsedad, esencial o no de cualquier dato o información que se incorpore a una
+        declaración responsable determinará la imposibilidad de continuar con el ejercicio
+        del derecho o actividad afectada desde el momento en que se tenga constancia
+        de tales hechos.
+
+d) La no presentación ante la Administración competente de la declaración
+        responsable, la documentación que sea en su caso requerida para acreditar el
+        cumplimiento de lo declarado, o la comunicación, no determinará la imposibilidad
+        de continuar con el ejercicio del derecho o actividad afectada desde el momento
+        en que se tenga constancia de tales hechos.
+
+12 SEGUN EL ARTÍCULO 6 DE LA NORMA FORAL 3/1987, DE 13 DE FEBRERO, SOBRE SOBRE
+        ELECCIÓN, ORGANIZACIÓN, RÉGIMEN Y FUNCIONAMIENTO DE LAS INSTITUCIONES
+        FORALES DEL TERRITORIO HISTÓRICO DE BIZKAIA DE LAS JUNTAS GENERALES DE
+        BIZKAIA, LAS NORMAS FORALES DE LAS JUNTAS GENERALES SERÁN PUBLICADAS EN EL
+        BOLETÍN OFICIAL DE BIZKAIA Y ENTRARÁN EN VIGOR, SALVO DISPOSICIÓN EN
+        CONTRARIO:
+
+a) Al día siguiente de su publicación.
+b) A los diez (10) días de su publicación.
+c) A los quince (15) días de su publicación.
+d) A los veinte (20) días de su publicación.
+
+                                                                                                                                                    3
+13 SEGÚN LO ESTABLECIDO EN EL ARTÍCULO 3 DE LA LEY 11/2022, DE 1 DE DICIEMBRE, DE
+        EMPLEO PÚBLICO VASCO:
+
+a) Esta ley tendrá carácter supletorio para todo el personal de las administraciones
+        públicas vascas, instituciones públicas u organismos públicos incluidos en su ámbito
+        de aplicación.
+
+b) Cada vez que esta ley haga mención al personal funcionario de carrera no se
+        entenderá comprendido el personal estatutario de Osakidetza-Servicio Vasco de
+        Salud, aplicándose con carácter preferente a dicho personal su normativa
+        específica.
+
+c) A los efectos de esta ley, compone parte del sector público vasco cualquier órgano
+        de naturaleza participativa, consultiva, de asesoramiento o de control dependiente
+        de la Diputación Foral de Bizkaia.
+
+d) Ninguna de las respuestas es correcta.
+
+14 SEGÚN LA LEY DE PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS
+        ADMINISTRACIONES PÚBLICAS, EN LA EJECUCIÓN DE RESOLUCIONES DE LOS ACTOS DE
+        LAS ADMINISTRACIONES PÚBLICAS SUJETAS AL DERECHO ADMINSITRATIVO, LA
+        EJECUCIÓN FORZOSA, NO SE EFECTUARÁ POR EL SIGUIENTE MEDIO:
+
+a) Ejecución subsidiaria.
+b) Acciones posesorias.
+c) Multa coercitiva.
+d) Compulsión sobre las personas.
+
+15 SEGÚN LA LEY 39/2015, DE 1 DE OCTUBRE, DEL PROCEDIMIENTO ADMINISTRATIVO
+        COMÚN DE LAS ADMINISTRACIONES PÚBLICAS, ¿QUÉ DIFERENCIA EXISTE ENTRE EL
+        DESISTIMIENTO Y LA RENUNCIA?:
+
+a) Podrá renunciar al procedimiento la Administración y podrá desistir del
+        procedimiento el interesado.
+
+b) Al renunciar a un procedimiento administrativo se pierde el derecho a volver a
+        solicitar lo mismo en un momento posterior, mientras que en el desistimiento se
+        desiste de la solicitud, pero se mantiene el derecho.
+
+c) Al desistir de un procedimiento administrativo se pierde el derecho a volver a solicitar
+        lo mismo en un momento posterior, mientras que con la renuncia se desiste de la
+        solicitud, pero se mantiene el derecho.
+
+d) Que la renuncia cabe siempre y el desistimiento no.
+
+16 DE CONFORMIDAD CON LO ESTABLECIDO EN EL ARTÍCULO 125 DE LA LEY 39/2015, DE 1
+        DE OCTUBRE, DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS
+        ADMINISTRACIONES PÚBLICAS, CONTRA UN ACTO FIRME EN VÍA ADMINISTRATIVA
+        DICTADO COMO CONSECUENCIA DE PREVARICACIÓN DECLARADA COMO TAL EN
+        SENTENCIA JUDICIAL FIRME CABE INTERPONER RECURSO EXTRAORDINARIO DE
+        REVISIÓN:
+
+a) Ante el órgano administrativo que lo dictó en el plazo de tres (3) meses desde que la
+        sentencia judicial quedó firme.
+
+b) Ante el superior jerárquico del órgano administrativo que lo dictó en el plazo de un
+        (1) mes desde que la sentencia judicial quedó firme.
+
+c) Ante el órgano administrativo que lo dictó en el plazo de un (1) mes desde que la
+        sentencia judicial quedó firme.
+
+d) Ante el superior jerárquico del órgano administrativo que lo dictó en el plazo de tres
+        (3) meses desde que la sentencia judicial quedó firme.
+
+                                                                                                                                                    4
+17 DE CONFORMIDAD CON EL ARTÍCULO 114 DE LA LEY 39/2015, DE 1 DE OCTUBRE, DEL
+        PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES PÚBLICAS, EN
+        EL ÁMBITO ESTATAL NO PONEN FIN A LA VÍA ADMINISTRATIVA:
+
+a) Los actos administrativos de los miembros y órganos del Gobierno.
+b) Los emanados de los Ministros y los Secretarios de Estado en el ejercicio de las
+
+        competencias que tienen atribuidas los órganos de los que son titulares.
+c) Los emanados de los órganos directivos con nivel de Director general o superior, en
+
+        el ejercicio de las competencias que tienen atribuidas los órganos de los que son
+        titulares.
+d) En los Organismos públicos y entidades de derecho público vinculados o
+        dependientes de la Administración General del Estado, los emanados de los
+        máximos órganos de dirección unipersonales o colegiados, de acuerdo con lo que
+        establezcan sus estatutos, salvo que por ley se establezca otra cosa.
+
+18 DE CONFORMIDAD CON EL ARTÍCULO 107 DE LA LEY 39/2015, DE 1 DE OCTUBRE, DEL
+        PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES PÚBLICAS
+        (LPACAP), LAS ADMINISTRACIONES PÚBLICAS PODRÁN IMPUGNAR:
+
+a) Ante el orden jurisdiccional contencioso-administrativo, los actos desfavorables para
+        los interesados que sean anulables conforme a lo dispuesto en el artículo 48 de la
+        LPACAP, previa su declaración de lesividad para el interés particular.
+
+b) Ante la administración o ante el orden jurisdiccional contencioso-administrativo, los
+        actos favorables para los interesados que sean anulables conforme a lo dispuesto en
+        el artículo 47 de la LPACAP, previa su declaración de lesividad para el interés
+        público.
+
+c) Ante el orden jurisdiccional contencioso-administrativo, los actos favorables para los
+        interesados que sean anulables conforme a lo dispuesto en el artículo 48 de la
+        LPACAP, previa su declaración de lesividad para el interés público.
+
+d) Ninguna es correcta.
+
+19 SEGÚN LO ESTABLECIDO EN EL ARTÍCULO 3 DE LA LEY 11/2022, DE 1 DE DICIEMBRE, DE
+        EMPLEO PÚBLICO VASCO, COMPONEN EL SECTOR PÚBLICO VASCO:
+
+a) Las administraciones locales, su respectiva administración institucional y los demás
+        entes instrumentales con personalidad jurídica propia, dependientes o no de
+        cualquiera de las administraciones públicas antes citadas.
+
+b) Las administraciones forales de los territorios históricos, su respectiva administración
+        institucional y los demás entes instrumentales con personalidad jurídica propia,
+        independientes de cualquiera de las administraciones públicas antes citadas.
+
+c) La Administración general de la Comunidad Autónoma de Euskadi.
+d) Todas son correctas.
+
+20 DE CONFORMIDAD CON LO ESTABLECIDO EN EL ARTÍCULO 80 DE LA LEY 39/2015, DE 1
+        DE OCTUBRE, DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS
+        ADMINISTRACIONES PÚBLICAS. LA EMISIÓN DE INFORMES: SALVO DISPOSICIÓN
+        EXPRESA EN CONTRARIO, LOS INFORMES SERÁN:
+
+a) Preceptivos y vinculantes.
+b) Facultativos y vinculantes.
+c) Preceptivos y no vinculantes.
+d) Facultativos y no vinculantes.
+
+                                                                                                                                                    5
+21 EN LA LEY DE EMPLEO PÚBLICO VASCO, SEGÚN EL ARTÍCULO 63, LA ADQUISICIÓN DE
+        LA CONDICIÓN DEL PERSONAL FUNCIONARIO DE CARRERA Y DE PERSONAL LABORAL
+        FIJO DE LAS ADMINISTRACIONES VASCAS SE ADQUIERE POR EL CUMPLIMIENTO
+        SUCESIVO DE LOS SIQUIENTES REQUISITOS:
+
+a) Primero: Nombramiento por el órgano o autoridad competente, que será publicado
+        en el «Boletín Oficial del País Vasco» o, en su caso, en el boletín oficial del territorio
+        histórico correspondiente. Segundo: Superación del proceso selectivo, incluidos, en
+        su caso, los correspondientes períodos de prácticas o pruebas. Tercero: Acto en
+        virtud del cual se manifieste que se acata el ordenamiento jurídico. Y cuarto: Toma
+        de posesión dentro del plazo que se establezca o, en su caso, formalización del
+        contrato laboral fijo por el órgano o autoridad competente.
+
+b) Primero: Nombramiento por el órgano o autoridad competente, que será publicado
+        en el «Boletín Oficial del País Vasco» o, en su caso, en el boletín oficial del territorio
+        histórico correspondiente. Segundo: Superación del proceso selectivo, incluidos, en
+        su caso, los correspondientes períodos de prácticas o pruebas. Tercero: Toma de
+        posesión dentro del plazo que se establezca o, en su caso, formalización del
+        contrato laboral fijo por el órgano o autoridad competente Y cuarto: Acto en virtud
+        del cual se manifieste que se acata el ordenamiento jurídico.
+
+c) Primero: Superación del proceso selectivo, incluidos, en su caso, los correspondientes
+        períodos de prácticas o pruebas. Segundo: Nombramiento por el órgano o
+        autoridad competente, que será publicado en el «Boletín Oficial del País Vasco» o,
+        en su caso, en el boletín oficial del territorio histórico correspondiente. Tercero: Acto
+        en virtud del cual se manifieste que se acata el ordenamiento jurídico. Y cuarto:
+        Toma de posesión dentro del plazo que se establezca o, en su caso, formalización
+        del contrato laboral fijo por el órgano o autoridad competente.
+
+d) Primero: Superación del proceso selectivo, incluidos, en su caso, los correspondientes
+        períodos de prácticas o pruebas. Segundo: Nombramiento por el órgano o
+        autoridad competente, que será publicado en el «Boletín Oficial del País Vasco» o,
+        en su caso, en el boletín oficial del territorio histórico correspondiente. Tercero: Toma
+        de posesión dentro del plazo que se establezca o, en su caso, formalización del
+        contrato laboral fijo por el órgano o autoridad competente. Y cuarto: Acto en virtud
+        del cual se manifieste que se acata el ordenamiento jurídico.
+
+22 DE CONFORMIDAD CON LO ESTABLECIDO EN EL ARTÍCULO 27 DE LA NORMA FORAL
+        3/1987, DE 13 DE FEBRERO, SOBRE SOBRE ELECCIÓN, ORGANIZACIÓN, RÉGIMEN Y
+        FUNCIONAMIENTO DE LAS INSTITUCIONES FORALES DEL TERRITORIO HISTÓRICO DE
+        BIZKAIA, LA DIPUTADA GENERAL COMO JEFA DE LA ADMINISTRACIÓN FORAL, LE
+        CORRESPONDERÁ:
+
+a) El ejercicio de las acciones judiciales y extrajudiciales que asistan a la Diputación
+        Foral y los establecimientos que de ella dependan y el personamiento en juicio, en
+        caso de urgencia, dando cuenta a la misma en su primera reunión.
+
+b) Firmar, expedir, publicar los Decretos Forales acordados por la Diputación Foral y por
+        ella misma.
+
+c) Convocar las reuniones de la Diputación Foral, fijar el Orden del Día, presidir sus
+        sesiones, dirigir las deliberaciones, suspender y levantar las sesiones.
+
+d) Prestar a las Juntas Generales la información y ayuda que éstas recaben de la
+        Diputación Foral.
+
+                                                                                                                                                    6
+23 SEGÚN LO ESTABLECIDO EN EL ARTÍCULO 120 DE LA LEY 11/2022, DE 1 DE DICIEMBRE, DE
+        EMPLEO PÚBLICO VASCO SE INDICA QUE LAS ADMINISTRACIONES PÚBLICAS VASCAS
+        RETRIBUIRÁN A SU PERSONAL FUNCIONARIO DE ACUERDO CON LOS CONCEPTOS DE
+        RETRIBUCIONES BÁSICAS, RETRIBUCIONES COMPLEMENTARIAS, PAGAS
+        EXTRAORDINARIAS Y CON EL SIGUIENTE CONCEPTO:
+
+a) Trienios.
+b) Complemento por productividad.
+c) Retribuciones diferidas.
+d) Complemento específico.
+
+24 SEGÚN LO ESTABLECIDO EN LA LEY 11/2022, DE 1 DE DICIEMBRE, DE EMPLEO PÚBLICO
+        VASCO EN CUÁL DE LOS SIGUIENTES SUPUESTOS NO QUEDARÁ EL PERSONAL
+        FUNCIONARIO DE CARRERA EN LA SITUACIÓN ADMINISTRATIVA DE SERVICIOS
+        ESPECIALES:
+
+a) Cuando adquiera la condición de personal funcionario al servicio de organizaciones
+        internacionales.
+
+b) Cuando sea designado personal asesor de los grupos parlamentarios de las Cortes
+        Generales.
+
+c) Cuando mediante el procedimiento de libre designación obtenga un puesto de
+        trabajo en otra administración pública.
+
+d) Cuando sea designado personal asesor de los Grupos Parlamentarios de las
+        Asambleas Legislativas de las Comunidades Autónomas.
+
+25 EL ARTÍCULO 2 DE LA LEY 9/2017, DE 8 DE NOVIEMBRE, DE CONTRATOS DEL SECTOR
+        PÚBLICO, POR LA QUE SE TRANSPONEN AL ORDENAMIENO JURÍDICO ESPAÑOL LAS
+        DIRECTIVAS DEL PARLAMENTO EUROPEO Y DEL CONSEJO 2014/23/UE Y 2014/24/UE, DE
+        26 DE FEBRERO DE 2014, SON CONTRATOS ONEROSOS:
+
+a) Aquéllos en los que la contratista obtenga algún tipo de beneficio económico sólo
+        de forma directa.
+
+b) Aquéllos en los que la contratista obtenga algún tipo de prestación o contrapartida
+        por la realización de la prestación.
+
+c) Aquéllos en los que la contratista obtenga algún tipo de beneficio económico, ya
+        sea de forma directa o indirecta.
+
+d) Aquéllos cuyo objeto se considere necesario para la correcta realización de la
+        prestación.
+
+26 SEGÚN LO ESTABLECIDO EN EL ARTÍCULO 3 DE LA LEY 9/2017, DE 8 DE NOVIEMBRE, DE
+        CONTRATOS DEL SECTOR PÚBLICO, A LOS EFECTOS DE ESTA LEY, NO SE CONSIDERA QUE
+        FORMAN PARTE DEL SECTOR PÚBLICO LA SIGUIENTES ENTIDADES:
+
+a) Los fondos sin personalidad jurídica.
+b) Cualesquiera entidades con personalidad jurídica propia, que hayan sido creadas
+
+        específicamente para satisfacer necesidades de interés general que no tengan
+        carácter industrial o mercantil, siempre que uno o varios sujetos pertenecientes al
+        sector público financien mayoritariamente su actividad, controlen su gestión, o
+        nombren a menos de la mitad de los miembros de su órgano de administración,
+        dirección o vigilancia.
+c) Las Diputaciones Forales.
+d) Las Mutuas colaboradoras con la Seguridad Social.
+
+                                                                                                                                                    7
+27 DE CONFORMIDAD CON LO ESTABLECIDO EN LA LEY 9/2017, DE 8 DE NOVIEMBRE, DE
+        CONTRATOS DEL SECTOR PÚBLICO, POR LA QUE SE TRANSPONEN AL ORDENAMIENTO
+        JURÍDICO ESPAÑOL LAS DIRECTIVAS DEL PARLAMENTO EUROPEO Y DEL CONSEJO
+        2014/23/UE Y 2014/24/UE DE 26 DE FEBRERO DE 2014. LA INCORPORACIÓN
+        TRANSVERSAL Y PRECEPTIVA DE CRITERIOS SOCIALES Y MEDIOAMBIENTALES EN LA
+        CONTRATACIÓN PÚBLICA:
+
+a) Proporciona mayor calidad-precio en la prestación contractual.
+b) Proporciona mayor y mejor eficacia en la utilización de los fondos públicos.
+c) Facilita el acceso a la contratación pública de las empresas de economía social.
+d) Todas son correctas.
+
+28 SEGÚN LO DISPUESTO EN EL ARTÍCULO 126 DE LA LEY 9/2017, DE 8 DE NOVIEMBRE, DE
+        CONTRATOS DEL SECTOR PÚBLICO, POR LA QUE SE TRANSPONEN AL ORDENAMIENTO
+        JURÍDICO ESPAÑOL LAS DIRECTIVAS DEL PARLAMENTO EUROPEO Y DEL CONSEJO
+        2014/23/UE Y 2014/24/UE DE 26 DE FEBRERO DE 2014, EN RELACIÓN CON LAS
+        PRESCRIPCIONES TÉCNICAS:
+
+a) No resulta necesario que definan las calidades, las condiciones sociales y
+        ambientales de conformidad con los requisitos que para cada tipo de contrato
+        establece la Ley de Contratos.
+
+b) Proporcionan a los empresarios acceso en condiciones de igualdad al
+        procedimiento de contratación.
+
+c) Tendrán por efecto la creación de obstáculos injustificados a la apertura de la
+        contratación pública a la competencia.
+
+d) Se redactarán siempre teniendo en cuenta la convención de las Naciones Unidas
+        sobre los derechos de las personas con discapacidad.
+
+29 DE CONFORMIDAD CON LO ESTABLECIDO EN EL ARTÍCULO 130 DE LA LEY 9/2017, DE 8
+        DE NOVIEMBRE, DE CONTRATOS DEL SECTOR PÚBLICO, PÚBLICO, POR LA QUE SE
+        TRANSPONEN AL ORDENAMIENO JURÍDICO ESPAÑOL LAS DIRECTIVAS DEL
+        PARLAMENTO EUROPEO Y DEL CONSEJO 2014/23/UE Y 2014/24/UE, DE 26 DE FEBRERO
+        DE 2014, CUANDO UNA ADMINISTRACIÓN PÚBLICA DECIDA PRESTAR DIRECTAMENTE
+        UN SERVICIO QUE VENÍA SIENDO PRESTADO POR UN OPERADOR ECONÓMICO,
+        ¿ESTARÁ OBLIGADA A LA SUBROGACIÓN DEL PERSONAL QUE LO PRESTABA?
+
+a) Sí, en todo caso atendiendo al principio constitucional de seguridad laboral de los
+        trabajadores.
+
+b) Sí, si así lo establece la propia administración en los pliegos de prescripciones
+        técnicas.
+
+c) Sí, salvo que la obligación no se recoja en los pliegos de cláusulas administrativas
+        generales.
+
+d) Sí, si así lo establece una norma legal, un convenio colectivo o un acuerdo de
+        negociación colectiva de eficacia general.
+
+                                                                                                                                                    8
+30 DE CONFORMIDAD CON LO ESTABLECIDO EN EL ARTÍCULO 119 DE LA LEY 9/2017, DE 8
+        DE NOVIEMBRE, DE CONTRATOS DEL SECTOR PÚBLICO, PÚBLICO, POR LA QUE SE
+        TRANSPONEN AL ORDENAMIENO JURÍDICO ESPAÑOL LAS DIRECTIVAS DEL
+        PARLAMENTO EUROPEO Y DEL CONSEJO 2014/23/UE Y 2014/24/UE, DE 26 DE FEBRERO
+        DE 2014, LOS EXPEDIENTE CALIFICADOS DE URGENTES GOZARÁN DE PREFERENCIA
+        PARA SU DESPACHO POR LOS DISTINTOS ÓRGANOS QUE INTERVENGAN EN LA
+        TRAMITACIÓN, QUE DISPONDRÁN DE UN PLAZO PARA EMITIR LOS RESPECTIVOS
+        INFORMES O CUMPLIMENTAR LOS TRÁMITES CORRESPONDIENTES DE:
+
+a) Veinte (20) días.
+b) Quince (15) días.
+c) Diez (10) días.
+d) Cinco (5) días.
+
+31 LAS NORMAS JURÍDICAS CONTENIDAS EN LOS TRATADOS INTERNACIONALES:
+
+a) En ningún caso puede llegar a tener aplicación directa en España.
+b) Aunque no pueden llegar a tener aplicación directa en España, tendrán carácter
+
+        informador del ordenamiento jurídico interno.
+c) Serán de aplicación directa en España desde la firma del tratado internacional
+
+        correspondiente.
+d) Serán de aplicación directa en España cuando hayan pasado a formar parte del
+
+        ordenamiento interno.
+
+32 UN REGLAMENTO INDEPENDIENTE ES AQUEL QUE:
+
+a) Dicta la Administración para hacer frente a situaciones extraordinarias.
+b) De una forma clara y directa desarrolla una norma de rango superior.
+c) Regula exclusivamente la organización administrativa.
+d) Regula materias no protegidas con reserva de ley.
+
+33 LA POTESTAD DISCRECIONAL ES:
+
+a) Aquella cuyo ejercicio viene totalmente delimitado por una norma sin que quepa la
+        posibilidad de que la Administración realice de forma subjetiva la facultad o poder
+        que se le confiere.
+
+b) La potestad discrecional es la que puede ser ejercida de forma libre “dicho sea esto
+        con todas las reservas” por parte de la Administración que la tiene concedida.
+
+c) La que faculta a la Administración para ejercer la tutela o preservación de una
+        relación jurídica.
+
+d) La que faculta para crear, modificar o extinguir las relaciones jurídicas.
+
+34 LEY 39/2015 DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS
+        ADMINISTRACIONES PÚBLICAS, EN EL ARTÍCULO 129, SEÑALA QUE EN EL EJERCICIO DE
+        LA INICIATIVA LEGISLATIVA Y LA POTESTAD REGLAMENTARIA, LAS ADMINISTRACIONES
+        PÚBLICAS ACTUARÁN DE ACUERDO CON LOS PRINCIPIOS DE:
+
+a) Independencia y proporcionalidad.
+b) Necesidad y proporcionalidad.
+c) Independencia y seguridad jurídica.
+d) Publicidad y transparencia.
+
+                                                                                                                                                    9
+35 SEGÚN LO ESTABLECIDO EN LOS ARTÍCULOS 140 Y 141 DE LA CONSTITUCIÓN ESPAÑOLA
+        DE 1978:
+
+a) Los municipios y las provincias tienen personalidad jurídica plena.
+b) Los municipios y las provincias tienen personalidad jurídica propia.
+c) Las provincias tienen personalidad jurídica plena.
+d) Las provincias tienen personalidad jurídica propia.
+
+36 EN LA LEY 7/1985, DE 2 DE ABRIL, REGULADORA DE LAS BASES DE RÉGIMEN LOCAL, EN
+        EL ARTÍCULO 3 SE SEÑALA QUE NO GOZAN DE LA CONDICIÓN DE ENTIDADES LOCALES:
+
+a) Las Áreas Metropolitanas.
+b) Las Mancomunidades de Municipios.
+c) Las Comunidades Autónomas.
+d) La Isla en el archipiélago canario.
+
+37 DE CONFORMIDAD CON LA LEY 2/2004, DE 25 DE FEBRERO, DE FICHEROS DE DATOS DE
+        CARÁCTER PERSONAL DE TITULARIDAD PÚBLICA Y DE CREACIÓN DE LA AGENCIA
+        VASCA DE PROTECCIÓN DE DATOS, SON FUNCIONES DE LA AGENCIA VASCA DE
+        PROTECCIÓN DE DATOS:
+
+a) Redactar una memoria anual y remitirla al Parlamento Vasco.
+b) Redactar una memoria anual y remitirla al Gobierno Vasco.
+c) Redactar una memoria anual y remitirla a la Vicepresidencia del Gobierno Vasco.
+d) Redactar una memoria anual y remitirla a la Lehendakaritza del Gobierno Vasco.
+
+38 EN EL ARTÍCULO 10 “CREACIÓN Y RÉGIMEN JURÍDICO”, DE LA LEY 2/2004, DE 25 DE
+        FEBRERO, DE FICHEROS DE DATOS DE CARÁCTER PERSONAL DE TITULARIDAD PÚBLICA Y
+        DE CREACIÓN DE LA AGENCIA VASCA DE PROTECCIÓN DE DATOS:
+
+a) Se crea la Agencia Vasca de Protección de Datos como ente de derecho público,
+        con personalidad jurídica propia y plena capacidad pública y privada, que actúa
+        con la supervisión del Gobierno Vasco en el ejercicio de sus funciones.
+
+b) Se regirá por lo dispuesto en esta ley y en su estatuto propio, que será aprobado por
+        decreto del Gobierno Vasco a propuesta de la Consejería de Igualdad, justicia y
+        políticas sociales.
+
+c) La representación y defensa en juicio de la Agencia Vasca de Protección de Datos
+        estará a cargo de los servicios jurídicos propios de la Agencia, conforme a lo
+        dispuesto en sus normas reguladoras.
+
+d) La Agencia Vasca de Protección de Datos estará sujeta al derecho público vigente
+        en materia de adquisiciones patrimoniales y contratación. Sus bienes y derechos
+        pertenecerán al patrimonio de la Comunidad Autónoma del País Vasco.
+
+39 LA NORMA FORAL 4/2018, DE 20 DE JUNIO, PARA LA IGUALDAD DE MUJERES Y
+        HOMBRES, EN SU ARTÍCULO 3.2, PRINCIPIOS GENERALES, SEÑALA COMO UN PRINCIPIO
+        TRANSVERSAL:
+
+a) La igualdad de trato.
+b) La acción positiva.
+c) El respeto a la diferencia.
+d) La interseccionalidad.
+
+                                                                                                                                                   10
+40 SEGÚN LO DISPUESTO EN EL TÍTULO PRELIMINAR DEL DECRETO LEGISLATIVO 1/2023, DE
+        16 DE MARZO, POR EL QUE SE APRUEBA EL TEXTO REFUNDIDO DE LA LEY PARA LA
+        IGUALDAD DE MUJERES Y HOMBRES Y VIDAS LIBRES DE VIOLENCIA MACHISTA CONTRA
+        LAS MUJERES, EL PRINCIPIO DE IGUALDAD DE TRATO SE APLICARÁ:
+
+a) A las entidades públicas que han suscrito contratos o convenios de colaboración
+        con los poderes públicos vascos.
+
+b) A las entidades privadas que suscriban contratos o convenios de colaboración con
+        los poderes públicos vascos durante el tiempo que dure la relación con el poder
+        público correspondiente.
+
+c) A las entidades públicas que suscriban convenios de colaboración con los poderes
+        públicos vascos durante el tiempo que dure la relación.
+
+d) Todas son incorrectas.
+
+41 SEGÚN EL ARTÍCULO 28, DE LA NORMA FORAL 1/2016, DE 17 DE FEBRERO, DE
+        TRANSPARENCIA DE BIZKAIA, SOBRE LA COMPOSICIÓN DE LA COMISIÓN DE
+        RECLAMACIONES EN MATERIA DE TRANSPARENCIA:
+
+a) La Comisión de Reclamaciones en materia de Transparencia se compone de tres (3)
+        miembros titulares y tres (3) suplentes.
+
+b) Deberán pertenecer al funcionariado de carrera de la Diputación Foral,
+        pertenecientes a cuerpos o escalas del Grupo de Clasificación A1 para cuyo ingreso
+        se haya exigido la Licenciatura de Licenciado en Derecho o Grado Universitario del
+        mismo carácter, con un mínimo de tres (3) años de experiencia profesional en tales
+        cuerpos o escalas.
+
+c) El desempeño de las funciones inherentes al cargo de las personas que sean
+        miembros de la Comisión de Reclamaciones en materia de Transparencia
+        conllevará dedicación exclusiva.
+
+d) Las personas que se designen como miembros de la Comisión de Reclamaciones en
+        materia de Transparencia serán nombradas por la Diputada General, y la
+        composición de la misma se publicará en el Portal de Transparencia.
+
+42 DE ACUERDO CON LOS ARTÍCULOS 10 Y 11 DE LA LEY ORGÁNICA 3/1979, DE 18 DE
+        DICIEMBRE, DEL ESTATUTO DE AUTONOMÍA PARA EL PAÍS VASCO, LA COMUNIDAD
+        AUTÓNOMA DEL PAÍS VASCO NO TIENE COMPETENCIA EXCLUSIVA EN MATERIA DE:
+
+a) Ordenación del territorio y litoral, urbanismo y vivienda.
+b) Medio ambiente y ecología.
+c) Asistencia social.
+d) Agricultura y ganadería, de acuerdo con la ordenación general de la economía.
+
+43 A TENOR DEL ARTÍCULO 11 DEL LA LEY ORGÁNICA 3/1979, DE 18 DE DICIEMBRE, DEL
+        ESTATUTO DE AUTONOMÍA DEL PAÍS VASCO, LA COMPETENCIA DE LA COMUNIDAD
+        AUTÓNOMA DEL PAÍS VASCO EN MATERIA DE MEDIO AMBIENTE Y ECOLOGÍA ES:
+
+a) De desarrollo legislativo y ejecución dentro de su territorio de la legislación básica
+        del Estado.
+
+b) Exclusiva.
+c) De ejecución de la legislación del Estado.
+d) Medio ambiente y ecología no es una competencia contenida en el Estatuto de
+
+        Autonomía del País Vasco.
+
+                                                                                                                                                   11
+44 SEGÚN EL ARTÍCULO 28 DEL ESTATUTO DE AUTONOMÍA DEL PAÍS VASCO, LEY
+        ORGÁNICA DE 3/1979, DE 18 DE DICIEMBRE, SOLICITAR DEL GOBIERNO DEL ESTADO LA
+        ADOPCIÓN DE UN PROYECTO DE LEY CORRESPONDE:
+
+a) A la Presidencia o Lehendakaritza del Gobierno Vasco.
+b) A la Consejería encargada de la secretaría del Gobierno Vasco.
+c) Al Parlamento Vasco.
+d) A la Delegación del Gobierno estatal en la Comunidad Autónoma del País Vasco.
+
+45 DE CONFORMIDAD CON LO ESTABLECIDO EN EL ARTÍCULO 45 DEL ESTATUTO DE
+        AUTONOMÍA DEL PAÍS VASCO, LEY ORGÁNICA DE 3/1979, DE 18 DE DICIEMBRE, LA
+
+       COMUNIDAD AUTÓNOMA DEL PAÍS VASCO:
+
+a) Podrá emitir deuda pública para financiar todo tipo de gasto.
+b) Podrá emitir deuda pública para financiar sus gastos en coordinación con el Estado.
+c) Podrá emitir deuda pública para financiar gastos de inversión.
+d) No podrá emitir deuda pública.
+
+46 SEGÚN LO ESTABLECIDO EN EL ARTÍCULO 7 DE LA LEY 27/1983, DE 25 DE NOVIEMBRE, DE
+        RELACIONES ENTRE LAS INSTITUCIONES COMUNES DE LA COMUNIDAD AUTÓNOMA Y
+        LOS ÓRGANOS FORALES DE SUS TERRITORIOS HISTÓRICOS, CORRESPONDE A LOS
+        TERRITORIOS HISTÓRICOS EL DESARROLLO Y EJECUCIÓN DE LAS NORMAS EMANADAS
+        DE LAS INSTITUCIONES COMUNES EN LA SIGUIENTE MATERIA:
+
+a) Operaciones de crédito y financieras en los términos que resultan del Título segundo
+        de la presente ley.
+
+b) Financiación de carreteras.
+c) Planificación de carreteras.
+d) Sanidad animal.
+
+47 SEGÚN LO ESTABLECIDO EN EL ARTÍCULO 22 DE LA LEY 27/1983, DE 25 DE NOVIEMBRE,
+        DE RELACIONES ENTRE LAS INSTITUCIONES COMUNES DE LA COMUNIDAD AUTÓNOMA
+        Y LOS ÓRGANOS FORALES DE SUS TERRITORIOS HISTÓRICOS, EL CONSEJO VASCO DE
+        FINANZAS PÚBLICAS, APROBARÁ CON CARÁCTER GENERAL LA METODOLOGÍA DE
+        DISTRIBUCIÓN DE RECURSOS Y LA DETERMINACIÓN DE LAS APORTACIONES DE CADA
+        TERRITORIO HISTÓRICO:
+
+a) Siempre anualmente, salvo que concurran circunstancias excepcionales.
+b) Para periodos mínimos de dos (2) ejercicios presupuestarios.
+c) Para periodos mínimos de tres (3) ejercicios presupuestarios.
+d) Para periodos mínimos de cuatro (4) ejercicios presupuestarios.
+
+48 SEGÚN LO ESTABLECIDO EN EL ARTÍCULO 18 DE LA LEY 27/1983, DE 25 DE NOVIEMBRE,
+        DE RELACIONES ENTRE LAS INSTITUCIONES COMUNES DE LA COMUNIDAD AUTÓNOMA
+        Y LOS ÓRGANOS FORALES DE SUS TERRITORIOS HISTÓRICOS, LAS HACIENDAS FORALES
+        DE LOS TERRITORIOS HISTÓRICOS, PARA EL ADECUADO EJERCICIO Y FINANCIACIÓN DE
+        TODAS LAS COMPETENCIAS QUE CORRESPONDAN A SUS ÓRGANOS FORALES,
+        DISPONDRÁN DE LAS SIGUIENTES FUENTES DE RECURSOS:
+
+a) Ingresos por endeudamiento como ingresos ordinarios.
+b) Rendimiento de los recargos y arbitrios como ingresos extraordinarios.
+c) Variación de activos financieros como ingresos extraordinarios.
+d) Los rendimientos procedentes de su patrimonio e ingresos de derecho privado como
+
+        ingresos extraordinarios.
+
+                                                                                                                                                   12
+49 SEGÚN EL ARTICULO 5 DE LA LEY 12/2002, DE 23 DE MAYO, POR LA QUE SE APRUEBA EL
+        CONCIERTO ECONÓMICO CON LA COMUNIDAD AUTÓNOMA DEL PAÍS VASCO.
+        CONSTITUIRÁN COMPETENCIAS EXCLUSIVAS DEL ESTADO:
+
+a) Los derechos a la importación en los Impuestos Especiales.
+b) La baja inspección de la aplicación del concierto económico.
+c) La regulación, gestión, inspección, revisión y recaudación de los derechos de
+
+        exportación.
+d) Los gravámenes a la importación en el Impuesto sobre el Valor Añadido.
+
+50 SEGÚN EL ARTICULO 48 DE LA LEY 12/2002, DE 23 DE MAYO, POR LA QUE SE APRUEBA EL
+        CONCIERTO ECONÓMICO CON LA COMUNIDAD AUTÓNOMA DEL PAÍS VASCO, LAS
+        RELACIONES FINANCIERAS ENTRE EL ESTADO Y EL PAÍS VASCO SE REGIRÁN POR LOS
+        PRINCIPIOS SIGUIENTES:
+
+a) Coordinación y colaboración con el Estado en materia de Deuda Pública.
+b) Contribución del País Vasco a la solidaridad en los términos prevenidos en la
+
+        Constitución y el Estatuto de Autonomía.
+c) Coordinación y colaboración con el Estado para la suficiencia presupuestaria.
+d) Coordinación y colaboración con el Estado en materia de estabilidad
+
+        presupuestaria.
+
+51 SEGÚN EL ARTÍCULO 5 DE LA LEY 10/1982, DE 24 DE NOVIEMBRE, BÁSICA DE
+        NORMALIZACIÓN DEL USO DEL EUSKERA:
+
+a) Las lenguas propias del País Vasco son el euskera y el castellano.
+b) Es un derecho lingüístico fundamental de los ciudadanos el derecho a expresarse en
+
+        cualquier reunión en euskera.
+c) Es un derecho lingüístico fundamental de los ciudadanos el derecho a recibir
+
+        programas de televisión en ambas lenguas oficiales.
+d) Es un derecho lingüístico fundamental de los ciudadanos el derecho desarrollar
+
+        actividades políticas en ambas lenguas oficiales.
+
+52 SEGÚN EL ARTÍCULO 20, DE LA NORMA FORAL 3/1987, DE 13 DE FEBRERO, SOBRE
+        ELECCIÓN, ORGANIZACIÓN, RÉGIMEN Y FUNCIONAMIENTO DE LAS INSTITUCIONES
+        FORALES DEL TERRITORIO HISTÓRICO DE BIZKAIA, LA DIPUTACIÓN FORAL PODRÁ CREAR
+        COMISIONES DELEGADAS DE CARÁCTER PERMANENTE O TEMPORAL EN MATERIAS
+        DETERMINADAS QUE AFECTEN A MÁS DE UN DEPARTAMENTO. EN EL DECRETO DE
+        CREACIÓN DE LAS COMISIONES NO DEBERÁ FIGURAR:
+
+a) Los motivos de su creación.
+b) El cargo de Secretario de la Comisión.
+c) Los Departamentos Forales que se afecten a ella.
+d) La duración.
+
+                                                                                                                                                   13
+53 SEGÚN EL ARTÍCULO 17, DE LA NORMA FORAL 3/1987, DE 13 DE FEBRERO, SOBRE
+        ELECCIÓN, ORGANIZACIÓN, RÉGIMEN Y FUNCIONAMIENTO DE LAS INSTITUCIONES
+        FORALES DEL TERRITORIO HISTÓRICO DE BIZKAIA, NO CORRESPONDE A LA DIPUTACIÓN
+        FORAL DE BIZKAIA:
+
+a) Aprobar los proyectos de Norma Foral para su remisión a las Juntas Generales.
+b) Fijar el Régimen General de Financiación de los Municipios del Territorio Histórico.
+c) Aprobar los proyectos de Presupuestos del Territorio Histórico y sus Cuentas Generales
+
+        y de Administración del Patrimonio y someterlos a la deliberación de las Juntas
+        Generales para su aprobación definitiva.
+d) Establecer las directrices de la acción de gobierno y ejercer la alta inspección de la
+        Administración Foral y de las Entidades, Empresas y establecimientos de ella
+        dependientes.
+
+54 SEGÚN LO DISPUESTO EN EL ARTÍCULO 53 DE LA NORMA FORAL 3/1987, DE 13 DE
+        FEBRERO, SOBRE ELECCIÓN, ORGANIZACIÓN, RÉGIMEN Y FUNCIONAMIENTO DE LAS
+        INSTITUCIONES FORALES DEL TERRITORIO HISTÓRICO DE BIZKAIA, LOS PROYECTOS DE
+        NORMAS FORALES PRESENTADOS POR LA DIPUTACIÓN FORAL A LAS JUNTAS
+        GENERALES:
+
+a) Irán acompañados de una exposición de motivos
+b) Indicarán pormenorizadamente, en la exposición, los motivos que hubieren dado
+
+        origen a su elaboración y la finalidad perseguida.
+c) Figurarán como anexos, en todo caso, la relación de disposiciones derogadas o
+
+        modificadas.
+d) Todas son correctas.
+
+55 SEGÚN EL ARTÍCULO 63 DE LA NORMA FORAL 3/1987, DE 13 DE FEBRERO, SOBRE
+        ELECCIÓN, ORGANIZACIÓN, RÉGIMEN Y FUNCIONAMIENTO DE LAS INSTITUCIONES
+        FORALES DEL TERRITORIO HISTÓRICO DE BIZKAIA, LAS DISPOSICIONES DE CARÁCTER
+        GENERAL SE AJUSTARÁN AL SIGUIENTE ORDEN JERÁRQUICO NORMATIVO:
+
+a) Normas Forales, emanadas de las Juntas Generales; Decretos Forales del Diputado
+        General; Decretos Forales de la Diputación Foral; Ordenes Forales dictadas por los
+        Diputados Forales de los Departamentos.
+
+b) Normas Forales, emanadas de las Juntas Generales; Decretos Forales de la
+        Diputación Foral; Decretos Forales del Diputado General; Ordenes Forales dictadas
+        por los Diputados Forales de los Departamentos.
+
+c) Normas Forales, emanadas de las Juntas Generales; Decretos Forales de la
+        Diputación Foral; Ordenes Forales dictadas por los Diputados Forales de los
+        Departamentos; Decretos Forales del Diputado General.
+
+d) Normas Forales, emanadas de la Diputación Foral; Decretos Forales de la Diputación
+        Foral; Ordenes Forales dictadas por los Diputados Forales de los Departamentos;
+        Decretos Forales del Diputado General.
+
+56 SEGÚN LA NORMA FORAL 2/2005, DE 10 DE MARZO, GENERAL TRIBUTARIA DEL
+        TERRITORIO HISTÓRICO DE BIZKAIA, LA OBLIGACIÓN TRIBUTARIA PRINCIPAL TIENE POR
+        OBJETO:
+
+a) El pago de la deuda tributaria.
+b) El pago de la cuota tributaria.
+c) El ingreso de la deuda tributaria.
+d) El ingreso de la cuota tributaria.
+
+                                                                                                                                                   14
+57 SEGÚN LA NORMA FORAL 2/2005, DE 10 DE MARZO, GENERAL TRIBUTARIA DEL
+        TERRITORIO HISTÓRICO DE BIZKAIA EN RELACIÓN CON EL ÁMBITO TEMPORAL DE LAS
+        NORMAS TRIBUTARIAS:
+
+a) Las normas tributarias entrarán en vigor a los quince (15) días de su completa
+        publicación en el «Boletín Oficial de Bizkaia», si en ellas no se dispone otra cosa.
+
+b) Las normas tributarias, salvo que se disponga lo contrario, no tendrán efecto
+        retroactivo y se aplicarán a los tributos con periodo impositivo devengados a partir
+        de su entrada en vigor y a los demás tributos cuyo período impositivo se inicie desde
+        ese momento.
+
+c) Las normas que regulen el régimen de infracciones y sanciones tributarias y el de los
+        recargos tendrán efectos retroactivos respecto de los actos que sean firmes, cuando
+        su aplicación resulte más favorable para el interesado.
+
+d) Las normas que regulen el régimen de infracciones y sanciones tributarias y el de los
+        recargos tendrán efectos retroactivos respecto de los actos que no sean firmes,
+        cuando su aplicación resulte más favorable para el interesado.
+
+58 SEGÚN LA NORMA FORAL 13/2013, DE 5 DE DICIEMBRE, DEL IMPUESTO DE LA RENTA DE
+        LAS PERSONAS FÍSICAS, EL IMPORTE DE LA INDEMNIZACIÓN EXENTA ESTABLECIDA PARA
+        LAS INDEMNIZACIONES POR DESPIDO NO PODRÁ SUPERAR LA CANTIDAD DE:
+
+a) Ciento cincuenta mil (150.000) euros.
+b) Ciento setenta y cinco mil (175.000) euros.
+c) Ciento ochenta mil (180.000) euros.
+d) Doscientos mil (200.000) euros.
+
+59 DE CONFORMIDAD CON LA NORMA FORAL 4/1990, DE 26 DE JUNIO, DE TASAS,
+        PRECIOS PÚBLICOS Y OTROS RECURSOS TRIBUTARIOS DE LA ADMINISTRACIÓN FORAL DE
+        BIZKAIA, LAS TASAS:
+
+a) Son tributos cuyo hecho imponible consiste en la utilización privativa o el
+        aprovechamiento especial del dominio público, la prestación de servicios o la
+        realización de actividades en régimen de Derecho público que se refieran, afecten
+        o beneficien de modo particular al obligado tributario, cuando los servicios o
+        actividades no sean de solicitud o recepción voluntaria para los obligados tributarios
+        o no se presten o realicen por el sector privado.
+
+b) Son tributos cuyo hecho imponible consiste en la utilización privativa o el
+        aprovechamiento especial del dominio público, la prestación de servicios o la
+        realización de actividades en régimen de Derecho público que se refieran, afecten
+        o beneficien de modo particular al obligado tributario, cuando los servicios o
+        actividades no sean de solicitud o recepción voluntaria para los obligados tributarios
+        o no se presten o realicen por el sector público.
+
+c) Son tributos cuyo hecho imponible lo constituye la obtención por el sujeto pasivo de
+        un beneficio o de un aumento de valor de sus bienes como consecuencia de la
+        realización de obras públicas o del establecimiento o ampliación de servicios
+        públicos, por la Diputación Foral de Bizkaia.
+
+d) Son tributos relativos a contraprestaciones pecuniarias que se satisfagan por la
+        prestación de Servicios o realización de actividades administrativas de la
+        competencia del Territorio Histórico de Bizkaia cuando los servicios o las actividades
+        no sean de solicitud o recepción obligatoria por los administrados o que los servicios
+        o actividades sean prestados o realizados por el sector privado.
+
+                                                                                                                                                   15
+60 SEGÚN EL TÍTULO II “HECHO IMPONIBLE” DE LA NORMA FORAL 4/2015, DE 25 DE
+        MARZO, DEL IMPUESTO DE SUCESIONES Y DONACIONES DE BIZKAIA, A EFECTOS DE ESTE
+        IMPUESTO NO SERÁN TÍTULOS SUCESORIOS:
+
+a) La designación de sucesor en capitulaciones matrimoniales.
+b) Los actos que resulten de la utilización del poder testatorio por el comisario,
+
+        cualquiera que sea la forma que adopten.
+c) Las adjudicaciones que, al disolverse la comunicación foral, se hagan a favor del
+
+        cónyuge viudo o pareja de hecho, en pago de su mitad de los bienes
+        comunicados.
+d) El legado.
+
+61 DE CONFORMIDAD CON EL ARTÍCULO 14 “CONCEPTO DE SOCIEDADES
+        PATRIMONIALES” DE LA NORMA FORAL 11/2013, DE 5 DE DICIEMBRE, DEL IMPUESTO
+        SOBRE SOCIEDADES, A LOS EFECTOS DE LO PREVISTO EN ESTA NORMA FORAL, TENDRÁN
+        LA CONSIDERACIÓN DE SOCIEDADES PATRIMONIALES LOS CONTRIBUYENTES EN LOS
+        QUE CONCURRAN, ENTRE OTRAS, QUE, AL MENOS EN NOVENTA DÍAS DEL PERIODO
+        IMPOSITIVO, MÁS DE LA MITAD DE SU ACTIVO ESTÉ CONSTITUIDO POR VALORES:
+
+a) Que poseídos den cumplimiento a obligaciones legales y reglamentarias.
+b) Que incorporen derechos de crédito nacidos de relaciones contractuales
+
+        establecidas como consecuencia del desarrollo de actividades económicas.
+c) O que más de la mitad de su activo no esté afecto a actividades económicas.
+d) O que estén poseídos por sociedades de valores como consecuencia del ejercicio
+
+        de la actividad constitutiva de su objeto.
+
+62 EN EL CAPÍTULO I “NATURALEZA Y CONTENIDO” DEL TÍTULO PRELIMINAR DE LA NORMA
+        FORAL 1/2011, DE 24 DE MARZO, DEL IMPUESTO SOBRE TRANSMISIONES PATRIMONIALES
+        Y ACTOS JURÍDICOS DOCUMENTADOS, SE SEÑALA QUE:
+
+a) El Impuesto sobre Transmisiones Patrimoniales y Actos Jurídicos Documentados es un
+        tributo de naturaleza directa que gravará las operaciones societarias.
+
+b) El Impuesto sobre Transmisiones Patrimoniales y Actos Jurídicos Documentados es un
+        tributo de naturaleza directa que gravará las transmisiones patrimoniales onerosas.
+
+c) Se considerarán bienes inmuebles las máquinas, instrumentos o utensilios destinados
+        por el propietario de un inmueble a la industria o explotación que se realice en el
+        mismo, aun cuando se les asigne valores distintos a los del inmueble.
+
+d) No tendrán consideración de bienes inmuebles los buques destinados por su objeto
+        y condiciones a permanecer en un punto fijo de un río, lago o costa.
+
+63 DE CONFORMIDAD CON EL ARTÍCULO 2, DE LA NORMA FORAL 4/2016, DE 18 DE MAYO,
+        DEL IMPUESTO SOBRE BIENES INMUEBLES, CONSTITUYE EL HECHO IMPONIBLE DEL
+        IMPUESTO SOBRE BIENES INMUEBLES LA TITULARIDAD DEL SIGUIENTE DERECHO SOBRE
+        LOS BIENES INMUEBLES RÚSTICOS, URBANOS Y DE CARACTERÍSTICAS ESPECIALES:
+
+a) De un derecho real de hipoteca.
+b) De un derecho real de servidumbre.
+c) De un derecho real de usufructo.
+d) De un derecho real de prenda.
+
+                                                                                                                                                   16
+64 DE CONFORMIDAD CON LA NORMA FORAL 7/1994, DE 9 DE NOVIEMBRE, DEL IMPUESTO
+        SOBRE EL VALOR AÑADIDO, CONSTITUYE HECHO IMPONIBLE:
+
+a) Las entregas de bienes y prestaciones de servicios realizadas en el ámbito espacial
+        del Impuesto por empresarios o profesionales a título oneroso, con carácter habitual
+        u ocasional, en el desarrollo de su actividad empresarial o profesional, excepto si se
+        efectúan en favor de los propios socios, asociados, miembros o partícipes de las
+        entidades que las realicen.
+
+b) Las entregas de bienes y prestaciones de servicios realizadas en el ámbito espacial
+        del Impuesto por empresarios o profesionales a título lucrativo, con carácter habitual
+        u ocasional, en el desarrollo de su actividad empresarial o profesional, incluso si se
+        efectúan en favor de los propios socios, asociados, miembros o partícipes de las
+        entidades que las realicen.
+
+c) Las entregas de bienes y prestaciones de servicios realizadas en el ámbito espacial
+        del Impuesto por empresarios o profesionales a título oneroso, con carácter habitual
+        u ocasional, en el desarrollo de su actividad empresarial o profesional, incluso si se
+        efectúan en favor de los propios socios, asociados, miembros o partícipes de las
+        entidades que las realicen.
+
+d) Las entregas de bienes y prestaciones de servicios realizadas en el ámbito espacial
+        del Impuesto por empresarios o profesionales a título oneroso, solo con carácter
+        indefinido, en el desarrollo de su actividad empresarial o profesional, incluso si se
+        efectúan en favor de los propios socios, asociados, miembros o partícipes de las
+        entidades que las realicen.
+
+65 SEGÚN LO ESTABLECIDO EN EL ARTÍCULO 1 DEL DECRETO FORAL NORMATIVO 2/1992,
+        DE 17 DE MARZO, POR EL QUE SE APRUEBA EL TEXTO REFUNDIDO DE LA NORMA FORAL
+        6/1989, DE 30 DE JUNIO, DEL IMPUESTO SOBRE ACTIVIDADES ECONÓMICAS, DICHO
+        IMPUESTO:
+
+a) Es un tributo indirecto de carácter real.
+b) Es un tributo personal de carácter real.
+c) Es un tributo directo de carácter real.
+d) Es un tributo directo y de naturaleza personal.
+
+66 EN LA CONSTITUCIÓN ESPAÑOLA DE 1978, QUE LA SOBERANÍA NACIONAL RESIDE EN EL
+        PUEBLO ESPAÑOL, DEL QUE EMANAN LOS PODERES DEL ESTADO, SE SEÑALA:
+
+a) En el título preliminar de la Constitución Española.
+b) En el preámbulo de la Constitución Española.
+c) En el título I de la Constitución Española.
+d) En el título II de la Constitución Española.
+
+67 EL ARTÍCULO 17 DE LA CONSTITUCIÓN ESPAÑOLA DE 1978, HACE REFERENCIA AL
+        PROCEDIMIENTO “HABEAS CORPUS” QUE SE REFIERE:
+
+a) A la prisión provisional.
+b) A la detención preventiva.
+c) A la detención ilegal.
+d) A la inviolabilidad del domicilio privado.
+
+                                                                                                                                                   17
+68 SEGÚN LO ESTABLECIDO EN EL ARTÍCULO 91 DE LA CONSTITUCIÓN ESPAÑOLA DE 1978,
+        EL PRESIDENTE DEL GOBIERNO SANCIONARÁ LAS LEYES APROBADAS POR LAS CORTES
+        GENERALES EN UN PLAZO DE:
+
+a) Diez (10) días.
+b) Veinte (20) días.
+c) Un (1) mes.
+d) Ninguna es correcta.
+
+69 DE CONFORMIDAD CON LO ESTABLECIDO LA CONSTITUCIÓN ESPAÑOLA DE 1978, EL
+        PRESIDENTE DEL GOBIERNO, PREVIA DELIBERACIÓN DEL CONSEJO DE MINISTROS, Y
+        BAJO SU EXCLUSIVA RESPONSABILIDAD, PODRÁ:
+
+a) Aprobar la disolución del Congreso
+b) Aprobar la disolución del Senado.
+c) Aprobar la disolución de las Cortes Generales.
+d) Proponer la disolución del Senado que será decretada por el Rey.
+
+70 DE CONFORMIDAD CON LO ESTABLECIDO EN EL ARTÍCULO 124 DE LA CONSTITUCIÓN
+        ESPAÑOLA DE 1978, LE CORRESPONDE VELAR POR LA INDEPENDENCIA DE LOS
+        TRIBUNALES:
+
+a) Al Tribunal Supremo.
+b) Al Consejo General del Poder Judicial.
+c) Al Fiscal General del Estado.
+d) Al Ministerio Fiscal.
+
+71 SEGÚN EL ARTÍCULO 117 DE LA CONSTITUCIÓN ESPAÑOLA DE 1978, EL EJERCICIO DE LA
+        POTESTAD JURISDICCIONAL EN TODO TIPO DE PROCESOS, JUZGANDO Y HACIENDO
+        EJECUTAR LO JUZGADO, CORRESPONDE EXCLUSIVAMENTE A:
+
+a) Los Juzgados y Tribunales determinados por las leyes, según las normas de
+        competencia y procedimiento que las mismas establezcan.
+
+b) Los Juzgados y Tribunales determinados por la Constitución, según las normas
+        potestativas y procedimiento que la misma establezca.
+
+c) Los Juzgados y Tribunales determinados por las leyes, según los reglamentos de la
+        jurisdicción y procedimiento que los mismos establezcan.
+
+d) Los Juzgados y Tribunales determinados por la Constitución, según los reglamentos
+        de la jurisdicción y procedimiento que los mismos establezcan.
+
+72 SEGÚN LO ESTABLECIDO LA CONSTITUCIÓN ESPAÑOLA DE 1978, EL ESTADO TIENE
+        COMPETENCIA EXCLUSIVA SOBRE LA SIGUIENTE MATERIA:
+
+a) Bases de régimen energético.
+b) Ordenación del territorio.
+c) Vivienda.
+d) Aeropuertos deportivos.
+
+73 ¿QUIÉN REPRESENTA LOS INTERESES COMUNES DE LA UNIÓN EUROPEA Y ES SU
+        PRINCIPAL ÓRGANO EJECUTIVO?
+
+a) La Comisión Europea.
+b) El Consejo de la Unión Europea.
+c) El Consejo Europeo.
+d) El Comité Europeo.
+
+                                                                                                                                                   18
+74 SEGÚN EL ARTÍCULO 148 DE LA CONSTITUCIÓN ESPAÑOLA DE 1978, LA POSIBILIDAD DE
+        QUE LAS COMUNIDADES AUTÓNOMAS AMPLÍEN SUCESIVAMENTE SUS COMPETENCIAS,
+        DENTRO DEL MARCO ESTABLECIDO EN EL ARTÍCULO 149, REQUIERE:
+
+a) La reforma de sus Estatutos.
+b) Siempre ley estatal especial.
+c) Refrendo popular y ley de Cortes.
+d) El transcurso de tres años.
+
+75 EL TRIBUNAL DE JUSTICIA DE LA UNIÓN EUROPEA, SE ENCUENTRA EN:
+
+a) Bruselas.
+b) Estrasburgo.
+c) Maastricht.
+d) Luxemburgo.
+
+                                          PREGUNTAS DE RESERVA
+
+76 EL ARTÍCULO 4 DE LA LEY 39/2015, DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN DE
+        LAS ADMINISTRACIONES PÚBLICAS, ESTABLECE EN RELACIÓN A LOS INTERESADOS EN EL
+        PROCEDIMIENTO ADMINISTRATIVO:
+
+a) Son aquellos cuyos intereses ilegítimos, individuales o colectivos puedan resultar
+        afectados por la resolución y se personen en el procedimiento, cualquiera que sea
+        el estado del procedimiento.
+
+b) Son cuando la condición de interesado derivase de alguna relación jurídica
+        transmisible, el derecho-habiente sucederá en tal condición cualquiera que sea el
+        estado del procedimiento.
+
+c) Son los que promuevan solo como titulares de derechos colectivos.
+d) No se considera interesado a los que, sin haber iniciado el procedimiento, tengan
+
+        derechos que puedan resultar afectados por la decisión que en el mismo se tome.
+
+77 SEGÚN LO ESTABLECIDO EN LA LEY 39/2015, DE 1 DE OCTUBRE, DEL PROCEDIMIENTO
+        ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES PÚBLICAS, SOBRE EL EXPEDIENTE
+        ADMINISTRATIVO ES CIERTO QUE:
+
+a) Cuando sea preciso remitir el expediente electrónico, se hará de acuerdo con lo
+        previsto en el Esquema Nacional de Seguridad.
+
+b) Formará parte del expediente administrativo los informes, solicitados antes de la
+        resolución administrativa que no pongan fin al procedimiento.
+
+c) El expediente se formará mediante la desagregación ordenada de documentos,
+        pruebas, dictámenes, informes, acuerdos, notificaciones, y demás diligencias.
+
+d) El expediente electrónico se enviará completo, y acompañado de un índice.
+
+                                                                                                                                                   19
+78 DE CONFORMIDAD CON EL ARTÍCULO 59 DE LA LEY 39/2015, DE 1 DE OCTUBRE, DEL
+        PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES PÚBLICAS. SE
+        ENTIENDE POR INICIO DEL PROCEDIMIENTO POR PROPIA INICIATIVA:
+
+a) La actuación derivada del conocimiento directo de las circunstancias, conductas o
+        hechos objeto del procedimiento por el órgano que tiene atribuida la competencia
+        de resolución.
+
+b) La actuación derivada del conocimiento directo o indirecto de las circunstancias,
+        conductas o hechos objeto del procedimiento por el órgano que tiene atribuida la
+        competencia de resolución.
+
+c) La actuación derivada del conocimiento directo o indirecto de las circunstancias,
+        conductas o hechos objeto del procedimiento por el órgano que tiene atribuida la
+        competencia de iniciación.
+
+d) La actuación derivada del conocimiento directo de las circunstancias, conductas o
+        hechos objeto del procedimiento por el órgano superior al que tiene atribuida la
+        competencia de iniciación.
+
+79 DE CONFORMIDAD CON LO ESTABLECIDO EN LA LEY 11/2022, DE 1 DE DICIEMBRE, DE
+        EMPLEO PÚBLICO VASCO EN RELACIÓN CON EL DEVENGO DE LAS RETRIBUCIONES:
+
+a) Las retribuciones se devengarán y harán efectivas por mensualidades completas y
+        vencidas y de acuerdo con la situación y derechos de la persona empleada
+        referidos al primer día del mes a que correspondan, salvo en los casos señalados en
+        esta ley, en que se liquidarán por días.
+
+b) El importe de cada trienio comenzará a devengarse a partir del día primero del mes
+        siguiente a su perfeccionamiento.
+
+c) Las retribuciones del personal eventual se devengarán desde el día siguiente a su
+        nombramiento hasta el día de su cese efectivo.
+
+d) Ninguna de las opciones anteriores es exacta.
+
+80 SEGUN EL ARTÍCULO 27 DE LA NORMA FORAL 3/1987, DE 13 DE FEBRERO, SOBRE
+        ELECCIÓN, ORGANIZACIÓN, RÉGIMEN Y FUNCIONAMIENTO DE LAS INSTITUCIONES
+        FORALES DEL TERRITORIO HISTÓRICO DE BIZKAIA, CORRESPONDE A LA DIPUTADA
+        GENERAL EN SU CALIDAD DE PRESIDENTA DE LA DIPUTACIÓN FORAL:
+
+a) Firmar en nombre de la Diputación los convenios o acuerdos de cooperación con
+        los Municipios de Bizkaia y otras Administraciones.
+
+b) Nombrar y separar a las Diputadas Forales y a los Diputados Forales.
+c) Resolver los conflictos de atribuciones y competencia entre los distintos
+
+        Departamentos de la Diputación Foral.
+d) Suscribir a nombre de la Diputación Foral, escrituras, documentos o pólizas, dejando
+
+        a salvo las atribuciones de los Diputados Forales para los contratos que según su
+        cuantía les compete de acuerdo a la normativa foral reguladora.
+
+81 SEGÚN LA NORMA FORAL 1/2011, DE 24 DE MARZO, DEL IMPUESTO SOBRE
+        TRANSMISIONES PATRIMONIALES Y ACTOS JURÍDICOS DOCUMENTADOS, SON
+        TRANSMISIONES PATRIMONIALES SUJETAS:
+
+a) Todos los excesos de adjudicación declarados.
+b) Las adjudicaciones en pago y para pago de deudas, así como las adjudicaciones
+
+        presuntas en pago de asunción de deudas.
+c) La constitución de derechos reales, préstamos, fianzas, arrendamientos, pensiones y
+
+        concesiones administrativas, salvo cuando estas últimas no tengan por objeto la
+        cesión del derecho a utilizar infraestructuras ferroviarias o inmuebles o instalaciones
+        en puertos y aeropuertos.
+d) Los contratos de aparcería y subarriendo.
+
+                                                                                                                                                   20
+82 SEGÚN EL ARTÍCULO 6 “CONCEPTO DE EDIFICACIONES” DE LA NORMA FORAL 7/1994,
+        DE 9 DE NOVIEMBRE, DEL IMPUESTO SOBRE EL VALOR AÑADIDO, NO TENDRÁN
+        CONSIDERACIÓN DE EDIFICACIONES:
+
+a) Las plataformas para exploración y explotación de hidrocarburos.
+b) Los puertos, aeropuertos y mercados.
+c) Las minas, canteras o escoriales, pozos de petróleo o de gas u otros lugares de
+
+        extracción de productos naturales.
+d) Las instalaciones de recreo y deportivas que no sean accesorias de otras
+
+        edificaciones.
+
+83 SEGÚN LA NORMA FORAL 7/1989, DE 30 DE JUNIO, DEL IMPUESTO SOBRE VEHÍCULOS DE
+        TRACCIÓN MECÁNICA, NO ESTÁN SUJETOS AL IMPUESTO:
+
+a) Los vehículos aptos para circular por las vías públicas, cualesquiera que sean su
+        clase y categoría, cuando el domicilio que conste en el permiso de circulación
+        corresponda a un municipio del Territorio Histórico de Bizkaia.
+
+b) Los vehículos que no habiendo sido dados de baja en los registros por antigüedad
+        de su modelo, puedan ser autorizados para circular excepcionalmente con ocasión
+        de exhibiciones, certámenes o carreras limitadas a los de esta naturaleza.
+
+c) Los remolques y semirremolques arrastrados por vehículos de tracción mecánica
+        cuya carga útil sea superior a 750 kilogramos.
+
+d) Los remolques y semirremolques arrastrados por vehículos de tracción mecánica
+        cuya carga útil sea inferior a 750 kilogramos.
+
+84 SEGÚN EL ARTÍCULO 117 DE LA CONSTITUCIÓN ESPAÑOLA DE 1978, “DEL PODER
+        JUDICIAL”:
+
+a) Se prohíben los Tribunales de excepción excepto en tiempos de guerra.
+b) La ley regulará el ejercicio de la jurisdicción militar no solo en el ámbito estrictamente
+
+        castrense.
+c) Los jueces y magistrados podrán ser separados por alguna de las causas y garantías
+
+        previstas en la Ley.
+d) La ley regulará el ejercicio de la jurisdicción militar en los supuestos de estado de
+
+        alarma.
+
+85 COMO CONSECUENCIA DE LA RETIRADA DEL REINO UNIDO DE LA UNIÓN EUROPEA EL
+        NÚMERO DE EUROPARLAMENTARIOS HA PASADO DE:
+
+a) 751 a 705.
+b) 750 a 700.
+c) 751 a 700.
+d) 761 a 715.
+
+                                                                                                                                                   21
+

@@ -1,0 +1,101 @@
+CASOS PRÁCTICOS DE CONTABILIDAD Y MATEMÁTICA FINANCIERA
+
+                                    SUPUESTO Nº1                                      1,00
+
+1. Calcular el dividendo que reparte la sociedad A, y contabilizar la operación.      0,25
+2. Contabilizar la operación.                                                         0,10
+3. Calcular el valor teórico de la acción en la ampliación de capital que realiza A.  0,10
+4. Contabilizar la operación.                                                         0,10
+5. Calcular los valores teóricos de las acciones de las dos sociedades en el momento  0,05
+previo a la fusión. A
+5. Calcular los valores teóricos de las acciones de las dos sociedades en el momento  0,05
+previo a la fusión. B                                                                 0,10
+6. Calcular el número de acciones a emitir por A para efectuar la fusión.             0,25
+7. Contabilizar las operaciones realizadas por la sociedad A respecto a la fusión.
+
+                                    SUPUESTO Nº2                                      0,75
+
+I Capital social serie A                                                              0,05
+II Capital social serie B                                                             0,05
+III Cifra de capital no exigido                                                       0,05
+IV Cifra de participaciones propias                                                   0,05
+V Cifra de dividendo a cuenta                                                         0,05
+I Asiento de cobro de dividendo pasivo                                                0,10
+II Asiento de pago de dividendo a cuenta                                              0,10
+III Asiento reparto de beneficio                                                      0,20
+IV Asiento venta de acciones propias                                                  0,10
+SUPUESTO Nº3                                                                            0,75
+
+I Ajuste positivo por amortización libre. Cifra correcta                                0,05
+II Ajuste positivo por stock options. Cifra correcta                                    0,05
+III Ajuste positivo por límite de gasto por relaciones públicas. Cifra correcta         0,05
+IV Compensación limitada de las BINs. Aplica límite                                     0,05
+V Compensación del 10% de las microempresas. Aplicar en lugar adecuado                  0,05
+VI Aplicación limitada de deducciones                                                   0,05
+VII Aplicación de retenciones soportadas                                                0,05
+I Asiento de Impuesto corriente                                                         0,05
+II Asiento de impuesto diferido por amortización libre                                  0,05
+III Asiento de impuesto diferido por stock options                                      0,05
+IV Asiento de impuesto diferido por aplicación de BINs anteriores                       0,05
+V Asiento de impuesto diferido por deducciones en la cuota no aplicadas este ejercicio  0,05
+VI Asiento de regularización                                                            0,05
+Cálculo del importe de la cuenta de pérdidas y ganancias: -8.500 + (129).               0,10
+
+SUPUESTO Nº4                                                                            0,5
+
+Asientos de julio del ejercicio X 0,10
+Asientos de diciembre del ejercicio X 0,10
+Asientos de diciembre del ejercicio X+1 0,10
+Asientos de julio del ejercicio X+2 0,10
+Asientos de diciembre del ejercicio X+2 0,10
+                                    SUPUESTO Nº5                              0,25
+
+Contabilización de las operaciones con carácter especulativo                  0,10
+Contabilización de las operaciones a VR con cambios en el PN hasta diciembre  0,10
+Contabilización de las operaciones a VR con cambios en el PN - venta          0,05
+
+                                    SUPUESTO Nº6                              0,25
+
+I Asientos previos de gastos del proyecto                                     0,05
+II Activación de los gastos                                                   0,05
+III Amortización de 6 meses del activo hasta la patente                       0,05
+IV Registro de la patente eliminando activo anterior y AA                     0,05
+V Amortización de 2 meses de patente                                          0,05
+
+                                    SUPUESTO Nº7                              0,5
+
+Asientos de julio del ejercicio X                                             0,05
+Asientos de julio del ejercicio X : cifras                                    0,05
+Asientos de octubre del ejercicio X                                           0,10
+Asientos de diciembre del ejercicio X y enero del ejercicio X+1               0,10
+Asientos de abril del ejercicio X+1                                           0,10
+Asientos de julio del ejercicio X+1                                           0,10
+
+                           SUPUESTO Nº8                                       0,25
+
+- Fondo de maniobra                                                           0,05
+- Ratio de liquidez                                                           0,05
+- Ratio de solvencia                                                          0,05
+- Ratio de tesorería                                                          0,05
+- Rentabilidad financiera                                                     0,05
+                                    SUPUESTO Nº9                                       0,25
+
+Inversión a tipo de interés simple                                                     0,125
+Inversión a tipo de interés compuesto                                                  0,125
+
+            SUPUESTO Nº10                                                              0,50
+
+Cuota fija que comenzará a pagar la empresa al pasar el período de carencia. 0,11
+
+Capital vivo al final de los años X+1, X+2 y X+4. 0,12
+
+Parte de interés y parte de amortización de los meses de enero de los años X+2, X+3 y
+
+X+5.                                                                                   0,12
+
+Valor del usufructo, de la nuda propiedad y de la plena propiedad cuando han
+
+transcurrido cuatro años y el tipo de interés de mercado es de 9%.                     0,15
+
+PUNTUACIÓN                                                                             5
+
