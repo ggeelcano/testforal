@@ -47,30 +47,44 @@
       return copy;
     });
   }
-  var sub  = (window.PREGUNTAS_SUBINSPECTOR_2022 || []);
-  var adm  = (window.PREGUNTAS_ADMINISTRATIVO_2022 || []);
-  var tm22 = (window.PREGUNTAS_TMGAF_2022 || []);
-  var tm26 = (window.PREGUNTAS_TMGAF_2026 || []);
-  var afc  = (window.PREGUNTAS_AFC_2024 || []);
-  var eco  = (window.PREGUNTAS_ECONOMISTA_2022 || []);
-  var tg23 = (window.PREGUNTAS_TAG_2023 || []);
-  var tg26 = (window.PREGUNTAS_TAG_2026 || []);
+  var sub      = (window.PREGUNTAS_SUBINSPECTOR_2022 || []);
+  var adm      = (window.PREGUNTAS_ADMINISTRATIVO_2022 || []);
+  var admPi    = (window.PREGUNTAS_ADMINISTRATIVO_PI_2022 || []);
+  var tm22     = (window.PREGUNTAS_TMGAF_2022 || []);
+  var tm26     = (window.PREGUNTAS_TMGAF_2026 || []);
+  var tm26Pi   = (window.PREGUNTAS_TMGAF_PI_2026 || []);
+  var afc      = (window.PREGUNTAS_AFC_2024 || []);
+  var afcPi    = (window.PREGUNTAS_AFC_PI_2024 || []);
+  var eco      = (window.PREGUNTAS_ECONOMISTA_2022 || []);
+  var ecoEstab = (window.PREGUNTAS_ECONOMISTA_ESTAB_2022 || []);
+  var tg23     = (window.PREGUNTAS_TAG_2023 || []);
+  var tg23Pi   = (window.PREGUNTAS_TAG_PI_2023 || []);
+  var tg26     = (window.PREGUNTAS_TAG_2026 || []);
+  var tg26Pi   = (window.PREGUNTAS_TAG_PI_2026 || []);
   window.PREGUNTAS = [].concat(
-    tag(sub,  'sub'),
-    tag(adm,  'adm'),
-    tag(tm22, 'tmgaf'),
-    tag(tm26, 'tmgaf'),
-    tag(afc,  'afc'),
-    tag(eco,  'eco'),
-    tag(tg23, 'tag'),
-    tag(tg26, 'tag')
+    tag(sub,      'sub'),
+    tag(adm,      'adm'),
+    tag(admPi,    'adm'),
+    tag(tm22,     'tmgaf'),
+    tag(tm26,     'tmgaf'),
+    tag(tm26Pi,   'tmgaf'),
+    tag(afc,      'afc'),
+    tag(afcPi,    'afc'),
+    tag(eco,      'eco'),
+    tag(ecoEstab, 'eco'),
+    tag(tg23,     'tag'),
+    tag(tg23Pi,   'tag'),
+    tag(tg26,     'tag'),
+    tag(tg26Pi,   'tag')
   );
   // Resumen para depuración
   if (typeof console !== 'undefined') {
     console.log('[TestForal] Preguntas cargadas:', window.PREGUNTAS.length,
-      'sub=' + sub.length, 'adm=' + adm.length,
-      'tmgaf=' + (tm22.length + tm26.length),
-      'afc=' + afc.length, 'eco=' + eco.length,
-      'tag=' + (tg23.length + tg26.length));
+      'sub=' + sub.length,
+      'adm=' + (adm.length + admPi.length),
+      'tmgaf=' + (tm22.length + tm26.length + tm26Pi.length),
+      'afc=' + (afc.length + afcPi.length),
+      'eco=' + (eco.length + ecoEstab.length),
+      'tag=' + (tg23.length + tg23Pi.length + tg26.length + tg26Pi.length));
   }
 })();
