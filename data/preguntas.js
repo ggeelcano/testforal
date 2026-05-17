@@ -11,11 +11,29 @@
 //   adm-*    → Administrativo Foral (85 preguntas, examen 2022 TL)
 //   tmgaf-*  → TMGAF / Liquidador (190 preguntas, exámenes 2022 + 2026)
 (function(){
-  // Normaliza subunidades a su unidad principal (p. ej. irpf-rendimientos → irpf, is-base → is)
+  // Agrupa cada unidad temática a uno de 6 bloques (para evitar bloques con 1 pregunta).
+  // Estos 6 bloques son comunes a todas las oposiciones.
   function normUnit(u){
     if (!u) return u;
-    if (u.indexOf('irpf-') === 0) return 'irpf';
-    if (u.indexOf('is-') === 0)   return 'is';
+    // Bloque 1: Constitucional + organización foral + concierto + UE
+    if (u === 'derecho-constitucional' || u === 'organizacion-foral' ||
+        u === 'concierto-economico'    || u === 'union-europea') return 'organizacion';
+    // Bloque 2: Procedimiento, contratos, función pública, igualdad, transparencia, datos
+    if (u === 'procedimiento-administrativo' || u === 'contratos-sector-publico' ||
+        u === 'funcion-publica' || u === 'igualdad' ||
+        u === 'transparencia'   || u === 'proteccion-datos' ||
+        u === 'atencion-ciudadana') return 'derecho-publico';
+    // Bloque 3: NFGT (parte general tributaria)
+    if (u.indexOf('nfgt-') === 0) return 'nfgt';
+    // Bloque 4: Impuestos directos
+    if (u.indexOf('irpf') === 0 || u.indexOf('is-') === 0 || u === 'is' || u === 'isd') return 'directos';
+    // Bloque 5: Impuestos indirectos y locales
+    if (u === 'iva' || u === 'itp-ajd' || u === 'haciendas-locales') return 'indirectos';
+    // Bloque 6: Presupuestos, contabilidad, estadística, macro/micro/política económica
+    if (u === 'presupuestos-foral' || u === 'contabilidad' ||
+        u === 'matematica-financiera' || u === 'estadistica' ||
+        u === 'macroeconomia' || u === 'microeconomia' ||
+        u === 'politica-economica') return 'presupuestos';
     return u;
   }
   function tag(arr, op){
